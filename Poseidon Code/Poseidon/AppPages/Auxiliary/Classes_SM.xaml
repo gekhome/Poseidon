@@ -1,0 +1,55 @@
+﻿<Page x:Class="Poseidon.AppPages.Auxiliary.Classes_SM"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:telerikControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+	Title="Τμήματα-Σχολή Μηχανικών">
+
+    <Grid>
+
+        <Border Background="Transparent" BorderBrush="DarkGray" BorderThickness="2" CornerRadius="4">
+            <StackPanel Orientation="Vertical">
+
+                <StackPanel Name="cmdPanel"  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                    <telerik:RadButton telerik:StyleManager.Theme="Windows8Touch" Content="Προσθήκη" Margin="0,10,5,0"    Name="btnAdd" Click="btnAdd_Click"   Height="36" Width="115"></telerik:RadButton>
+                    <telerik:RadButton telerik:StyleManager.Theme="Windows8Touch" Content="Διαγραφή" Margin="0,10,5,0"    Name="btnDelete" Click="btnDelete_Click"   Height="36" Width="115"></telerik:RadButton>
+                    <telerik:RadButton telerik:StyleManager.Theme="Windows8Touch" Content="Επεξεργασία" Margin="0,10,5,0" Name="btnEdit" Click="btnEdit_Click"   Height="36" Width="115"></telerik:RadButton>
+                    <telerik:RadButton telerik:StyleManager.Theme="Windows8Touch" Content="Αναίρεση" Margin="0,10,5,0"    Name="btnUndo" Click="btnUndo_Click"   Height="36" Width="115"></telerik:RadButton>
+                    <telerik:RadButton telerik:StyleManager.Theme="Windows8Touch" Content="Αποθήκευση" Margin="0,10,5,0"  Name="btnSave" Click="btnSave_Click"   Height="36" Width="115"></telerik:RadButton>
+                </StackPanel>
+                <TextBlock Text="Τμήματα-Σχολή Μηχανικών" FontSize="16" FontFamily="Segoe UI" FontWeight="Normal" Height="29" Padding="4" />
+
+                <telerik:RadGridView x:Name="dataGrid" telerikControls:StyleManager.Theme="Windows8Touch" ScrollMode="RealTime" Margin="0,0,0,0"
+                                     CanUserInsertRows="True" CanUserDeleteRows="True" SelectionMode="Extended" Height="480" 
+                                     RowEditEnded="dataGrid_RowEditEnded" AutoGenerateColumns="False" ShowGroupPanel="True" AlternationCount="2"
+                                     ShowInsertRow="True" ShowColumnFooters="True" ShowGroupFooters="True" AddingNewDataItem="dataGrid_AddingNewDataItem"  
+                                     CellValidating="dataGrid_CellValidating" RowValidating="dataGrid_RowValidating">
+                    <!--Style="{DynamicResource RadGridViewStyleGR}"  -->
+                    <telerik:RadGridView.Columns>
+                        
+
+                        <telerik:GridViewComboBoxColumn Name="cboSchoolYear"  DataMemberBinding="{Binding ΔΙΔ_ΕΤΟΣ}" Header="Διδ.Έτος"
+                                                        SelectedValueMemberPath="ΣΧΟΛ_ΕΤΟΣ_ΚΩΔ" DisplayMemberPath="ΣΧΟΛ_ΕΤΟΣ"/>
+                        <telerik:GridViewComboBoxColumn Name="cboTerm"  DataMemberBinding="{Binding ΕΞΑΜΗΝΟ}" Header="Εξάμηνο"
+                                                        SelectedValueMemberPath="ΕΞΑΜΗΝΟ_ΚΩΔ" DisplayMemberPath="ΕΞΑΜΗΝΟ"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ}" Header="Τμήμα" Name="ΤΜΗΜΑ" IsGroupable="False">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction Caption="Πλήθος: " />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+
+
+                    </telerik:RadGridView.Columns>
+
+
+                </telerik:RadGridView>
+
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Page>

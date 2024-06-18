@@ -1,0 +1,975 @@
+﻿<UserControl x:Class="Poseidon.AppPages.Tools.TextProcessor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+            xmlns:local="clr-namespace:Poseidon.AppPages.Tools"
+            mc:Ignorable="d"
+            d:DesignHeight="300" d:DesignWidth="1000" 
+            FontFamily="Arial" FontSize="11">
+    
+    
+    <Grid>
+
+        <Grid x:Name="radRichTextBoxParent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <telerik:DocumentRuler Grid.Row="1">
+                <telerik:RadRichTextBox x:Name="radRichTextBox" ShowComments="True" LayoutMode="Paged"/>
+            </telerik:DocumentRuler>
+            <telerik:RadRichTextBoxRibbonUI BackstageClippingElement="{Binding ElementName=radRichTextBoxParent}" CollapseThresholdSize="50,50" DataContext="{Binding Commands, ElementName=radRichTextBox}" 
+                                            ApplicationName="Επεξεργαστής κειμένου" ApplicationButtonImageSource="/Poseidon;component/Shell/Images/Metro/Word.png">
+                <telerik:RadRichTextBoxRibbonUI.Resources>
+                    <telerik:FontFamiliesProvider x:Key="FontFamiliesProvider"/>
+                    <telerik:EditingContextTypeToBoolConverter x:Key="EditingContextTypeToBoolConverter"/>
+                </telerik:RadRichTextBoxRibbonUI.Resources>
+                <telerik:RadRichTextBoxRibbonUI.Backstage>
+                    <telerik:RadRibbonBackstage>
+                        <telerik:RadRibbonBackstageItem Header="Νέο" Icon="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/new.png" IsSelectable="false" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding NewDocumentCommand}"/>
+                        <telerik:RadRibbonBackstageItem Header="Άνοιγμα" Icon="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/open.png" IsSelectable="false" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding OpenDocumentCommand}"/>
+                        <telerik:RadRibbonBackstageItem Header="Αποθήκευση" Icon="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/save.png" IsSelectable="false" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding SaveCommand}"/>
+                        <telerik:RadRibbonBackstageItem Header="Αποθήκευση ως" Icon="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/saveas.png" IsDefault="false">
+                            <StackPanel HorizontalAlignment="Stretch" Margin="20,20,0,0" UseLayoutRounding="True">
+                                <TextBlock Foreground="#FF5E5E7C" FontWeight="ExtraBold" FontSize="18" FontFamily="Verdana" Text="Αποθήκευση ως"/>
+                                <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="1" Width="410"/>
+                                <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                    <telerik:RadRibbonButton BorderBrush="Gray" CommandParameter="docx" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding SaveCommand}" telerik:RadRichTextBoxRibbonUI.ShouldCloseBackstage="True" VerticalContentAlignment="Center" Width="90">
+                                        <Image HorizontalAlignment="Center" Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/ApplicationMenu/worddoc.png" Stretch="None"/>
+                                    </telerik:RadRibbonButton>
+                                    <StackPanel Margin="20 0 0 0">
+                                        <TextBlock Foreground="#FF5E5E7C" FontWeight="ExtraBold" FontSize="18" Text="Έγγραφο Word"/>
+                                        <TextBlock FontSize="13" FontFamily="Verdana" TextWrapping="Wrap" Text="Αποθήκευση ως αρχείο Word." Width="300"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                    <telerik:RadRibbonButton BorderBrush="Gray" CommandParameter="pdf" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding SaveCommand}" telerik:RadRichTextBoxRibbonUI.ShouldCloseBackstage="True" VerticalContentAlignment="Center" Width="90">
+                                        <Image HorizontalAlignment="Center" Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/ApplicationMenu/Pdf.png" Stretch="None"/>
+                                    </telerik:RadRibbonButton>
+                                    <StackPanel Margin="20 0 0 0">
+                                        <TextBlock Foreground="#FF5E5E7C" FontWeight="ExtraBold" FontSize="18" Text="Έγγραφο PDF"/>
+                                        <TextBlock FontSize="13" FontFamily="Verdana" TextWrapping="Wrap" Text="Αποθήκευση ως αρχείο PDF." Width="300"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                    <telerik:RadRibbonButton BorderBrush="Gray" CommandParameter="html" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding SaveCommand}" telerik:RadRichTextBoxRibbonUI.ShouldCloseBackstage="True" VerticalContentAlignment="Center" Width="90">
+                                        <Image HorizontalAlignment="Center" Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/ApplicationMenu/html.png" Stretch="None"/>
+                                    </telerik:RadRibbonButton>
+                                    <StackPanel Margin="20 0 0 0">
+                                        <TextBlock Foreground="#FF5E5E7C" FontWeight="ExtraBold" FontSize="18" Text="Αρχείο HTML"/>
+                                        <TextBlock FontSize="13" FontFamily="Verdana" TextWrapping="Wrap" Text="Αποθήκευση ως έγγραφο HTML." Width="300"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                    <telerik:RadRibbonButton BorderBrush="Gray" CommandParameter="rtf" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding SaveCommand}" telerik:RadRichTextBoxRibbonUI.ShouldCloseBackstage="True" VerticalContentAlignment="Center" Width="90">
+                                        <Image HorizontalAlignment="Center" Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/ApplicationMenu/Rtf.png" Stretch="None"/>
+                                    </telerik:RadRibbonButton>
+                                    <StackPanel Margin="20 0 0 0">
+                                        <TextBlock Foreground="#FF5E5E7C" FontWeight="ExtraBold" FontSize="18" Text="Rich Text Format"/>
+                                        <TextBlock FontSize="13" FontFamily="Verdana" TextWrapping="Wrap" Text="ΑΠοθήκευση εγγράφου σε μορφή RTF." Width="300"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                    <telerik:RadRibbonButton BorderBrush="Gray" CommandParameter="txt" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding SaveCommand}" telerik:RadRichTextBoxRibbonUI.ShouldCloseBackstage="True" VerticalContentAlignment="Center" Width="90">
+                                        <Image HorizontalAlignment="Center" Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/ApplicationMenu/PlainText.png" Stretch="None"/>
+                                    </telerik:RadRibbonButton>
+                                    <StackPanel Margin="20 0 0 0">
+                                        <TextBlock Foreground="#FF5E5E7C" FontWeight="ExtraBold" FontSize="18" Text="Απλό κείμενο"/>
+                                        <TextBlock FontSize="13" FontFamily="Verdana" TextWrapping="Wrap" Text="Αποθήκευση ως απλό κείμενο." Width="300"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                    <telerik:RadRibbonButton BorderBrush="Gray" CommandParameter="xaml" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding SaveCommand}" telerik:RadRichTextBoxRibbonUI.ShouldCloseBackstage="True" VerticalContentAlignment="Center" Width="90">
+                                        <Image HorizontalAlignment="Center" Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/ApplicationMenu/Xaml.png" Stretch="None"/>
+                                    </telerik:RadRibbonButton>
+                                    <StackPanel Margin="20 0 0 0">
+                                        <TextBlock Foreground="#FF5E5E7C" FontWeight="ExtraBold" FontSize="18" Text="Έγγραφο XAML"/>
+                                        <TextBlock FontSize="13" FontFamily="Verdana" TextWrapping="Wrap" Text="Αποθήκευση ως αρχείο XAML." Width="300"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </telerik:RadRibbonBackstageItem>
+                        <telerik:RadRibbonBackstageItem Header="Print" Icon="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/print.png" IsDefault="true">
+                            <StackPanel HorizontalAlignment="Stretch" Margin="20,20,0,0" UseLayoutRounding="True">
+                                <TextBlock Foreground="#FF5E5E7C" FontWeight="ExtraBold" FontSize="18" FontFamily="Verdana" Text="Print"/>
+                                <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="1" Width="410"/>
+                                <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                    <telerik:RadRibbonButton BorderBrush="Gray" CommandParameter="Native" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding PrintCommand}" telerik:RadRichTextBoxRibbonUI.ShouldCloseBackstage="True" VerticalContentAlignment="Center" Width="90">
+                                        <Image HorizontalAlignment="Center" Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/ApplicationMenu/pagesetup.png" Stretch="None"/>
+                                    </telerik:RadRibbonButton>
+                                    <StackPanel Margin="20 0 0 0">
+                                        <TextBlock Foreground="#FF5E5E7C" FontWeight="ExtraBold" FontSize="18" Text="Άμεση εκτύπωση"/>
+                                        <TextBlock FontSize="13" FontFamily="Verdana" TextWrapping="Wrap" Text="Εκτύπωση του εγγράφου στον προεπιλεγμένο εκτυπωτή χωρίς αλλαγές." Width="300"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </telerik:RadRibbonBackstageItem>
+                    </telerik:RadRibbonBackstage>
+                </telerik:RadRichTextBoxRibbonUI.Backstage>
+                <telerik:RadRichTextBoxRibbonUI.ContextualGroups>
+                    <telerik:RadRibbonContextualGroup x:Name="TableTools" Header="Εργαλεία πινάκων">
+                        <telerik:RadRibbonContextualGroup.IsActive>
+                            <Binding Converter="{StaticResource EditingContextTypeToBoolConverter}" Mode="OneWay" Path="AssociatedRichTextBox.CurrentEditingContext.Type">
+                                <Binding.ConverterParameter>
+                                    <telerik:EditingContextTypes>Table</telerik:EditingContextTypes>
+                                </Binding.ConverterParameter>
+                            </Binding>
+                        </telerik:RadRibbonContextualGroup.IsActive>
+                    </telerik:RadRibbonContextualGroup>
+                    <telerik:RadRibbonContextualGroup x:Name="HeaderFooterTools" Header="Header &amp; Footer Tools">
+                        <telerik:RadRibbonContextualGroup.IsActive>
+                            <Binding Converter="{StaticResource EditingContextTypeToBoolConverter}" Mode="OneWay" Path="AssociatedRichTextBox.CurrentEditingContext.Type">
+                                <Binding.ConverterParameter>
+                                    <telerik:EditingContextTypes>HeaderFooter</telerik:EditingContextTypes>
+                                </Binding.ConverterParameter>
+                            </Binding>
+                        </telerik:RadRibbonContextualGroup.IsActive>
+                    </telerik:RadRibbonContextualGroup>
+                </telerik:RadRichTextBoxRibbonUI.ContextualGroups>
+                <telerik:RadRichTextBoxRibbonUI.QuickAccessToolBar>
+                    <telerik:QuickAccessToolBar>
+                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding SaveCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/save.png" Text="Save"/>
+                        <telerik:RadRibbonSplitButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding UndoCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/undo.png" Text="Undo">
+                            <telerik:RadRibbonSplitButton.DropDownContent>
+                                <telerik:MultipleUndoControl telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding MultipleUndoCommand}"/>
+                            </telerik:RadRibbonSplitButton.DropDownContent>
+                        </telerik:RadRibbonSplitButton>
+                        <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding RedoCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/redo.png" Text="Redo"/>
+                    </telerik:QuickAccessToolBar>
+                </telerik:RadRichTextBoxRibbonUI.QuickAccessToolBar>
+                <telerik:RadRibbonTab Header="ΑΡΧΙΚΗ">
+                    <telerik:RadRibbonGroup Header="Πρόχειρο">
+                        <telerik:RadCollapsiblePanel>
+                            <telerik:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" telerik:ScreenTip.Description="Αποκοπή επιλογής και τοποθέτηση στο Πρόχειρο." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding CutCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/cut.png" Text="Αποκοπή" telerik:ScreenTip.Title="Αποκοπή"/>
+                            <telerik:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" telerik:ScreenTip.Description="Αντιγραφή επιλογής και τοποθέτηση στο Πρόχειρο." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding CopyCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/copy.png" Text="Αντιγραφή" telerik:ScreenTip.Title="Αντιγραφή"/>
+                            <telerik:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" telerik:ScreenTip.Description="Επικόλληση των περιεχομένων του Πρόχειρου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding PasteCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/paste.png" Text="Επικόλληση" telerik:ScreenTip.Title="Επικόλληση" />
+                        </telerik:RadCollapsiblePanel>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup DialogLauncherVisibility="Visible" telerik:ScreenTip.Description="Εμφάνιση λίστας επιλογής γραμματοσειράς." Header="Γραμματοσειρά" telerik:ScreenTip.Icon="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/FontDialog.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowFontPropertiesDialogCommand}" telerik:ScreenTip.Title="Γραμματοσειρά">
+                        <telerik:RadOrderedWrapPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <telerik:RadRibbonComboBox CanAutocompleteSelectItems="False" CanKeyboardNavigationSelectItems="False" CommandParameter="{Binding SelectedValue, RelativeSource={RelativeSource Self}}" telerik:ScreenTip.Description="Change the font family." IsReadOnly="True" ItemsSource="{Binding RegisteredFonts, Source={StaticResource FontFamiliesProvider}}" MaxDropDownHeight="400" OpenDropDownOnFocus="True" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeFontFamilyCommand}" telerik:ScreenTip.Title="Font" Width="132"/>
+                                <telerik:RadRibbonComboBox CanAutocompleteSelectItems="False" CanKeyboardNavigationSelectItems="False" CommandParameter="{Binding SelectedItem.Tag, RelativeSource={RelativeSource Self}}" telerik:ScreenTip.Description="Change the font size." IsEditable="True" IsReadOnly="True" IsTextSearchEnabled="False" MaxDropDownHeight="400" OpenDropDownOnFocus="True" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeFontSizeCommand}" telerik:ScreenTip.Title="Font Size" Width="65">
+                                    <telerik:RadRibbonComboBoxItem Content="8" Tag="10.67"/>
+                                    <telerik:RadRibbonComboBoxItem Content="9" Tag="12"/>
+                                    <telerik:RadRibbonComboBoxItem Content="10" Tag="13.34"/>
+                                    <telerik:RadRibbonComboBoxItem Content="11" Tag="14.67"/>
+                                    <telerik:RadRibbonComboBoxItem Content="12" Tag="16"/>
+                                    <telerik:RadRibbonComboBoxItem Content="14" Tag="18.67"/>
+                                    <telerik:RadRibbonComboBoxItem Content="16" Tag="21.33"/>
+                                    <telerik:RadRibbonComboBoxItem Content="18" Tag="24"/>
+                                    <telerik:RadRibbonComboBoxItem Content="20" Tag="26.67"/>
+                                    <telerik:RadRibbonComboBoxItem Content="22" Tag="29.33"/>
+                                    <telerik:RadRibbonComboBoxItem Content="24" Tag="32"/>
+                                    <telerik:RadRibbonComboBoxItem Content="26" Tag="34.67"/>
+                                    <telerik:RadRibbonComboBoxItem Content="28" Tag="37.33"/>
+                                    <telerik:RadRibbonComboBoxItem Content="36" Tag="48"/>
+                                    <telerik:RadRibbonComboBoxItem Content="48" Tag="64"/>
+                                    <telerik:RadRibbonComboBoxItem Content="72" Tag="96"/>
+                                </telerik:RadRibbonComboBox>
+                            </StackPanel>
+                            <telerik:RadButtonGroup>
+                                <telerik:RadRibbonButton telerik:ScreenTip.Description="Αύξηση του μεγέθους γραμματοσειράς." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding IncrementFontSizeCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/font-increasesize.png" telerik:ScreenTip.Title="Μεγέθυνση"/>
+                                <telerik:RadRibbonButton telerik:ScreenTip.Description="Μείωση του μεγέθους γραμματοσειράς." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding DecrementFontSizeCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/font-decreasesize.png" telerik:ScreenTip.Title="Σμίκρυνση"/>
+                            </telerik:RadButtonGroup>
+                            <telerik:RadButtonGroup>
+                                <telerik:RadRibbonButton telerik:ScreenTip.Description="Διαγραφή μορφοποίησης της επιλογής, αφήνοντας το απλό κείμενο." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ClearAllFormattingCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/ClearFormatting16.png" telerik:ScreenTip.Title="Διαγραφή μορφοποίησης"/>
+                            </telerik:RadButtonGroup>
+                            <telerik:RadButtonGroup>
+                                <telerik:RadRibbonToggleButton telerik:ScreenTip.Description="Έντονη γραφή του επιλεγμένου κειμένου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleBoldCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/bold.png" telerik:ScreenTip.Title="Έντονη γραφή"/>
+                                <telerik:RadRibbonToggleButton telerik:ScreenTip.Description="Πλάγια γραφή του επιλεγμένου κειμένου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleItalicCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/italic.png" telerik:ScreenTip.Title="Πλάγια γραφή"/>
+                                <telerik:RadRibbonSplitButton telerik:ScreenTip.Description="Υπογράμμιση του επιλεγμένου κειμένου." IsToggle="True" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleUnderlineCommand}" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/underline.png" telerik:ScreenTip.Title="Υπογράμμιση">
+                                    <telerik:RadRibbonSplitButton.DropDownContent>
+                                        <telerik:RadGallery Height="210" ItemWidth="156" ItemHeight="26" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeUnderlineDecorationCommand}" ViewportWidth="157">
+                                            <telerik:RadGalleryItem Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/underline1.png" Tag="Line"/>
+                                            <telerik:RadGalleryItem Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/underline2.png" Tag="DoubleLine"/>
+                                            <telerik:RadGalleryItem Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/underline3.png" Tag="ThickLine"/>
+                                            <telerik:RadGalleryItem Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/underline4.png" Tag="DottedLine"/>
+                                            <telerik:RadGalleryItem Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/underline5.png" Tag="DashedLine"/>
+                                            <telerik:RadGalleryItem Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/underline6.png" Tag="DotDashedLine"/>
+                                            <telerik:RadGalleryItem Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/underline7.png" Tag="DotDotDashedLine"/>
+                                            <telerik:RadGalleryItem Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/underline8.png" Tag="Wave"/>
+                                        </telerik:RadGallery>
+                                    </telerik:RadRibbonSplitButton.DropDownContent>
+                                </telerik:RadRibbonSplitButton>
+                                <telerik:RadRibbonToggleButton telerik:ScreenTip.Description="Γραμμή δια μέσου του επιλεγμένου κειμένου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleStrikethroughCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/Strikethrough16.png" telerik:ScreenTip.Title="Διαγράμμιση"/>
+                                <telerik:RadRibbonToggleButton telerik:ScreenTip.Description="Μικροί χαρακτήρες κάτω από τη βασική γραμμή του κειμένου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleSubscriptCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/subscript.png" telerik:ScreenTip.Title="Δείκτης"/>
+                                <telerik:RadRibbonToggleButton telerik:ScreenTip.Description="Μικροί χαρακτήρες πάνω από τη βασική γραμμή του κειμένου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleSuperscriptCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/superscript.png" telerik:ScreenTip.Title="Εκθέτης"/>
+                            </telerik:RadButtonGroup>
+                            <telerik:RadButtonGroup>
+                                <telerik:HighlightColorPicker AutomaticColor="Transparent" BorderThickness="0" telerik:ScreenTip.Description="Επισήμανση κειμένου, όπως με μια γραφίδα επισήμανσης." Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/highlight.png" NoColorText="No color" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeFontHighlightColorCommand}" SelectedColor="Yellow" telerik:ScreenTip.Title="Χρώμα επισήμανσης κειμένου"/>
+                                <telerik:HighlightColorPicker BorderThickness="0" telerik:ScreenTip.Description="Αλλαγή χρώματος κειμένου." Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/FontForeColor.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeFontForeColorCommand}" SelectedColor="Red" telerik:ScreenTip.Title="Χρώμα Γραμματοσειράς"/>
+                            </telerik:RadButtonGroup>
+                        </telerik:RadOrderedWrapPanel>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup DialogLauncherVisibility="Visible" telerik:ScreenTip.Description="Εμφάνιση πλαισίου διαλόγου παραγράφου." Header="Παράγραφος" telerik:ScreenTip.Icon="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/PropertiesDialog.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowParagraphPropertiesDialogCommand}" telerik:ScreenTip.Title="Paragraph">
+                        <telerik:RadOrderedWrapPanel>
+                            <telerik:RadButtonGroup>
+                                <telerik:RadRibbonToggleButton telerik:ScreenTip.Description="Αρχή λίστας με κουκκίδες." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleBulletsCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/list-bullets.png" telerik:ScreenTip.Title="Κουκκίδες"/>
+                                <telerik:RadRibbonToggleButton telerik:ScreenTip.Description="Αρχή αριθμημένης λίστας." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleNumberedCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/list-numbered.png" telerik:ScreenTip.Title="Αρίθμηση"/>
+                                <telerik:RadRibbonDropDownButton telerik:ScreenTip.Description="Αρχή πολυεπίπεδης λίστας. Κλικ στο βελος για επιλογή διαφορετικών στυλ." Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/MultilevelList.png" telerik:ScreenTip.Title="Πολυεπίπεδη λίστα">
+                                    <telerik:RadRibbonDropDownButton.DropDownContent>
+                                        <StackPanel>
+                                            <ScrollViewer MaxHeight="565">
+                                                <StackPanel>
+                                                    <telerik:RadGroupHeader Content="Βιβλιοθήκη λίστας"/>
+                                                    <telerik:RadGallery Height="176" ItemWidth="88" ItemHeight="88" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeListStyleCommand}" ScrollViewer.VerticalScrollBarVisibility="Disabled" ViewportWidth="266">
+                                                        <telerik:RadGalleryItem Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/MultilevelListNone.png" Tag="None"/>
+                                                        <telerik:RadGalleryItem Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/MultilevelListBulleted.png" Tag="Bulleted"/>
+                                                        <telerik:RadGalleryItem Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/MultilevelListNumbered.png" Tag="Numbered"/>
+                                                        <telerik:RadGalleryItem Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/MultilevelListNumberedParenthesis.png" Tag="NumberedParenthesis"/>
+                                                        <telerik:RadGalleryItem Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/MultilevelListNumberedHierarchical.png" Tag="NumberedHierarchical"/>
+                                                    </telerik:RadGallery>
+                                                    <telerik:ListStylesGallery AssociatedRichTextBox="{Binding AssociatedRichTextBox, Mode=OneWay}"/>
+                                                </StackPanel>
+                                            </ScrollViewer>
+                                            <telerik:RadRibbonButton HorizontalAlignment="Stretch" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowDefineNewListStyleDialogCommand}" Size="Medium" Text="Ορισμός νέου στυλ λίστας ..."/>
+                                        </StackPanel>
+                                    </telerik:RadRibbonDropDownButton.DropDownContent>
+                                </telerik:RadRibbonDropDownButton>
+                            </telerik:RadButtonGroup>
+                            <telerik:RadButtonGroup>
+                                <telerik:RadRibbonButton telerik:ScreenTip.Description="Μείωση του επιπέδου εσοχής της παραγράφου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding DecrementParagraphLeftIndentCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/outdent.png" telerik:ScreenTip.Title="Μείωση Εσοχής"/>
+                                <telerik:RadRibbonButton telerik:ScreenTip.Description="Αύξηση του επιπέδου εσοχής της παραγράφου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding IncrementParagraphLeftIndentCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/indent.png" telerik:ScreenTip.Title="Αύξηση Εσοχής"/>
+                            </telerik:RadButtonGroup>
+                            <telerik:RadButtonGroup>
+                                <telerik:RadRibbonToggleButton telerik:ScreenTip.Description="Ορισμός κατεύθυνσης εμφανιζόμενου κειμένου αριστερά-προς-δεξιά." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeParagraphFlowDirectionCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/LeftToRightFlowDirection.png" Text="Left-to-Right Text Direction" telerik:ScreenTip.Title="Κατεύθυνση κειμένου αριστερά-προς-δεξιά">
+                                    <telerik:RadRibbonToggleButton.CommandParameter>
+                                        <FlowDirection>LeftToRight</FlowDirection>
+                                    </telerik:RadRibbonToggleButton.CommandParameter>
+                                </telerik:RadRibbonToggleButton>
+                                <telerik:RadRibbonToggleButton telerik:ScreenTip.Description="Ορισμός κατεύθυνσης εμφανιζόμενου κειμένου δεξιά-προς-αριστερά." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeParagraphFlowDirectionCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/RightToLeftFlowDirection.png" Text="Right-to-Left Text Direction" telerik:ScreenTip.Title="Κατεύθυνση κειμένου δεξιά-προς-αριστερά">
+                                    <telerik:RadRibbonToggleButton.CommandParameter>
+                                        <FlowDirection>RightToLeft</FlowDirection>
+                                    </telerik:RadRibbonToggleButton.CommandParameter>
+                                </telerik:RadRibbonToggleButton>
+                            </telerik:RadButtonGroup>
+                            <telerik:RadButtonGroup>
+                                <telerik:RadRibbonToggleButton telerik:ScreenTip.Description="Εμφάνιση σημαδιών παραγράφου και άλλων κρυμμένων συμβόλων μορφοποίησης." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleFormattingSymbolsCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/formatting-symbols.png" telerik:ScreenTip.Title="Εμφάνιση/Απόκρυψη συμβόλων μορφοποίησης"/>
+                            </telerik:RadButtonGroup>
+                            <telerik:RadButtonGroup>
+                                <telerik:RadRibbonToggleButton CommandParameter="Left" telerik:ScreenTip.Description="Αριστερή στοίχιση κειμένου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeTextAlignmentCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/alignleft.png" Text="Στοίχιση Αριστερά" telerik:ScreenTip.Title="Στοίχιση Αριστερά"/>
+                                <telerik:RadRibbonToggleButton CommandParameter="Center" telerik:ScreenTip.Description="Στοιχίση κειμένου στο κέντρο." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeTextAlignmentCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/aligncenter.png" Text="Στοίχιση στο Κέντρο" telerik:ScreenTip.Title="Στοίχιση στο Κέντρο"/>
+                                <telerik:RadRibbonToggleButton CommandParameter="Right" telerik:ScreenTip.Description="Δεξιά στοίχιση κειμένου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeTextAlignmentCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/alignright.png" Text="Στοίχιση Δεξιά" telerik:ScreenTip.Title="Στοίχιση Δεξιά"/>
+                                <telerik:RadRibbonToggleButton CommandParameter="Justify" telerik:ScreenTip.Description="Πλήρης στοίχιση (δεξιά και αριστερά), με προσθήκη κενών ανάμεσα στις λέξεις." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeTextAlignmentCommand}" Size="Small" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/alignjustify.png" Text="Πλήρης Στοίχιση" telerik:ScreenTip.Title="Πλήρης Στοίχιση"/>
+                            </telerik:RadButtonGroup>
+                            <telerik:RadButtonGroup>
+                                <telerik:HighlightColorPicker AutomaticColor="Transparent" BorderThickness="0" telerik:ScreenTip.Description="Χρώμα φόντου της επιλεγμένης παραγράφου." Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/ParagraphBackgroundColor.png" NoColorText="Χωρίς χρώμα" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeParagraphBackgroundColorCommand}" SelectedColor="Transparent" telerik:ScreenTip.Title="Απόχρωση"/>
+                            </telerik:RadButtonGroup>
+                        </telerik:RadOrderedWrapPanel>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Επεξεργασία &amp; Γλωσσικός έλεγχος">
+                        <telerik:RadCollapsiblePanel>
+                            <telerik:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" telerik:ScreenTip.Description="Εύρεση ή αντικατάσταση κειμένου στο έγγραφο." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowFindReplaceDialogCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/Find.png" Text="Εύρεση/Αντικατάσταση" telerik:ScreenTip.Title="Εύρεση/Αντικατάσταση"/>
+                            <telerik:RadRibbonToggleButton CollapseToSmall="WhenGroupIsMedium" telerik:ScreenTip.Description="Ενεργοποίηση/Απενεργοποίηση ορθογραφικού ελέγχου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleSpellCheckingCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/EnableSpellCheck.png" Text="Ορθογραφικός έλεγχος" telerik:ScreenTip.Title="Ορθογραφικός έλεγχος"/>
+                            <telerik:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" telerik:ScreenTip.Description="Άνοιγμα μενού προβολής επόμενου ορθογραφικού σφάλματος." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding OpenContextMenuOnNextSpellingErrorCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/FindNextSpellingError.png" Text="Επόμενο σφάλμα" telerik:ScreenTip.Title="Επόμενο σφάλμα"/>
+                        </telerik:RadCollapsiblePanel>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Στυλ">
+                        <telerik:StylesGallery AssociatedRichTextBox="{Binding AssociatedRichTextBox, Mode=OneWay}"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Αλλαγή των στυλ, χρωμάτων, γραμματοσειρών και διαστημάτων παραγράφων στο έγγραφο." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/ChangeStyles.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageStylesDialogCommand}" Size="Large" Text="Αλλαγή Στυλ" telerik:ScreenTip.Title="Αλλαγή Στυλ"/>
+                    </telerik:RadRibbonGroup>
+                </telerik:RadRibbonTab>
+                <telerik:RadRibbonTab Header="ΕΙΣΑΓΩΓΗ">
+                    <telerik:RadRibbonGroup Header="Σελίδες">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Αρχή επόμενης σελίδας στην τρέχουσα θέση." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/PageBreak.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" Size="Large" Text="Αλλαγή Σελίδας" telerik:ScreenTip.Title="Αλλαγή Σελίδας"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Πίνακες">
+                        <telerik:RadRibbonDropDownButton CollapseToMedium="WhenGroupIsMedium" Command="{Binding InsertTableCommand}" telerik:ScreenTip.Description="Insert a table into the document." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertTable.png" Size="Large" Text="Πίνακας" telerik:ScreenTip.Title="Πίνακας">
+                            <telerik:RadRibbonDropDownButton.DropDownContent>
+                                <StackPanel>
+                                    <telerik:RadRibbonButton ClickMode="Press">
+                                        <telerik:TableSizePicker Command="{Binding InsertTableCommand}"/>
+                                    </telerik:RadRibbonButton>
+                                    <telerik:RadMenuItem IsSeparator="True"/>
+                                    <telerik:RadRibbonButton HorizontalAlignment="Stretch" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowInsertTableDialogCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/InsertTable.png" Text="Εισαγωγή Πίνακα ..."/>
+                                </StackPanel>
+                            </telerik:RadRibbonDropDownButton.DropDownContent>
+                        </telerik:RadRibbonDropDownButton>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Απεικονίσεις">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εισαγωγή εικόνας από αρχείο." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/Picture.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPictureCommand}" Size="Large" Text="Εικόνα" telerik:ScreenTip.Title="Εισαγωγή Εικόνας από Αρχείο"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Σύνδεσμοι">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Δημιουργία συνδέσμου σε ιστοσελίδα, εικόνα ή διεύθυνση e-mail." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/inserthyperlink.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowInsertHyperlinkDialogCommand}" Size="Large" Text="Υπερ-σύνδεση" telerik:ScreenTip.Title="Εισαγωγή υπερ-σύνδεσης"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Δημιουργία σελιδοδείκτη για ορισμό ονόματος ενός σημείου του εγγράφου." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertBookmark.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBookmarksDialogCommand}" Size="Large" Text="Σελιδοδείκτης" telerik:ScreenTip.Title="Σελιδοδείκτης"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Παραπομπή σε στοιχεία όπως επικεφαλίδες, εικόνες και πίνακες." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertCrossReference.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowInsertCrossReferenceWindowCommand}" Size="Large" Text="Παραπομπή" telerik:ScreenTip.Title="Παραπομπή"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Σχόλια">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εισαγωγή σχολίου σχετικού με την επιλογή." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/NewComment.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertCommentCommand}" Size="Large" Text="Νέο Σχόλιο" telerik:ScreenTip.Title="Εισαγωγή Σχολίου"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Κεφαλίδα &amp; Υποσέλιδο">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Επεξεργασία της κεφαλίδας του εγγράφου." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/EditHeader.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding EditHeaderCommand}" Size="Large" Text="Κεφαλίδα" telerik:ScreenTip.Title="Κεφαλίδα"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Επεξεργασία του υποσέλιδου του εγγράφου." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/EditFooter.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding EditFooterCommand}" Size="Large" Text="Υποσέλιδο" telerik:ScreenTip.Title="Υποσέλιδο"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Κείμενο">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εισαγωγή της τρέχουσας ημερομηνίας ή ώρας στο έγγραφο." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertDateTime.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowInsertDateTimeDialogCommand}" Size="Large" Text="Ημερομηνία &amp; Ώρα" telerik:ScreenTip.Title="Εισαγωγή Ημερομηνίας και Ώρας"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εισαγωγή αρίθμησης σελίδων στο έγγραφο." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertPageNumber.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageFieldCommand}" Size="Large" Text="Αριθμός Σελίδας" telerik:ScreenTip.Title="Εισαγωγή Αριθμού Σελίδας"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εισαγωγή τμήματος με μορφοποίηση προγραμματιστικού κώδικα." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/CodeBlock.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowCodeFormattingDialogCommand}" Size="Large" Text="Κώδικας" telerik:ScreenTip.Title="Εισαγωγή Τμήματος Κώδικα"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Σύμβολα">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εισαγωγή συμβόλων που δεν υπάρχουν στο πληκτρολόγιο, όπως σύμβολα copyright, εμπορικά σύμβολα, σημάδια παραγράφου, και χαρακτήρες Unicode." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/Symbol.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowInsertSymbolWindowCommand}" Size="Large" Text="Σύμβολο" telerik:ScreenTip.Title="Εισαγωγή Συμβόλου"/>
+                    </telerik:RadRibbonGroup>
+                </telerik:RadRibbonTab>
+                <telerik:RadRibbonTab Header="ΔΙΑΤΑΞΗ ΣΕΛΙΔΑΣ">
+                    <telerik:RadRibbonGroup Header="Διαμόρφωση Σελίδας">
+                        <telerik:RadRibbonDropDownButton CollapseToMedium="WhenGroupIsMedium" Command="{Binding ChangePaperTypeCommand}" telerik:ScreenTip.Description="ΕΠιλογή μεγέθους χαρτιού για την τρέχουσα ενότητα." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/PageSize.png" Size="Large" Text="Μέγεθος" telerik:ScreenTip.Title="Μέγεθος Χαρτιού">
+                            <telerik:RadRibbonDropDownButton.DropDownContent>
+                                <telerik:RadGallery ItemWidth="184" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangePaperTypeCommand}" ViewportWidth="185" MaxHeight="320">
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="A0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="A0" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (33.05&quot; x 46.78&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="A1">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="A1" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (23.39&quot; x 33.05&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="A2">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="A2" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (16.53&quot; x 23.39&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="A3">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="A3" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (11.7&quot; x 16.53&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="A4">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="A4" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (8.26&quot; x 11.7&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="A5">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="A5" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (5.83&quot; x 8.26&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="RA0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="RA0" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (33.86&quot; x 48.03&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="RA1">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="RA1" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (24.01&quot; x 33.86&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="RA2">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="RA2" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (16.93&quot; x 24.01&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="RA3">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="RA3" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (12.01&quot; x 16.93&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="RA4">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="RA4" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (8.46&quot; x 12.01&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="RA5">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="RA5" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (4.76&quot; x 8.46&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="B0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="B0" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (39.38&quot; x 55.67&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="B1">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="B1" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (27.83&quot; x 39.38&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="B2">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="B2" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (59.05&quot; x 19.68&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="B3">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="B3" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (13.91&quot; x 19.68&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="B4">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="B4" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (10.13&quot; x 14.33&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="B5">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="B5" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (7.17&quot; x 10.13&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Quarto">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Quarto" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (8&quot; x 10&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Foolscap">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Foolscap" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (8&quot; x 13&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Executive">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Executive" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (7.5&quot; x 10&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="GovernmentLetter">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="GovernmentLetter" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (10.5&quot; x 8&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Letter">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Letter" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (8.5&quot; x 11&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Legal">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Legal" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (8.5&quot; x 14&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Ledger">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Ledger" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (17&quot; x 11&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Tabloid">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Tabloid" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (11&quot; x 17&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Post">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Post" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (15.64&quot; x 19.25&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Crown">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Crown" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (20&quot; x 15&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="LargePost">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="LargePost" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (16.5&quot; x 21&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Demy">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Demy" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (17.5&quot; x 22&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Medium">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Medium" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (18&quot; x 23&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Royal">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Royal" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (20&quot; x 25&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Elephant">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Elephant" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (21.74&quot; x 28&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="DoubleDemy">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="DoubleDemy" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (23.5&quot; x 35&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="QuadDemy">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="QuadDemy" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (35&quot; x 45&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="STMT">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="STMT" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (5.5&quot; x 8.5&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Folio">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Folio" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (8.5&quot; x 13&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Statement">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Statement" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (5.5&quot; x 8.5&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Size10x14">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontWeight="Bold" Text="Size10x14" VerticalAlignment="Center"/>
+                                            <TextBlock FontWeight="Normal" Text=" (10&quot; x 14&quot;)" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                </telerik:RadGallery>
+                            </telerik:RadRibbonDropDownButton.DropDownContent>
+                        </telerik:RadRibbonDropDownButton>
+                        <telerik:RadRibbonDropDownButton CollapseToMedium="WhenGroupIsMedium" Command="{Binding ChangePageMarginsCommand}" telerik:ScreenTip.Description="Select the margin sizes for the current section." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/PageMargin.png" Size="Large" Text="Περιθώρια" telerik:ScreenTip.Title="Περιθώρια">
+                            <telerik:RadRibbonDropDownButton.DropDownContent>
+                                <telerik:RadGallery Height="270" ItemWidth="114" ItemHeight="54" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangePageMarginsCommand}" ViewportWidth="115">
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Normal">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/PageMarginNormal.png" Stretch="None"/>
+                                            <TextBlock FontWeight="Bold" Text="Normal" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Narrow">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/PageMarginNarrow.png" Stretch="None"/>
+                                            <TextBlock FontWeight="Bold" Text="Narrow" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Moderate">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/PageMarginModerate.png" Stretch="None"/>
+                                            <TextBlock FontWeight="Bold" Text="Moderate" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Wide">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/PageMarginWide.png" Stretch="None"/>
+                                            <TextBlock FontWeight="Bold" Text="Wide" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left" Tag="Office2003">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/PageMarginNormal.png" Stretch="None"/>
+                                            <TextBlock FontWeight="Bold" Text="Office2003" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                </telerik:RadGallery>
+                            </telerik:RadRibbonDropDownButton.DropDownContent>
+                        </telerik:RadRibbonDropDownButton>
+                        <telerik:RadRibbonDropDownButton CollapseToMedium="WhenGroupIsMedium" Command="{Binding ChangePageOrientationCommand}" telerik:ScreenTip.Description="Εναλλαγή σελίδων μεταξύ οριζόντιου και κατακόρυφου προσανατολισμού." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/PageOrientation.png" Size="Large" Text="Προσανατολισμός" telerik:ScreenTip.Title="Προσανατολισμός Σελίδας">
+                            <telerik:RadRibbonDropDownButton.DropDownContent>
+                                <telerik:RadGallery Height="216" ItemWidth="109" ItemHeight="54" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangePageOrientationCommand}" ViewportWidth="110">
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left">
+                                        <telerik:RadGalleryItem.Tag>
+                                            <telerik:PageOrientation>Portrait</telerik:PageOrientation>
+                                        </telerik:RadGalleryItem.Tag>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/PageOrientationPortrait.png" Stretch="None"/>
+                                            <TextBlock FontWeight="Bold" Text="Portrait" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left">
+                                        <telerik:RadGalleryItem.Tag>
+                                            <telerik:PageOrientation>Rotate90</telerik:PageOrientation>
+                                        </telerik:RadGalleryItem.Tag>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/PageOrientationLandscape.png" Stretch="None"/>
+                                            <TextBlock FontWeight="Bold" Text="Landscape" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left">
+                                        <telerik:RadGalleryItem.Tag>
+                                            <telerik:PageOrientation>Rotate180</telerik:PageOrientation>
+                                        </telerik:RadGalleryItem.Tag>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/PageOrientationRotate180.png" Stretch="None"/>
+                                            <TextBlock FontWeight="Bold" Text="Rotate 180" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                    <telerik:RadGalleryItem HorizontalContentAlignment="Left">
+                                        <telerik:RadGalleryItem.Tag>
+                                            <telerik:PageOrientation>Rotate270</telerik:PageOrientation>
+                                        </telerik:RadGalleryItem.Tag>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/PageOrientationRotate270.png" Stretch="None"/>
+                                            <TextBlock FontWeight="Bold" Text="Rotate 270" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </telerik:RadGalleryItem>
+                                </telerik:RadGallery>
+                            </telerik:RadRibbonDropDownButton.DropDownContent>
+                        </telerik:RadRibbonDropDownButton>
+                        <StackPanel>
+                            <telerik:RadRibbonDropDownButton CollapseToMedium="WhenGroupIsMedium" Command="{Binding InsertSectionBreakCommand}" telerik:ScreenTip.Description="Προσθήκη χωρίσματος σελίδας, τμήματος λη στήλης στο έγγραφο." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/Break.png" Size="Medium" Text="Χωρίσματα" telerik:ScreenTip.Title="Εισαγωγή Χωρισμάτων Σελίδας και Τμήματος">
+                                <telerik:RadRibbonDropDownButton.DropDownContent>
+                                    <StackPanel>
+                                        <telerik:RadGroupHeader Content="Χωρίσματα Σελίδας"/>
+                                        <telerik:RadGallery Height="54" ItemHeight="54" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageBreakCommand}" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                                            <telerik:RadGalleryItem HorizontalAlignment="Stretch" HorizontalContentAlignment="Left">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/PageBreak.png" Stretch="None"/>
+                                                    <TextBlock FontWeight="Bold" Margin="8 0 0 0" Text="Page" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                            </telerik:RadGalleryItem>
+                                        </telerik:RadGallery>
+                                        <telerik:RadGroupHeader Content="Χωρίσματα Ενότητας"/>
+                                        <telerik:RadGallery Height="162" ItemHeight="54" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertSectionBreakCommand}" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                                            <telerik:RadGalleryItem HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Tag="NextPage">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/NextPageSectionBreak.png" Stretch="None"/>
+                                                    <TextBlock FontWeight="Bold" Margin="8 0 0 0" Text="Next Page" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                            </telerik:RadGalleryItem>
+                                            <telerik:RadGalleryItem HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Tag="EvenPage">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/EvenPageSectionBreak.png" Stretch="None"/>
+                                                    <TextBlock FontWeight="Bold" Margin="8 0 0 0" Text="Even Page" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                            </telerik:RadGalleryItem>
+                                            <telerik:RadGalleryItem HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Tag="OddPage">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/OddPageSectionBreak.png" Stretch="None"/>
+                                                    <TextBlock FontWeight="Bold" Margin="8 0 0 0" Text="Odd Page" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                            </telerik:RadGalleryItem>
+                                        </telerik:RadGallery>
+                                    </StackPanel>
+                                </telerik:RadRibbonDropDownButton.DropDownContent>
+                            </telerik:RadRibbonDropDownButton>
+                        </StackPanel>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Φόντο Σελίδας">
+                        <telerik:RadRibbonDropDownButton CollapseToMedium="WhenGroupIsMedium" telerik:ScreenTip.Description="Εισαγωγή ειδώλου κειμένου στο φόντο της σελίδας." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/Watermark.png" Size="Large" Text="Υδατογράφημα" telerik:ScreenTip.Title="Υδατογράφημα">
+                            <telerik:RadRibbonDropDownButton.DropDownContent>
+                                <StackPanel Orientation="Vertical">
+                                    <telerik:RadGroupHeader Content="Predefined"/>
+                                    <telerik:RadGallery Height="200" ItemWidth="115" ItemHeight="100" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeIntegratedWatermarkTypeCommand}" ViewportWidth="345">
+                                        <telerik:RadGalleryItem HorizontalContentAlignment="Left" Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/WatermarkGallery/confidentialR.png" Tag="ConfidentialRotated"/>
+                                        <telerik:RadGalleryItem HorizontalContentAlignment="Left" Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/WatermarkGallery/confidential.png" Tag="Confidential"/>
+                                        <telerik:RadGalleryItem HorizontalContentAlignment="Left" Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/WatermarkGallery/doNotCopyR.png" Tag="DoNotCopyRotated"/>
+                                        <telerik:RadGalleryItem HorizontalContentAlignment="Left" Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/WatermarkGallery/doNotCopy.png" Tag="DoNotCopy"/>
+                                        <telerik:RadGalleryItem HorizontalContentAlignment="Left" Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/WatermarkGallery/draftR.png" Tag="DraftRotated"/>
+                                        <telerik:RadGalleryItem HorizontalContentAlignment="Left" Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/WatermarkGallery/draft.png" Tag="Draft"/>
+                                        <telerik:RadGalleryItem HorizontalContentAlignment="Left" Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/WatermarkGallery/sampleR.png" Tag="SampleRotated"/>
+                                        <telerik:RadGalleryItem HorizontalContentAlignment="Left" Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/WatermarkGallery/sample.png" Tag="Sample"/>
+                                        <telerik:RadGalleryItem HorizontalContentAlignment="Left" Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/WatermarkGallery/asapR.png" Tag="AsapRotated"/>
+                                        <telerik:RadGalleryItem HorizontalContentAlignment="Left" Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/WatermarkGallery/asap.png" Tag="Asap"/>
+                                        <telerik:RadGalleryItem HorizontalContentAlignment="Left" Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/WatermarkGallery/urgentR.png" Tag="UrgentRotated"/>
+                                        <telerik:RadGalleryItem HorizontalContentAlignment="Left" Image="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/WatermarkGallery/urgent.png" Tag="Urgent"/>
+                                    </telerik:RadGallery>
+                                    <telerik:RadMenuItem IsSeparator="True"/>
+                                    <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowWatermarkSettingsDialogCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/Watermark.png" Text="Εισαγωγή προσαρμοσμένου υδατογραφήματος."/>
+                                    <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding RemoveWatermarkCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/RemoveWatermark.png" Text="Κατάργηση Υδατογραφήματος"/>
+                                </StackPanel>
+                            </telerik:RadRibbonDropDownButton.DropDownContent>
+                        </telerik:RadRibbonDropDownButton>
+                    </telerik:RadRibbonGroup>
+                </telerik:RadRibbonTab>
+                <telerik:RadRibbonTab Header="ΑΝΑΦΟΡΕΣ">
+                    <telerik:RadRibbonGroup Header="Πίνακας Περιεχομένων">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εισαγωγή πίνακα περιεχομένων στο έγγραφο." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertTableOfContents.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowInsertTableOfContentsDialogCommand}" Size="Large" Text="Πίνακας Περιεχομένων" telerik:ScreenTip.Title="Πίνακας Περιεχομένων"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup DialogLauncherVisibility="Visible" Header="Υποσημειώσεις" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowNotesDialogCommand}">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εισαγωγή υποσημείωσης στο έγγραφο." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertFootnote.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertFootnoteCommand}" Size="Large" Text="Εισαγωγή Υποσημείωσης" telerik:ScreenTip.Title="Εισαγωγή Υποσημείωσης."/>
+                        <telerik:RadCollapsiblePanel>
+                            <telerik:RadRibbonButton telerik:ScreenTip.Description="Εισαγωγή σημείωσης τέλους στο έγγραφο." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertEndnoteCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/InsertEndnote.png" Text="Εισαγωγή Σημείωσης Τέλους" telerik:ScreenTip.Title="Εισαγωγή Σημείωσης Τέλους."/>
+                            <telerik:RadRibbonSplitButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding GoToNextFootnoteCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/NextNote.png" Text="Επόμενη Υποσημείωση">
+                                <telerik:RadRibbonSplitButton.DropDownContent>
+                                    <StackPanel>
+                                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Μετάβαση στην επόμενη υποσημείωση του εγγράφου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding GoToNextFootnoteCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/NextNote.png" Text="Επόμενη Υποσημείωση" telerik:ScreenTip.Title="Επόμενη Υποσημείωση."/>
+                                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Μετάβαση στην προηγούμενη υποσημείωση του εγγράφου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding GoToPreviousFootnoteCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/PreviousNote.png" Text="Προηγούμενη Υποσημείωση" telerik:ScreenTip.Title="Προηγούμενη Υποσημείωση."/>
+                                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Μετάβαση στην επόμενη σημείωση τέλους του εγγράφου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding GoToNextEndnoteCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/NextNote.png" Text="Επόμενη σημείωση τέλους" telerik:ScreenTip.Title="Επόμενη σημείωση τέλους."/>
+                                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Μετάβαση στην προηγούμενη σημείωση τέλους του εγγράφου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding GoToPreviousEndnoteCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/PreviousNote.png" Text="Προηγούμενη σημείωση τέλους" telerik:ScreenTip.Title="Προηγούμενη σημείωση τέλους."/>
+                                    </StackPanel>
+                                </telerik:RadRibbonSplitButton.DropDownContent>
+                            </telerik:RadRibbonSplitButton>
+                        </telerik:RadCollapsiblePanel>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Αναφορές &amp; Βιβλιογραφία">
+                        <telerik:RadRibbonDropDownButton CollapseToMedium="WhenGroupIsMedium" telerik:ScreenTip.Description="Αναφορά σε βιβλίο, άρθρο, ή πεδιοδικό ως πηγή για ένα τμήμα πληροφορίας στο έγγραφο." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertCitation.png" Size="Large" Text="Εισαγωγή Αναφοράς" telerik:ScreenTip.Title="Εισαγωγή Αναφοράς">
+                            <telerik:RadRibbonDropDownButton.DropDownContent>
+                                <StackPanel Orientation="Vertical">
+                                    <telerik:CitationsSourceGallery/>
+                                    <telerik:RadMenuItem IsSeparator="True"/>
+                                    <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowAddNewBibliographicReferenceDialogCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/AddNewSource.png" Text="Προσθήκη Νέας Πηγής..."/>
+                                </StackPanel>
+                            </telerik:RadRibbonDropDownButton.DropDownContent>
+                        </telerik:RadRibbonDropDownButton>
+                        <telerik:RadCollapsiblePanel>
+                            <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowManageBibliographicSourcesDialogCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/ManageSources.png" Text="Διαχείριση Πηγών"/>
+                            <StackPanel Margin="3 0 0 0" Orientation="Horizontal">
+                                <Image Margin="0 0 2 0" Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/BibliographyStyle.png" Stretch="None"/>
+                                <TextBlock FontWeight="Normal" Margin="3 0" Text="Στυλ:" VerticalAlignment="Center"/>
+                                <telerik:RadRibbonComboBox CanAutocompleteSelectItems="False" CanKeyboardNavigationSelectItems="False" CommandParameter="{Binding SelectedValue, RelativeSource={RelativeSource Self}}" DisplayMemberPath="Name" IsReadOnly="True" ItemsSource="{Binding AssociatedRichTextBox.Document.BibliographicStyles.Values}" MinHeight="15" OpenDropDownOnFocus="True" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeBibliographicStyleCommand}" Width="80"/>
+                            </StackPanel>
+                            <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertBibliographyFieldCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/InsertBibliography.png" Text="Βιβλιογραφία"/>
+                        </telerik:RadCollapsiblePanel>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Λεζάντες">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Τοποθέτηση λεζάντας σε εικόνα ή αντικείμενο.&#xA;&#xA;Μετά την εισαγωγή λεζάντας μπορει να γίνει αναφορά στο αντικείμενο με παραπομπή." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertCaption.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowInsertCaptionDialogCommand}" Size="Large" Text="Εισαγωγή Λεζάντας" telerik:ScreenTip.Title="Εισαγωγή Λεζάντας"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Αναφορά σε κεφαλίδες, εικόνες και πίνακες." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertCrossReference.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowInsertCrossReferenceWindowCommand}" Size="Large" Text="Παραπομπή" telerik:ScreenTip.Title="Παραπομπή"/>
+                    </telerik:RadRibbonGroup>
+                </telerik:RadRibbonTab>
+                <telerik:RadRibbonTab Header="ΑΛΛΗΛΟΓΡΑΦΙΑ">
+                    <telerik:RadRibbonGroup Header="Εγγραφή &amp; Εισαγωγή Πεδίων">
+                        <telerik:RadRibbonToggleButton telerik:ScreenTip.Description="Επισήμανση των πεδίων που έχουν εισαχθεί στο έγγραφο." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/HighlightMergeFields.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleMergeFieldsHighlightCommand}" Size="Large" Text="Επισήμανση Πεδίων Συγχώνευσης" telerik:ScreenTip.Title="Επισήμανση Πεδίων Συγχώνευσης"/>
+                        <telerik:RadRibbonDropDownButton CollapseToMedium="WhenGroupIsMedium" telerik:ScreenTip.Description="Εισαγωγή πεδίων όπως Όνομα ή Διεύθυνση, τα οποία αντικαθίστανται αυτόματα με δεδομένα από μια βάση δεδομένων ή λίστα επαφών για κάθε αντίγραφο της φόρμας αλληλογραφίας." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertMergeField.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertMergeFieldEmptyCommand}" Size="Large" Text="Εισαγωγή Πεδίου Συγχώνευσης" telerik:ScreenTip.Title="Εισαγωγή Πεδίου Συγχώνευσης"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Προεπισκόπηση Αποτελέσματος">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εμφάνιση όλων των πεδίων στο έγγραφο." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/ShowAllFieldsCodes.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeAllFieldsDisplayModeCommand}" Size="Large" Text="Εμφάνιση Όλων των Πεδίων" telerik:ScreenTip.Title="Εμφάνιση Όλων των Πεδίων">
+                            <telerik:RadRibbonButton.CommandParameter>
+                                <telerik:FieldDisplayMode>Code</telerik:FieldDisplayMode>
+                            </telerik:RadRibbonButton.CommandParameter>
+                        </telerik:RadRibbonButton>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εμφάνιση όλων των ονομάτων πεδίων στο έγγραφο." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/ShowAllFieldsDisplayNames.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeAllFieldsDisplayModeCommand}" Size="Large" Text="Εμφάνιση Ονομάτων πεδίων" telerik:ScreenTip.Title="Εμφάνιση Ονομάτων πεδίων">
+                            <telerik:RadRibbonButton.CommandParameter>
+                                <telerik:FieldDisplayMode>DisplayName</telerik:FieldDisplayMode>
+                            </telerik:RadRibbonButton.CommandParameter>
+                        </telerik:RadRibbonButton>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Αντικατάσταση των πεδίων συγχώνευσης με τα δεδομένα από τη λίστα παραληπτών, ώστε να πλοβληθεί πώς θα φαίνεται η επιστολή αλληλογραφίας." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/ShowAllFieldsResults.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeAllFieldsDisplayModeCommand}" Size="Large" Text="Προεπισκόπηση Αποτελέσματος" telerik:ScreenTip.Title="Προβολή Συγχωνευμένων Δεδομένων">
+                            <telerik:RadRibbonButton.CommandParameter>
+                                <telerik:FieldDisplayMode>Result</telerik:FieldDisplayMode>
+                            </telerik:RadRibbonButton.CommandParameter>
+                        </telerik:RadRibbonButton>
+                        <telerik:Separator/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Προεπισκόπηση της πρώτης εγγραφής στη λίστα παραληπτών." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/First.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding PreviewFirstMailMergeDataRecordCommand}" Size="Large" Text="Πρώτη" telerik:ScreenTip.Title="Προεπισκόπηση Πρώτης Εγγραφής"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Προεπισκόπηση της προηγούμενης εγγραφής στη λίστα παραληπτών." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/Previous.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding PreviewPreviousMailMergeDataRecordCommand}" Size="Large" Text="Προηγούμενη" telerik:ScreenTip.Title="Προεπισκόπηση Προηγούμενης Εγγραφής"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Προεπισκόπηση της επόμενης εγγραφής στη λίστα παραληπτών." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/Next.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding PreviewNextMailMergeDataRecordCommand}" Size="Large" Text="Επόμενη" telerik:ScreenTip.Title="Προεπισκόπηση Επόμενης Εγγραφής"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Προεπισκόπηση της τελευταίας εγγραφής στη λίστα παραληπτών." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/Last.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding PreviewLastMailMergeDataRecordCommand}" Size="Large" Text="Τελευταία" telerik:ScreenTip.Title="Προεπισκόπηση Τελευταίας Εγγραφής"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Τερματισμός">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Ολοκλήρωση της συγχώνευσης αλληλογραφίας." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/MailMerge.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding MailMergeCommand}" Size="Large" Text="Συγχώνευση Αλληλογραφίας" telerik:ScreenTip.Title="Ολοκλήρωση &amp; Συγχώνευσης"/>
+                    </telerik:RadRibbonGroup>
+                </telerik:RadRibbonTab>
+                <telerik:RadRibbonTab Header="ΑΝΑΘΕΩΡΗΣΗ">
+                    <telerik:RadRibbonGroup Header="Γλωσσικός έλεγχος">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εκτέλεση γλωσσικού ελέγχου του κειμένου του εγγράφου." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/EnableSpellCheck.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowSpellCheckingDialogCommand}" Size="Large" Text="Ορθοθγραφικός Έλεγχος" telerik:ScreenTip.Title="Ορθογραφία"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Σχόλια">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Προσθήκη σχολίου σχετικά με την επιλογή." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/NewComment.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertCommentCommand}" Size="Large" Text="Νέο Σχόλιο" telerik:ScreenTip.Title="Εισαγωγή Σχολίου"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Διαγραφή του επιλεγμένου σχολίου." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/DeleteComment.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding DeleteCommentCommand}" Size="Large" Text="Διαγραφή" telerik:ScreenTip.Title="Διαγραφή Σχολίου"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Μετάβαση στο προηγούμενο σχόλιο του εγγράφου." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/PreviousComment.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding GoToPreviousCommentCommand}" Size="Large" Text="Προηγούμενο" telerik:ScreenTip.Title="Προηγούμενο Σχόλιο"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Μετάβαση στο επόμενο σχόλιο του εγγράφου." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/NextComment.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding GoToNextCommentCommand}" Size="Large" Text="Επόμενο" telerik:ScreenTip.Title="Επόμενο Σχόλιο"/>
+                        <telerik:RadRibbonToggleButton telerik:ScreenTip.Description="Απόκρυψη/Εμφάνιση σχολίων." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/ShowHideComments.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleCommentsCommand}" Size="Large" Text="Εμφάνιση/Απόκρυψη Σχολίων" telerik:ScreenTip.Title="Εμφάνιση/Απόκρυψη Σχολίων"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Διαγραφή όλων των σχολίων του εγγράφου." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/DeleteAllComments.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding DeleteAllCommentsCommand}" Size="Large" Text="Διαγραφή Όλων" telerik:ScreenTip.Title="Διαγραφή Όλων των Σχολίων"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Εντοπισμός &amp; Αλλαγές">
+                        <telerik:RadRibbonToggleButton telerik:ScreenTip.Description="Εντοπισμός όλων των αλλαγών στο έγγραφο, όπως προσθήκες, διαγραφές, και αλλαγές μορφοποίησης." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/TrackChanges.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleTrackChangesCommand}" Size="Large" Text="Εντοπισμός Αλλαγών" telerik:ScreenTip.Title="Εντοπισμός Αλλαγών"/>
+                        <telerik:RadRibbonSplitButton telerik:ScreenTip.Description="Αποδοχή και μετάβαση στην επόμενη." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/AcceptChange.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding AcceptRevisionCommand}" Size="Large" Text="Αποδοχή" telerik:ScreenTip.Title="Αποδοχή">
+                            <telerik:RadRibbonSplitButton.DropDownContent>
+                                <StackPanel>
+                                    <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding AcceptRevisionCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/AcceptChange.png" Text="Αποδοχή και Μετάβαση στην Επόμενη"/>
+                                    <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding AcceptAllRevisionsCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/AcceptChange.png" Text="Αποδοχή Όλων των Αλλαγών"/>
+                                </StackPanel>
+                            </telerik:RadRibbonSplitButton.DropDownContent>
+                        </telerik:RadRibbonSplitButton>
+                        <telerik:RadRibbonSplitButton telerik:ScreenTip.Description="Απόρριψη και Μετάβαση στην Επόμενη." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/RejectChange.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding RejectRevisionCommand}" Size="Large" Text="Απόρριψη" telerik:ScreenTip.Title="Απόρριψη">
+                            <telerik:RadRibbonSplitButton.DropDownContent>
+                                <StackPanel>
+                                    <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding RejectRevisionCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/RejectChange.png" Text="Απόρριψη και Μετάβαση στην Επόμενη"/>
+                                    <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding RejectAllRevisionsCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/RejectChange.png" Text="Απόρριψη Όλων των Αλλαγών"/>
+                                </StackPanel>
+                            </telerik:RadRibbonSplitButton.DropDownContent>
+                        </telerik:RadRibbonSplitButton>
+                        <telerik:RadCollapsiblePanel>
+                            <telerik:RadRibbonButton telerik:ScreenTip.Description="Προηγούμενη αλλαγή." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding GoToPreviousRevisionCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/PreviousChange.png" Text="Προηγούμενη" telerik:ScreenTip.Title="Προηγούμενη"/>
+                            <telerik:RadRibbonButton telerik:ScreenTip.Description="Επόμενη αλλαγή." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding GoToNextRevisionCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/NextChange.png" Text="Επόμενη" telerik:ScreenTip.Title="Επόμενη"/>
+                        </telerik:RadCollapsiblePanel>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Ασφάλεια">
+                        <telerik:RadRibbonToggleButton telerik:ScreenTip.Description="Περιορισμός στους τρόπους επεξεργασίας τμημάτων κειμένου από άλλους χρήστες." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/ProtectDocument.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleDocumentProtectionCommand}" Size="Large" Text="Προστασία Εγγράφου" telerik:ScreenTip.Title="Εναλλαγή Προστασίας Εγγράφου"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Shows the dialog for setting editing restrictions to users/groups." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/ChangeEditingPermissions.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowChangeEditingPermissionsDialogCommand}" Size="Large" Text="Περιορισμοί Επεξεργασίας" telerik:ScreenTip.Title="Αλλαγήε περιορισμών Επεξεργασίας"/>
+                    </telerik:RadRibbonGroup>
+                </telerik:RadRibbonTab>
+                <telerik:RadRibbonTab Header="ΠΡΟΒΟΛΗ">
+                    <telerik:RadRibbonGroup Header="Προβολές Εγγράφου">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Προβολή του εγγράφου ως ιστοσελίδα." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/web-C.PNG" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeLayoutModeCommand}" Size="Large" Text="Διάταξη Web" telerik:ScreenTip.Title="Διάταξη Web">
+                            <telerik:RadRibbonButton.CommandParameter>
+                                <telerik:DocumentLayoutMode>Flow</telerik:DocumentLayoutMode>
+                            </telerik:RadRibbonButton.CommandParameter>
+                        </telerik:RadRibbonButton>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Προβολή του εγγράφου σε εκτυπώσιμη μορφή." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/PageBreak.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeLayoutModeCommand}" Size="Large" Text="Διάταξη Εκτύπωσης" telerik:ScreenTip.Title="Διάταξη Εκτύπωσης">
+                            <telerik:RadRibbonButton.CommandParameter>
+                                <telerik:DocumentLayoutMode>Paged</telerik:DocumentLayoutMode>
+                            </telerik:RadRibbonButton.CommandParameter>
+                        </telerik:RadRibbonButton>
+                    </telerik:RadRibbonGroup>
+                </telerik:RadRibbonTab>
+                <telerik:RadRibbonTab ContextualGroupName="TableTools" Header="Σχεδίαση">
+                    <telerik:RadRibbonGroup Header="Επιλογές Μορφών Πίνακα">
+                        <telerik:RadCollapsiblePanel>
+                            <CheckBox Content="Κεφαλίδα Γραμμής" telerik:ScreenTip.Description="Εμφάνιση ειδικής μορφοποίησης για την πρώτη γραμμή του πίνακα." Margin="2" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleTableLookFirstRowOptionCommand}" telerik:ScreenTip.Title="Γραμμή Κεφαλίδας"/>
+                            <CheckBox Content="Γραμμή Σύνοψης" telerik:ScreenTip.Description="Εμφάνιση ειδικής μορφοποίησης για την τελευταία γραμμή του πίνακα." Margin="2" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleTableLookLastRowOptionCommand}" telerik:ScreenTip.Title="Γραμμή Σύνοψης"/>
+                            <CheckBox Content="Κλιμακωτές Γραμμές" telerik:ScreenTip.Description="Εμφάνιση κλιμακωτών γραμμών με διαφορετική μορφοποίηση για τις μονές και ζυγές γραμμές.&amp;#10;&amp;#10;Αυτή η κλιμάκωση κάνει τους πίνακες πιο ευανάγνωστους." Margin="2" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleTableLookRowBandingOptionCommand}" telerik:ScreenTip.Title="Κλιμακωτές Γραμμές"/>
+                            <CheckBox Content="Πρώτη Στήλη" telerik:ScreenTip.Description="Εμφάνιση ειδικής μορφοποίησης για την πρώτη στήλη του πίνακα." Margin="2" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleTableLookFirstColumnOptionCommand}" telerik:ScreenTip.Title="Πρώτη Στήλη"/>
+                            <CheckBox Content="Τελευταία Στήλη" telerik:ScreenTip.Description="Εμφάνιση ειδικής μορφοποίησης για την τελευταία στήλη του πίνακα." Margin="2" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleTableLookLastColumnOptionCommand}" telerik:ScreenTip.Title="Τελευταία Στήλη"/>
+                            <CheckBox Content="Κλιμακωτές Στήλες" telerik:ScreenTip.Description="Εμφάνιση κλιμακωτών στηλών με διαφορετική μορφοποίηση για τις μονές και ζυγές στήλες.&amp;#10;&amp;#10;Αυτή η κλιμάκωση κάνει τους πίνακες πιο ευανάγνωστους." Margin="2" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleTableLookColumnBandingOptionCommand}" telerik:ScreenTip.Title="Κλιμακωτές Στήλες"/>
+                        </telerik:RadCollapsiblePanel>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Μορφές Πίνακα">
+                        <telerik:TableStylesGallery AssociatedRichTextBox="{Binding AssociatedRichTextBox, Mode=OneWay}"/>
+                    </telerik:RadRibbonGroup>
+                </telerik:RadRibbonTab>
+                <telerik:RadRibbonTab ContextualGroupName="TableTools" Header="Διάταξη">
+                    <telerik:RadRibbonGroup Header="Πίνακας">
+                        <telerik:RadRibbonDropDownButton CollapseToMedium="WhenGroupIsMedium" Command="{Binding SelectTableEmptyCommand}" telerik:ScreenTip.Description="Select rows, columns, cells, or the entire table." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/SelectTableTools.png" Size="Large" Text="Select" telerik:ScreenTip.Title="Select Table">
+                            <telerik:RadRibbonDropDownButton.DropDownContent>
+                                <StackPanel>
+                                    <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding SelectTableCellCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/SelectTableCell.png" Text="Select Cell"/>
+                                    <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding SelectTableColumnCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/SelectTableColumn.png" Text="Select Column"/>
+                                    <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding SelectTableRowCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/SelectTableRow.png" Text="Select Row"/>
+                                    <telerik:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding SelectTableCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/SelectTable.png" Text="Select Table"/>
+                                </StackPanel>
+                            </telerik:RadRibbonDropDownButton.DropDownContent>
+                        </telerik:RadRibbonDropDownButton>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εμφάνιση διαλόγου προχωρημένων ιδιοτήτων πίνακα." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/TableProperties.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowTablePropertiesDialogCommand}" Size="Large" Text="Ιδιότητες" telerik:ScreenTip.Title="Ιδιότητες Πίνακα"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Διαγραφή όλου του πίνακα." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/DeleteTable.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding DeleteTableCommand}" Size="Large" Text="Διαγραφή" telerik:ScreenTip.Title="Διαγραφή Πίνακα"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Γραμμές">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εισαγωγή νέας γραμμής." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertTableRow.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertTableRowCommand}" Size="Large" Text="Εισαγωγή Γραμμής" telerik:ScreenTip.Title="Εισαγωγή Γραμμής"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Προσθήκη νέας γραμμής κάτω από την επιλεγμένη." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertTableRowBelow.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertTableRowBelowCommand}" Size="Large" Text="Εισαγωγή Κάτω" telerik:ScreenTip.Title="Εισαγωγή Γραμμών Κάτω"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Προσθήκη νέας γραμμής πάνω από την επιλεγμένη." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertTableRowAbove.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertTableRowAboveCommand}" Size="Large" Text="Εισαγωγή Πάνω" telerik:ScreenTip.Title="Εισαγωγή Γραμμών Πάνω"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Διαγραφή της επιλεγμένης γραμμής." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/DeleteTableRows.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding DeleteTableRowCommand}" Size="Large" Text="Διαγραφή Γραμμής" telerik:ScreenTip.Title="Διαγραφή Γραμμής"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Στήλες">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εισαγωγή νέας στήλης." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertTableColumn.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertTableColumnCommand}" Size="Large" Text="Εισαγωγή Στήλης" telerik:ScreenTip.Title="Εισαγωγή Στήλης"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εισαγωγή νέας στήλης αριστερά της επιλεγμένης." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertTableColumnToTheLeft.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertTableColumnToTheLeftCommand}" Size="Large" Text="Εισαγωγή Αριστερά" telerik:ScreenTip.Title="Εισαγωγή στηλών Αριστερά"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εισαγωγή νέας στήλης δεξιά της επιλεγμένης." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertTableColumnToTheRight.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertTableColumnToTheRightCommand}" Size="Large" Text="Εισαγωγή Δεξιά" telerik:ScreenTip.Title="Εισαγωγή στηλών Δεξιά"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Διαγραφή της επιλεγμένης στήλης." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/DeleteTableColumns.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding DeleteTableColumnCommand}" Size="Large" Text="Διαγραφή Στήλης" telerik:ScreenTip.Title="Διαγραφή Στήλης"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Συγχώνευση">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Συγχώνευση των επιλεγμένων κελιών σε ένα." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/MergeTableCells.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding MergeTableCellsCommand}" Size="Large" Text="Συγχώνευση Κελιών" telerik:ScreenTip.Title="Συγχώνευση Κελιών"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Μέγεθος Κελιού">
+                        <telerik:RadRibbonDropDownButton CollapseToMedium="WhenGroupIsMedium" Command="{Binding SelectTableEmptyCommand}" telerik:ScreenTip.Description="Αυτόματη αλλαγή μεγέθους στα πλάτη στηλών βασισμένες στο μέγεθος του κειμένου ή διατήρηση των πλατών σε σταθερό μέγεθος." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/AutoFit.png" Size="Large" Text="Αυτόματη Προσαρμογή" telerik:ScreenTip.Title="Αυτόματη Προσαρμογή/Καθορισμένη">
+                            <telerik:RadRibbonDropDownButton.DropDownContent>
+                                <StackPanel>
+                                    <telerik:RadRibbonButton CommandParameter="AutoFit" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeTableColumnsLayoutModeCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/AutoFItToWindow.png" Text="Αυτόματη προσαρμογή στο Παράθυρο"/>
+                                    <telerik:RadRibbonButton CommandParameter="Fixed" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeTableColumnsLayoutModeCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/FixedColumnWidth.png" Text="Σταθερό Πλάτος Στήλης"/>
+                                </StackPanel>
+                            </telerik:RadRibbonDropDownButton.DropDownContent>
+                        </telerik:RadRibbonDropDownButton>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Ευθυγράμμιση">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <telerik:RadToggleButton Grid.Column="0" CommandParameter="Left,Top" telerik:ScreenTip.Description="Align text to the top left corner of the cell." IsTabStop="False" IsBackgroundVisible="False" Padding="2" Grid.Row="0" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding TableCellContentAlignmentCommand}" telerik:ScreenTip.Title="Ευθυγράμμιση Πάνω Αριστερά">
+                                <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/LeftTopCellAlignment.png" Stretch="None"/>
+                            </telerik:RadToggleButton>
+                            <telerik:RadToggleButton Grid.Column="1" CommandParameter="Center,Top" telerik:ScreenTip.Description="Center text and align it to the top of the cell." IsTabStop="False" IsBackgroundVisible="False" Padding="2" Grid.Row="0" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding TableCellContentAlignmentCommand}" telerik:ScreenTip.Title="Ευθυγράμμιση Πάνω Κέντρο">
+                                <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/CenterTopCellAlignment.png" Stretch="None"/>
+                            </telerik:RadToggleButton>
+                            <telerik:RadToggleButton Grid.Column="2" CommandParameter="Right,Top" telerik:ScreenTip.Description="Align text to the top right corner of the cell." IsTabStop="False" IsBackgroundVisible="False" Padding="2" Grid.Row="0" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding TableCellContentAlignmentCommand}" telerik:ScreenTip.Title="Ευθυγράμμιση Πάνω Δεξιά">
+                                <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/RightTopCellAlignment.png" Stretch="None"/>
+                            </telerik:RadToggleButton>
+                            <telerik:RadToggleButton Grid.Column="0" CommandParameter="Left,Center" telerik:ScreenTip.Description="Center text vertically and align it to the left side of the cell." IsTabStop="False" IsBackgroundVisible="False" Padding="2" Grid.Row="1" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding TableCellContentAlignmentCommand}" telerik:ScreenTip.Title="Ευθυγράμμιση Κέντρο Αριστερά">
+                                <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/LeftMiddleCellAlignment.png" Stretch="None"/>
+                            </telerik:RadToggleButton>
+                            <telerik:RadToggleButton Grid.Column="1" CommandParameter="Center,Center" telerik:ScreenTip.Description="Center text horizontally and vertically within the cell." IsTabStop="False" IsBackgroundVisible="False" Padding="2" Grid.Row="1" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding TableCellContentAlignmentCommand}" telerik:ScreenTip.Title="Ευθυγράμμιση Κέντρο">
+                                <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/CenterMiddleCellAlignment.png" Stretch="None"/>
+                            </telerik:RadToggleButton>
+                            <telerik:RadToggleButton Grid.Column="2" CommandParameter="Right,Center" telerik:ScreenTip.Description="Center text vertically and align it to the right side of the cell." IsTabStop="False" IsBackgroundVisible="False" Padding="2" Grid.Row="1" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding TableCellContentAlignmentCommand}" telerik:ScreenTip.Title="Ευθυγράμμιση Κέντρο Δεξιά">
+                                <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/RightMiddleCellAlignment.png" Stretch="None"/>
+                            </telerik:RadToggleButton>
+                            <telerik:RadToggleButton Grid.Column="0" CommandParameter="Left,Bottom" telerik:ScreenTip.Description="Align text to the bottom left corner of the cell." IsTabStop="False" IsBackgroundVisible="False" Padding="2" Grid.Row="2" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding TableCellContentAlignmentCommand}" telerik:ScreenTip.Title="Ευθυγράμμιση Κάτω Αριστερά">
+                                <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/LeftBottomCellAlignment.png" Stretch="None"/>
+                            </telerik:RadToggleButton>
+                            <telerik:RadToggleButton Grid.Column="1" CommandParameter="Center,Bottom" telerik:ScreenTip.Description="Center text and align it to the bottom of the cell." IsTabStop="False" IsBackgroundVisible="False" Padding="2" Grid.Row="2" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding TableCellContentAlignmentCommand}" telerik:ScreenTip.Title="Ευθυγράμμιση Κάτω Κέντρο">
+                                <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/CenterBottomCellAlignment.png" Stretch="None"/>
+                            </telerik:RadToggleButton>
+                            <telerik:RadToggleButton Grid.Column="2" CommandParameter="Right,Bottom" telerik:ScreenTip.Description="Align text to the bottom right corner of the cell." IsTabStop="False" IsBackgroundVisible="False" Padding="2" Grid.Row="2" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding TableCellContentAlignmentCommand}" telerik:ScreenTip.Title="Ευθυγράμμιση Κάτω Δεξιά">
+                                <Image Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/RightBottomCellAlignment.png" Stretch="None"/>
+                            </telerik:RadToggleButton>
+                        </Grid>
+                    </telerik:RadRibbonGroup>
+                </telerik:RadRibbonTab>
+                <telerik:RadRibbonTab ContextualGroupName="HeaderFooterTools" Header="Σχεδίαση" Width="140">
+                    <telerik:RadRibbonGroup Header="Insert">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εισαγωγή ημερομηνίας ή ώρας στο έγγραφο." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertDateTime.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ShowInsertDateTimeDialogCommand}" Size="Large" Text="Ημερομηνία &amp; Ώρα" telerik:ScreenTip.Title="Εισαγωγή Ημερομηνίας και Ώρας"/>
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Εισαγωγή αριθμών σελίδων στο έγγραφο." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/InsertPageNumber.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding InsertPageFieldCommand}" Size="Large" Text="Αριθμός Σελίδας" telerik:ScreenTip.Title="Εισαγωγή Αριθμού Σελίδας"/>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Πλοήγηση">
+                        <StackPanel>
+                            <telerik:RadRibbonToggleButton telerik:ScreenTip.Description="Σύνδεση στο προηγούμενο τμήμα ώστε η κεφαλίδα και υποσέλιδο του τρέχοντος τμήματος έχει το ίδιο περιεχόμενο με το προηγούμενο τμήμα." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleHeaderFooterLinkToPreviousCommand}" Size="Medium" SmallImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/LinkToPreviousHeaderFooter.png" Text="Σύνδεση στο Προηγούμενο" telerik:ScreenTip.Title="Σύνδεση στο Προηγούμενο"/>
+                        </StackPanel>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Επιλογές">
+                        <StackPanel>
+                            <CheckBox Content="Different First Page" telerik:ScreenTip.Description="Ορισμός ειδικής κεφαλίδας και υποσέλιδου για την πρώτη σελίδα του εγγράφου." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleDifferentFirstPageHeaderFooterCommand}" telerik:ScreenTip.Title="Διαφοροποίηση Πρώτης Σελίδας"/>
+                            <CheckBox Content="Different Odd &amp; Even Pages" telerik:ScreenTip.Description="Ορισμός διαφορετικής κεφαλίδας και υποσέλιδου για μονές και ζυγές σελίδες." telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ToggleDifferentOddAndEvenPagesHeaderFooterCommand}" telerik:ScreenTip.Title="Διαφοροποίηση Μονών &amp; Ζυγών Σελίδων"/>
+                        </StackPanel>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Θέση">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Column="0" Grid.Row="0" Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/HeaderFromTop.png" Stretch="None" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text=" Κεφαλίδα από το πάνω μέρος: " VerticalAlignment="Center"/>
+                            <telerik:RadNumericUpDown Grid.Column="2" telerik:ScreenTip.Description="Ορισμός ύψους περιοχής κεφαλίδας." IsInteger="true" Minimum="0" NullValue="48" Grid.Row="0" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeSectionHeaderTopMarginCommand}" telerik:ScreenTip.Title="Θέση Κεφαλίδας από το πάνω μέρος"/>
+                            <Image Grid.Column="0" Margin="0 1 0 0" Grid.Row="1" Source="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/16/FooterFromBottom.png" Stretch="None" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Margin="0 1 0 0" Grid.Row="1" Text=" Υποσέλιδο από το κάτω μέρος: " VerticalAlignment="Center"/>
+                            <telerik:RadNumericUpDown Grid.Column="2" telerik:ScreenTip.Description="Ορισμός ύψους περιοχής υποσέλιδου." IsInteger="true" Margin="0 1 0 0" Minimum="0" NullValue="48" Grid.Row="1" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ChangeSectionFooterBottomMarginCommand}" telerik:ScreenTip.Title="Θέση Υποσέλιδου από το κάτω μέρος"/>
+                        </Grid>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Κλείσιμο">
+                        <telerik:RadRibbonButton telerik:ScreenTip.Description="Κλείσιμο Κεφαλίδων και Υποσέλιδων." LargeImage="pack://application:,,,/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/32/ExitHeaderFooterEditMode.png" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding ExitHeaderFooterEditModeCommand}" Size="Large" Text="Κλείσιμο Καφαλίδων και Υποσέλιδων" telerik:ScreenTip.Title="Κλείσιμο Καφαλίδων και Υποσέλιδων"/>
+                    </telerik:RadRibbonGroup>
+                </telerik:RadRibbonTab>
+            </telerik:RadRichTextBoxRibbonUI>
+            <telerik:RadRichTextBoxStatusBar AssociatedRichTextBox="{Binding ElementName=radRichTextBox}" Grid.Row="2" UseLayoutRounding="True"/>
+        </Grid>
+
+    </Grid>
+    
+</UserControl>

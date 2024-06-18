@@ -1,0 +1,148 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+    xmlns:FrameNavigationWPF="clr-namespace:FrameNavigationWPF;assembly=FrameNavigationWPF"
+	x:Class="FrameNavigateTest.Page1"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Width="640" Height="480"
+	WindowWidth="640" WindowHeight="480">
+
+	<Grid x:Name="LayoutRoot" Background="#FF240BAD">
+		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Page 1" VerticalAlignment="Top" Foreground="White" FontSize="32"/>
+		<WrapPanel Margin="8,42.843,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical" Height="428.677" Width="268.927">
+			<TextBlock TextWrapping="Wrap" Text="Up" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="Up" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="Left" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="Right" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="Right" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="Down" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="Down" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="UpWithFade" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="UpWithFade" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="LeftWithFade" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="LeftWithFade" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="RightWithFade" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="RightWithFade" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="DownWithFade" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="DownWithFade" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="Fade" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="Fade" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="Zoom" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="Zoom" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="SpinLeft" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="SpinLeft" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="SpinRight" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="SpinRight" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="SkewLeft" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="SkewLeft" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="SkewRight" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="SkewRight" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="RotateLeft" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="RotateLeft" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="RotateRight" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="RotateRight" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="SwitchLeft" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="SwitchLeft" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="SwitchRight" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="SwitchRight" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="SwitchUp" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="SwitchUp" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="SwitchDown" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="SwitchDown" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="SwitchLeftFade" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="SwitchLeftFade" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="SwitchRightFade" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="SwitchRightFade" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="SwitchUpFade" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="SwitchUpFade" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="SwitchDownFade" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="SwitchDownFade" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="Blur" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="Blur" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Text="Random" Cursor="Hand" Margin="5" FontSize="14.667" Foreground="White">
+				<i:Interaction.Behaviors>
+					<FrameNavigationWPF:FrameNavigate NavigateTo="Page2.xaml" Transition="Random" TransitionTime="2"/>
+				</i:Interaction.Behaviors>
+			</TextBlock>
+		</WrapPanel>
+	</Grid>
+</Page>

@@ -1,0 +1,2472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD77A1E5-BE9A-4201-9518-6BE250E94ACC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Poseidon</RootNamespace>
+    <AssemblyName>Poseidon</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>poseidon_ white.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="PresentationFramework.Luna" />
+    <Reference Include="PresentationFramework.Royale" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Reporting, Version=7.2.13.1016, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Reporting.OpenXmlRendering, Version=7.2.13.1016, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Reporting.Service, Version=7.2.13.1016, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Reporting.XpsRendering, Version=7.2.13.1016, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.ReportViewer.Wpf, Version=7.2.13.1016, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Chart, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Charting, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.DataServices, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.DataVisualization, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Diagrams, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Diagrams.Extensions, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Docking, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Expressions, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.FixedDocumentViewers, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.FixedDocumentViewersUI, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Gauge, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.ImageEditor, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.RibbonView, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.RichTextBoxUI, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Spreadsheet, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Data, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Diagrams.Core, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents.Fixed, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Html, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.OpenXml, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Pdf, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Rtf, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Xaml, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents.Proofing, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents.Proofing.DataGrid, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents.Proofing.Dictionaries.En-US, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents.Proofing.RadGridView, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Zip, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AppPages\Auxiliary\aen.xaml.cs">
+      <DependentUpon>aen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\aenData.xaml.cs">
+      <DependentUpon>aenData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\aenDataForm.xaml.cs">
+      <DependentUpon>aenDataForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\aenDataFormRO.xaml.cs">
+      <DependentUpon>aenDataFormRO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\Auxiliary.xaml.cs">
+      <DependentUpon>Auxiliary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\BlankFrame.xaml.cs">
+      <DependentUpon>BlankFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\Classes_SM.xaml.cs">
+      <DependentUpon>Classes_SM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\Classes_SP.xaml.cs">
+      <DependentUpon>Classes_SP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\Eidikotites.xaml.cs">
+      <DependentUpon>Eidikotites.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\InitializeDB.xaml.cs">
+      <DependentUpon>InitializeDB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\Kladoi.xaml.cs">
+      <DependentUpon>Kladoi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\Lessons_SM.xaml.cs">
+      <DependentUpon>Lessons_SM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\Lessons_SP.xaml.cs">
+      <DependentUpon>Lessons_SP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\Perifereies.xaml.cs">
+      <DependentUpon>Perifereies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\Prokirixeis.xaml.cs">
+      <DependentUpon>Prokirixeis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\Schools.xaml.cs">
+      <DependentUpon>Schools.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\SchoolYears.xaml.cs">
+      <DependentUpon>SchoolYears.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\ShipSubtypes.xaml.cs">
+      <DependentUpon>ShipSubtypes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\ShipTypes.xaml.cs">
+      <DependentUpon>ShipTypes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Auxiliary\TeachingHours.xaml.cs">
+      <DependentUpon>TeachingHours.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Blank.xaml.cs">
+      <DependentUpon>Blank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Printouts\MonthHoursSP.xaml.cs">
+      <DependentUpon>MonthHoursSP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Printouts\HoursTrackSP.xaml.cs">
+      <DependentUpon>HoursTrackSP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Printouts\HoursTrackSM.xaml.cs">
+      <DependentUpon>HoursTrackSM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Printouts\LessonsSM.xaml.cs">
+      <DependentUpon>LessonsSM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Printouts\LessonsSP.xaml.cs">
+      <DependentUpon>LessonsSP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Printouts\MonthHoursSM.xaml.cs">
+      <DependentUpon>MonthHoursSM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Printouts\PerifereiesNomoi.xaml.cs">
+      <DependentUpon>PerifereiesNomoi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Printouts\ShipTypesUI.xaml.cs">
+      <DependentUpon>ShipTypesUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Printouts\TeacherEidikotites.xaml.cs">
+      <DependentUpon>TeacherEidikotites.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Programme\BlankFrame.xaml.cs">
+      <DependentUpon>BlankFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Programme\ProgrammeMain.xaml.cs">
+      <DependentUpon>ProgrammeMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Programme\SM\HoursTrack.xaml.cs">
+      <DependentUpon>HoursTrack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Programme\SM\MonthlyHours.xaml.cs">
+      <DependentUpon>MonthlyHours.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Programme\SM\Orologio.xaml.cs">
+      <DependentUpon>Orologio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Programme\SM\ParousiesBook.xaml.cs">
+      <DependentUpon>ParousiesBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Programme\SP\HoursTrack.xaml.cs">
+      <DependentUpon>HoursTrack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Programme\SP\MonthlyHours.xaml.cs">
+      <DependentUpon>MonthlyHours.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Programme\SP\Orologio.xaml.cs">
+      <DependentUpon>Orologio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Programme\SP\ParousiesBook.xaml.cs">
+      <DependentUpon>ParousiesBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Charts\StudentEgrafiTypePieChart.xaml.cs">
+      <DependentUpon>StudentEgrafiTypePieChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Charts\StudentGenderPieChart.xaml.cs">
+      <DependentUpon>StudentGenderPieChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Charts\TeacherCategoryBarChart.xaml.cs">
+      <DependentUpon>TeacherCategoryBarChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Charts\TeacherGenderBarChart.xaml.cs">
+      <DependentUpon>TeacherGenderBarChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Charts\TeacherTypeBarChart.xaml.cs">
+      <DependentUpon>TeacherTypeBarChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\ChartViewModel\CategoryDataALL.cs" />
+    <Compile Include="AppPages\Statistics\ALL\ChartViewModel\CategoryViewModelALL.cs" />
+    <Compile Include="AppPages\Statistics\ALL\ChartViewModel\GenderDataALL.cs" />
+    <Compile Include="AppPages\Statistics\ALL\ChartViewModel\GenderViewModelALL.cs" />
+    <Compile Include="AppPages\Statistics\ALL\ChartViewModel\StudentNationalityALL.cs" />
+    <Compile Include="AppPages\Statistics\ALL\ChartViewModel\StudentNationalityVM_ALL.cs" />
+    <Compile Include="AppPages\Statistics\ALL\ChartViewModel\WorkDataALL.cs" />
+    <Compile Include="AppPages\Statistics\ALL\ChartViewModel\WorkViewModelALL.cs" />
+    <Compile Include="AppPages\Statistics\ALL\Pages\RepStudentGenderChart.xaml.cs">
+      <DependentUpon>RepStudentGenderChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Pages\RepStudentNationalityChart.xaml.cs">
+      <DependentUpon>RepStudentNationalityChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Pages\RepTeacherAnathesiChart.xaml.cs">
+      <DependentUpon>RepTeacherAnathesiChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Pages\RepTeacherCategoryChart.xaml.cs">
+      <DependentUpon>RepTeacherCategoryChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Pages\RepTeacherGenderChart.xaml.cs">
+      <DependentUpon>RepTeacherGenderChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Pages\RepTeacherME.xaml.cs">
+      <DependentUpon>RepTeacherME.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Pages\RepTeacherPostGradChart.xaml.cs">
+      <DependentUpon>RepTeacherPostGradChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Pages\StudentEgrafiType.xaml.cs">
+      <DependentUpon>StudentEgrafiType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Pages\StudentGenderChart.xaml.cs">
+      <DependentUpon>StudentGenderChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Pages\StudentNationalityCount.xaml.cs">
+      <DependentUpon>StudentNationalityCount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Pages\TeacherKladosCount.xaml.cs">
+      <DependentUpon>TeacherKladosCount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Pages\TeacherPostGradStudies.xaml.cs">
+      <DependentUpon>TeacherPostGradStudies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\ALL\Pages\RepStudentRegChart.xaml.cs">
+      <DependentUpon>RepStudentRegChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\Blank.xaml.cs">
+      <DependentUpon>Blank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\COMMON\OrientationBehavior.cs" />
+    <Compile Include="AppPages\Statistics\SM\Charts\StudentEgrafiTypePieChart.xaml.cs">
+      <DependentUpon>StudentEgrafiTypePieChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Charts\StudentGenderPieChart.xaml.cs">
+      <DependentUpon>StudentGenderPieChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Charts\TeacherCategoryBarChart.xaml.cs">
+      <DependentUpon>TeacherCategoryBarChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Charts\TeacherGenderBarChart.xaml.cs">
+      <DependentUpon>TeacherGenderBarChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Charts\TeacherProsontaBarChart.xaml.cs">
+      <DependentUpon>TeacherProsontaBarChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Charts\TeacherTypeBarChart.xaml.cs">
+      <DependentUpon>TeacherTypeBarChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\ChartViewModel\CategoryDataSM.cs" />
+    <Compile Include="AppPages\Statistics\SM\ChartViewModel\CategoryViewModelSM.cs" />
+    <Compile Include="AppPages\Statistics\SM\ChartViewModel\GenderDataSM.cs" />
+    <Compile Include="AppPages\Statistics\SM\ChartViewModel\GenderViewModelSM.cs" />
+    <Compile Include="AppPages\Statistics\SM\ChartViewModel\ProsontaDataSM.cs" />
+    <Compile Include="AppPages\Statistics\SM\ChartViewModel\ProsontaViewModelSM.cs" />
+    <Compile Include="AppPages\Statistics\SM\ChartViewModel\WorkDataSM.cs" />
+    <Compile Include="AppPages\Statistics\SM\ChartViewModel\WorkViewModelSM.cs" />
+    <Compile Include="AppPages\Statistics\SM\Pages\RepStudentGenderChart.xaml.cs">
+      <DependentUpon>RepStudentGenderChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Pages\RepStudentNationalityChart.xaml.cs">
+      <DependentUpon>RepStudentNationalityChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Pages\RepStudentRegChart.xaml.cs">
+      <DependentUpon>RepStudentRegChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Pages\RepTeacherAnathesiChart.xaml.cs">
+      <DependentUpon>RepTeacherAnathesiChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Pages\RepTeacherCategoryChart.xaml.cs">
+      <DependentUpon>RepTeacherCategoryChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Pages\RepTeacherGenderChart.xaml.cs">
+      <DependentUpon>RepTeacherGenderChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Pages\RepTeacherME.xaml.cs">
+      <DependentUpon>RepTeacherME.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Pages\RepTeacherPostGradChart.xaml.cs">
+      <DependentUpon>RepTeacherPostGradChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Pages\StudentEgrafiType.xaml.cs">
+      <DependentUpon>StudentEgrafiType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Pages\StudentGenderChart.xaml.cs">
+      <DependentUpon>StudentGenderChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Pages\StudentNationalityCount.xaml.cs">
+      <DependentUpon>StudentNationalityCount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Pages\TeacherKladosCount.xaml.cs">
+      <DependentUpon>TeacherKladosCount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SM\Pages\TeacherPostGradStudies.xaml.cs">
+      <DependentUpon>TeacherPostGradStudies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Charts\StudentEgrafiTypePieChart.xaml.cs">
+      <DependentUpon>StudentEgrafiTypePieChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Charts\StudentGenderPieChart.xaml.cs">
+      <DependentUpon>StudentGenderPieChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Charts\TeacherCategoryBarChart.xaml.cs">
+      <DependentUpon>TeacherCategoryBarChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Charts\TeacherGenderBarChart.xaml.cs">
+      <DependentUpon>TeacherGenderBarChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Charts\TeacherTypeBarChart.xaml.cs">
+      <DependentUpon>TeacherTypeBarChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\ChartViewModel\CategoryDataSP.cs" />
+    <Compile Include="AppPages\Statistics\SP\ChartViewModel\CategoryViewModelSP.cs" />
+    <Compile Include="AppPages\Statistics\SP\ChartViewModel\GenderDataSP.cs" />
+    <Compile Include="AppPages\Statistics\SP\ChartViewModel\GenderViewModelSP.cs" />
+    <Compile Include="AppPages\Statistics\SP\ChartViewModel\WorkDataSP.cs" />
+    <Compile Include="AppPages\Statistics\SP\ChartViewModel\WorkViewModelSP.cs" />
+    <Compile Include="AppPages\Statistics\SP\Pages\RepStudentGenderChart.xaml.cs">
+      <DependentUpon>RepStudentGenderChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Pages\RepStudentNationalityChart.xaml.cs">
+      <DependentUpon>RepStudentNationalityChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Pages\RepStudentRegChart.xaml.cs">
+      <DependentUpon>RepStudentRegChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Pages\RepTeacherAnathesiChart.xaml.cs">
+      <DependentUpon>RepTeacherAnathesiChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Pages\RepTeacherCategoryChart.xaml.cs">
+      <DependentUpon>RepTeacherCategoryChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Pages\RepTeacherGenderChart.xaml.cs">
+      <DependentUpon>RepTeacherGenderChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Pages\RepTeacherME.xaml.cs">
+      <DependentUpon>RepTeacherME.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Pages\RepTeacherPostGradChart.xaml.cs">
+      <DependentUpon>RepTeacherPostGradChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Pages\StudentEgrafiType.xaml.cs">
+      <DependentUpon>StudentEgrafiType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Pages\StudentGenderChart.xaml.cs">
+      <DependentUpon>StudentGenderChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Pages\StudentNationalityCount.xaml.cs">
+      <DependentUpon>StudentNationalityCount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Pages\TeacherKladosCount.xaml.cs">
+      <DependentUpon>TeacherKladosCount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\SP\Pages\TeacherPostGradStudies.xaml.cs">
+      <DependentUpon>TeacherPostGradStudies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Statistics\StatisticsPage.xaml.cs">
+      <DependentUpon>StatisticsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\BlankFrame.xaml.cs">
+      <DependentUpon>BlankFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Documents.xaml.cs">
+      <DependentUpon>Documents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Printouts\BebeoseisPrintSP.xaml.cs">
+      <DependentUpon>BebeoseisPrintSP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Printouts\BebeoseisPrintSM.xaml.cs">
+      <DependentUpon>BebeoseisPrintSM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Printouts\StudentAitisi2.xaml.cs">
+      <DependentUpon>StudentAitisi2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Printouts\StudentAitisi3.xaml.cs">
+      <DependentUpon>StudentAitisi3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Printouts\StudentAitisi4.xaml.cs">
+      <DependentUpon>StudentAitisi4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Printouts\StudentCertificate1SP.xaml.cs">
+      <DependentUpon>StudentCertificate1SP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Printouts\StudentData.xaml.cs">
+      <DependentUpon>StudentData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Printouts\DemoReport.xaml.cs">
+      <DependentUpon>DemoReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Printouts\StudentAitisi1.xaml.cs">
+      <DependentUpon>StudentAitisi1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Printouts\StudentDataWindow.xaml.cs">
+      <DependentUpon>StudentDataWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Printouts\StudentGradesReportSM.xaml.cs">
+      <DependentUpon>StudentGradesReportSM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Printouts\StudentGradesReportSP.xaml.cs">
+      <DependentUpon>StudentGradesReportSP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Printouts\StudentGradesSM.xaml.cs">
+      <DependentUpon>StudentGradesSM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Printouts\StudentCertificate1SM.xaml.cs">
+      <DependentUpon>StudentCertificate1SM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\Printouts\YD1599.xaml.cs">
+      <DependentUpon>YD1599.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Apousies\Apousies.xaml.cs">
+      <DependentUpon>Apousies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Apousies\ApousiesPrint.xaml.cs">
+      <DependentUpon>ApousiesPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Apousies\ApousiesSearch.xaml.cs">
+      <DependentUpon>ApousiesSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Apousies\ApousiesTotal.xaml.cs">
+      <DependentUpon>ApousiesTotal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Apousies\ApousiesTotalPrint.xaml.cs">
+      <DependentUpon>ApousiesTotalPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Bathmoi\Bathmoi.xaml.cs">
+      <DependentUpon>Bathmoi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Bathmoi\BathmoiPrint.xaml.cs">
+      <DependentUpon>BathmoiPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Bathmoi\BathmoiSearch.xaml.cs">
+      <DependentUpon>BathmoiSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Bebeoseis\BebeoseisPrint.xaml.cs">
+      <DependentUpon>BebeoseisPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Egrafes\Egrafes.xaml.cs">
+      <DependentUpon>Egrafes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Egrafes\EgrafesPrint.xaml.cs">
+      <DependentUpon>EgrafesPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Egrafes\EgrafesSearch.xaml.cs">
+      <DependentUpon>EgrafesSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Practice\Practice.xaml.cs">
+      <DependentUpon>Practice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Practice\PracticePrint.xaml.cs">
+      <DependentUpon>PracticePrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Practice\PracticeSearch.xaml.cs">
+      <DependentUpon>PracticeSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Ptixiakes\Ptixiaki.xaml.cs">
+      <DependentUpon>Ptixiaki.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Ptixiakes\PtixiakiPrint.xaml.cs">
+      <DependentUpon>PtixiakiPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SM\Ptixiakes\PtixiakiSearch.xaml.cs">
+      <DependentUpon>PtixiakiSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Apousies\Apousies.xaml.cs">
+      <DependentUpon>Apousies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Apousies\ApousiesPrint.xaml.cs">
+      <DependentUpon>ApousiesPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Apousies\ApousiesSearch.xaml.cs">
+      <DependentUpon>ApousiesSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Apousies\ApousiesTotal.xaml.cs">
+      <DependentUpon>ApousiesTotal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Apousies\ApousiesTotalPrint.xaml.cs">
+      <DependentUpon>ApousiesTotalPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Bathmoi\Bathmoi.xaml.cs">
+      <DependentUpon>Bathmoi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Bathmoi\BathmoiPrint.xaml.cs">
+      <DependentUpon>BathmoiPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Bathmoi\BathmoiSearch.xaml.cs">
+      <DependentUpon>BathmoiSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Bebeoseis\BebeoseisPrint.xaml.cs">
+      <DependentUpon>BebeoseisPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Egrafes\Egrafes.xaml.cs">
+      <DependentUpon>Egrafes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Egrafes\EgrafesPrint.xaml.cs">
+      <DependentUpon>EgrafesPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Egrafes\EgrafesSearch.xaml.cs">
+      <DependentUpon>EgrafesSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Practice\Practice.xaml.cs">
+      <DependentUpon>Practice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Practice\PracticePrint.xaml.cs">
+      <DependentUpon>PracticePrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Practice\PracticeSearch.xaml.cs">
+      <DependentUpon>PracticeSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Ptixiakes\Ptixiaki.xaml.cs">
+      <DependentUpon>Ptixiaki.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Ptixiakes\PtixiakiPrint.xaml.cs">
+      <DependentUpon>PtixiakiPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\SP\Ptixiakes\PtixiakiSearch.xaml.cs">
+      <DependentUpon>PtixiakiSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\StudentData.xaml.cs">
+      <DependentUpon>StudentData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\StudentDataForm.xaml.cs">
+      <DependentUpon>StudentDataForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\StudentDataFormRO.xaml.cs">
+      <DependentUpon>StudentDataFormRO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\StudentSearch.xaml.cs">
+      <DependentUpon>StudentSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Students\StudentsPage.xaml.cs">
+      <DependentUpon>StudentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Anatheseis\SM\Anatheseis.xaml.cs">
+      <DependentUpon>Anatheseis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Anatheseis\SM\AnatheseisPrint.xaml.cs">
+      <DependentUpon>AnatheseisPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Anatheseis\SM\AnatheseisSearch.xaml.cs">
+      <DependentUpon>AnatheseisSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Anatheseis\SM\AnathesiForm.xaml.cs">
+      <DependentUpon>AnathesiForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Anatheseis\SM\AnathesiFormRO.xaml.cs">
+      <DependentUpon>AnathesiFormRO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Anatheseis\SP\Anatheseis.xaml.cs">
+      <DependentUpon>Anatheseis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Anatheseis\SP\AnatheseisPrint.xaml.cs">
+      <DependentUpon>AnatheseisPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Anatheseis\SP\AnatheseisSearch.xaml.cs">
+      <DependentUpon>AnatheseisSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Anatheseis\SP\AnathesiForm.xaml.cs">
+      <DependentUpon>AnathesiForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Anatheseis\SP\AnathesiFormRO.xaml.cs">
+      <DependentUpon>AnathesiFormRO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Bebeoseis\Bebeoseis.xaml.cs">
+      <DependentUpon>Bebeoseis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Bebeoseis\BebeoseisPrint.xaml.cs">
+      <DependentUpon>BebeoseisPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Bebeoseis\BebeoseisSearch.xaml.cs">
+      <DependentUpon>BebeoseisSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\BlankFrame.xaml.cs">
+      <DependentUpon>BlankFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Documents.xaml.cs">
+      <DependentUpon>Documents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Printouts\TeacherAitisi.xaml.cs">
+      <DependentUpon>TeacherAitisi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Printouts\TeacherBebaiosi.xaml.cs">
+      <DependentUpon>TeacherBebaiosi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Printouts\TeacherListWindow.xaml.cs">
+      <DependentUpon>TeacherListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Printouts\DemoReport.xaml.cs">
+      <DependentUpon>DemoReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Printouts\Dilosi1599.xaml.cs">
+      <DependentUpon>Dilosi1599.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Printouts\TeacherList.xaml.cs">
+      <DependentUpon>TeacherList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Printouts\TeacherMonthHours.xaml.cs">
+      <DependentUpon>TeacherMonthHours.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Simbaseis\Simbaseis.xaml.cs">
+      <DependentUpon>Simbaseis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Simbaseis\SimbaseisPrint.xaml.cs">
+      <DependentUpon>SimbaseisPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Simbaseis\SimbaseisSearch.xaml.cs">
+      <DependentUpon>SimbaseisSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Simbaseis\SimbasiForm.xaml.cs">
+      <DependentUpon>SimbasiForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Simbaseis\SimbasiFormRO.xaml.cs">
+      <DependentUpon>SimbasiFormRO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\TeacherDetail.xaml.cs">
+      <DependentUpon>TeacherDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\TeacherForm.xaml.cs">
+      <DependentUpon>TeacherForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\TeacherFormRO.xaml.cs">
+      <DependentUpon>TeacherFormRO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\Teachers.xaml.cs">
+      <DependentUpon>Teachers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\TeacherSearch.xaml.cs">
+      <DependentUpon>TeacherSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Teachers\TeachersPage.xaml.cs">
+      <DependentUpon>TeachersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Tools\BlankFrame.xaml.cs">
+      <DependentUpon>BlankFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Tools\BookShips.xaml.cs">
+      <DependentUpon>BookShips.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Tools\Extensions.cs" />
+    <Compile Include="AppPages\Tools\ImageEditor.xaml.cs">
+      <DependentUpon>ImageEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Tools\PDFViewer.xaml.cs">
+      <DependentUpon>PDFViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Tools\ResourceToStreamHelper.cs" />
+    <Compile Include="AppPages\Tools\Spreadsheet.xaml.cs">
+      <DependentUpon>Spreadsheet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Tools\TextProcessor.xaml.cs">
+      <DependentUpon>TextProcessor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppPages\Tools\ThemeHelper.cs" />
+    <Compile Include="AppPages\Tools\ToolsPage.xaml.cs">
+      <DependentUpon>ToolsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CircularProgressBar.xaml.cs" />
+    <Compile Include="Controls\currentDate.xaml.cs" />
+    <Compile Include="Controls\GlassPane.xaml.cs" />
+    <Compile Include="Controls\LocalizationRoot.cs" />
+    <Compile Include="Controls\menuTooltip.xaml.cs" />
+    <Compile Include="Controls\MessagePopup.xaml.cs" />
+    <Compile Include="Controls\NavPage.xaml.cs" />
+    <Compile Include="Controls\RadMsgWindow.xaml.cs" />
+    <Compile Include="Controls\TileTimeDate.xaml.cs" />
+    <Compile Include="Controls\TileUser.xaml.cs" />
+    <Compile Include="Controls\W8Message.xaml.cs" />
+    <Compile Include="Controls\xClock.xaml.cs" />
+    <Compile Include="DataModel\AnathesiModel.cs" />
+    <Compile Include="DataModel\CommitModel.cs" />
+    <Compile Include="DataModel\Kerberos.cs" />
+    <Compile Include="DataModel\SimbasiModel.cs" />
+    <Compile Include="DataModel\StudentModel.cs" />
+    <Compile Include="DataModel\TeacherModel.cs" />
+    <Compile Include="Localization\GridViewResources.gr.Designer.cs" />
+    <Compile Include="Localization\RadControlsResources.gr.Designer.cs" />
+    <Compile Include="Model\Poseidon.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Poseidon.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ALL\StudentGender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ALL\StudentGender.Designer.cs">
+      <DependentUpon>StudentGender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ALL\StudentNationality.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ALL\StudentNationality.Designer.cs">
+      <DependentUpon>StudentNationality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ALL\StudentRegistration.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ALL\StudentRegistration.Designer.cs">
+      <DependentUpon>StudentRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ALL\TeacherAnathesi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ALL\TeacherAnathesi.Designer.cs">
+      <DependentUpon>TeacherAnathesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ALL\TeacherCategory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ALL\TeacherCategory.Designer.cs">
+      <DependentUpon>TeacherCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ALL\TeacherDegree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ALL\TeacherDegree.Designer.cs">
+      <DependentUpon>TeacherDegree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ALL\TeacherGender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ALL\TeacherGender.Designer.cs">
+      <DependentUpon>TeacherGender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ALL\TeacherHoursMonth.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ALL\TeacherHoursMonth.Designer.cs">
+      <DependentUpon>TeacherHoursMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ALL\TeacherME.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ALL\TeacherME.Designer.cs">
+      <DependentUpon>TeacherME.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DemoReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DemoReport.Designer.cs">
+      <DependentUpon>DemoReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MISC\StudentAitisi1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MISC\StudentAitisi1.Designer.cs">
+      <DependentUpon>StudentAitisi1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MISC\KladoiEidikotites.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MISC\KladoiEidikotites.Designer.cs">
+      <DependentUpon>KladoiEidikotites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MISC\LessonsSM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MISC\LessonsSM.Designer.cs">
+      <DependentUpon>LessonsSM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MISC\LessonsSP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MISC\LessonsSP.Designer.cs">
+      <DependentUpon>LessonsSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MISC\Perifereies.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MISC\Perifereies.Designer.cs">
+      <DependentUpon>Perifereies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MISC\Ships.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MISC\Ships.Designer.cs">
+      <DependentUpon>Ships.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MISC\ShipTypes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MISC\ShipTypes.Designer.cs">
+      <DependentUpon>ShipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MISC\StudentAitisi2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MISC\StudentAitisi2.Designer.cs">
+      <DependentUpon>StudentAitisi2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MISC\StudentAitisi3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MISC\StudentAitisi3.Designer.cs">
+      <DependentUpon>StudentAitisi3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MISC\StudentAitisi4.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MISC\StudentAitisi4.Designer.cs">
+      <DependentUpon>StudentAitisi4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MISC\TeacherBebeosi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MISC\TeacherBebeosi.Designer.cs">
+      <DependentUpon>TeacherBebeosi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MISC\TeacherBebeosiLessons.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MISC\TeacherBebeosiLessons.Designer.cs">
+      <DependentUpon>TeacherBebeosiLessons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MISC\TeacherList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MISC\TeacherList.Designer.cs">
+      <DependentUpon>TeacherList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MISC\TeacherSimbaseis.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MISC\TeacherSimbaseis.Designer.cs">
+      <DependentUpon>TeacherSimbaseis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MISC\YD1599.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MISC\YD1599.Designer.cs">
+      <DependentUpon>YD1599.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\AnatheseisSearchSM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\AnatheseisSearchSM.Designer.cs">
+      <DependentUpon>AnatheseisSearchSM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\AnatheseisSM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\AnatheseisSM.Designer.cs">
+      <DependentUpon>AnatheseisSM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\ApousiesSM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\ApousiesSM.Designer.cs">
+      <DependentUpon>ApousiesSM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\ApousiesTotalSM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\ApousiesTotalSM.Designer.cs">
+      <DependentUpon>ApousiesTotalSM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\EgrafesSM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\EgrafesSM.Designer.cs">
+      <DependentUpon>EgrafesSM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\HoursTrack.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\HoursTrack.Designer.cs">
+      <DependentUpon>HoursTrack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\PracticeSM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\PracticeSM.Designer.cs">
+      <DependentUpon>PracticeSM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\PtixiakesSM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\PtixiakesSM.Designer.cs">
+      <DependentUpon>PtixiakesSM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\StudentCertificate1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\StudentCertificate1.Designer.cs">
+      <DependentUpon>StudentCertificate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\StudentCertificateStudiesSM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\StudentCertificateStudiesSM.Designer.cs">
+      <DependentUpon>StudentCertificateStudiesSM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\StudentGender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\StudentGender.Designer.cs">
+      <DependentUpon>StudentGender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\StudentGradesReportSM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\StudentGradesReportSM.Designer.cs">
+      <DependentUpon>StudentGradesReportSM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\StudentGradesSM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\StudentGradesSM.Designer.cs">
+      <DependentUpon>StudentGradesSM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\StudentNationality.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\StudentNationality.Designer.cs">
+      <DependentUpon>StudentNationality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\StudentRegistration.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\StudentRegistration.Designer.cs">
+      <DependentUpon>StudentRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\TeacherAnathesi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\TeacherAnathesi.Designer.cs">
+      <DependentUpon>TeacherAnathesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\TeacherBook.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\TeacherBook.Designer.cs">
+      <DependentUpon>TeacherBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\TeacherCategory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\TeacherCategory.Designer.cs">
+      <DependentUpon>TeacherCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\TeacherDegree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\TeacherDegree.Designer.cs">
+      <DependentUpon>TeacherDegree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\TeacherGender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\TeacherGender.Designer.cs">
+      <DependentUpon>TeacherGender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\TeacherHoursMonth.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\TeacherHoursMonth.Designer.cs">
+      <DependentUpon>TeacherHoursMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SM\TeacherME.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SM\TeacherME.Designer.cs">
+      <DependentUpon>TeacherME.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\AnatheseisSearchSP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\AnatheseisSearchSP.Designer.cs">
+      <DependentUpon>AnatheseisSearchSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\AnatheseisSP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\AnatheseisSP.Designer.cs">
+      <DependentUpon>AnatheseisSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\ApousiesSP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\ApousiesSP.Designer.cs">
+      <DependentUpon>ApousiesSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\ApousiesTotalSP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\ApousiesTotalSP.Designer.cs">
+      <DependentUpon>ApousiesTotalSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\EgrafesSP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\EgrafesSP.Designer.cs">
+      <DependentUpon>EgrafesSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\HoursTrack.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\HoursTrack.Designer.cs">
+      <DependentUpon>HoursTrack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\PracticeSP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\PracticeSP.Designer.cs">
+      <DependentUpon>PracticeSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\PtixiakesSP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\PtixiakesSP.Designer.cs">
+      <DependentUpon>PtixiakesSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\Report1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\Report1.Designer.cs">
+      <DependentUpon>Report1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\StudentCertificate1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\StudentCertificate1.Designer.cs">
+      <DependentUpon>StudentCertificate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\StudentCertificateStudiesSP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\StudentCertificateStudiesSP.Designer.cs">
+      <DependentUpon>StudentCertificateStudiesSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\StudentGender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\StudentGender.Designer.cs">
+      <DependentUpon>StudentGender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\StudentGradesReportSP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\StudentGradesReportSP.Designer.cs">
+      <DependentUpon>StudentGradesReportSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\StudentGradesSP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\StudentGradesSP.Designer.cs">
+      <DependentUpon>StudentGradesSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\StudentNationality.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\StudentNationality.Designer.cs">
+      <DependentUpon>StudentNationality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\StudentRegistration.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\StudentRegistration.Designer.cs">
+      <DependentUpon>StudentRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\TeacherAnathesi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\TeacherAnathesi.Designer.cs">
+      <DependentUpon>TeacherAnathesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\TeacherBook.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\TeacherBook.Designer.cs">
+      <DependentUpon>TeacherBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\TeacherCategory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\TeacherCategory.Designer.cs">
+      <DependentUpon>TeacherCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\TeacherDegree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\TeacherDegree.Designer.cs">
+      <DependentUpon>TeacherDegree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\TeacherGender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\TeacherGender.Designer.cs">
+      <DependentUpon>TeacherGender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\TeacherHoursMonth.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\TeacherHoursMonth.Designer.cs">
+      <DependentUpon>TeacherHoursMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ALL\StudentData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ALL\StudentData.Designer.cs">
+      <DependentUpon>StudentData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SP\TeacherME.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SP\TeacherME.Designer.cs">
+      <DependentUpon>TeacherME.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\ConnectPage.xaml.cs">
+      <DependentUpon>ConnectPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\Navigation\Navigator.xaml.cs">
+      <DependentUpon>Navigator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SqlConnections\Connection.xaml.cs">
+      <DependentUpon>Connection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SqlConnections\DatabaseTable.cs" />
+    <Compile Include="SqlConnections\ISmoTasks.cs" />
+    <Compile Include="SqlConnections\LoadingCircle.xaml.cs">
+      <DependentUpon>LoadingCircle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SqlConnections\SmoTasks.cs" />
+    <Compile Include="SqlConnections\SqlConnectionString.cs" />
+    <Compile Include="SqlConnections\SqlConnectionStringBuilder.xaml.cs">
+      <DependentUpon>SqlConnectionStringBuilder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\BinaryImageConverter.cs" />
+    <Compile Include="Utilities\DatePickerWatermark.cs" />
+    <Compile Include="Utilities\DateUtilities.cs" />
+    <Compile Include="Utilities\GlobalText.cs" />
+    <Compile Include="Utilities\Loading.xaml.cs" />
+    <Compile Include="Utilities\ProgressBarThread.cs" />
+    <Compile Include="Utilities\RoutedEventHelper.cs" />
+    <Compile Include="Utilities\ServerFunctions.cs" />
+    <Compile Include="Utilities\TabItemHelper.cs" />
+    <Compile Include="Utilities\UserFunctions.cs" />
+    <Page Include="AppPages\Auxiliary\aen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\aenData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\aenDataForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\aenDataFormRO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\Auxiliary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\BlankFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\Classes_SM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\Classes_SP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\Eidikotites.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\InitializeDB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\Kladoi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\Lessons_SM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\Lessons_SP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\Perifereies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\Prokirixeis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\Schools.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\SchoolYears.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\ShipSubtypes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\ShipTypes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Auxiliary\TeachingHours.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Blank.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Printouts\MonthHoursSP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Printouts\HoursTrackSP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Printouts\HoursTrackSM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Printouts\LessonsSM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Printouts\LessonsSP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Printouts\MonthHoursSM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Printouts\PerifereiesNomoi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Printouts\ShipTypesUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Printouts\TeacherEidikotites.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Programme\BlankFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Programme\ProgrammeMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Programme\SM\HoursTrack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Programme\SM\MonthlyHours.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Programme\SM\Orologio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Programme\SM\ParousiesBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Programme\SP\HoursTrack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Programme\SP\MonthlyHours.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Programme\SP\Orologio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Programme\SP\ParousiesBook.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Charts\StudentEgrafiTypePieChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Charts\StudentGenderPieChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Charts\TeacherCategoryBarChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Charts\TeacherGenderBarChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Charts\TeacherTypeBarChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Pages\RepStudentGenderChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Pages\RepStudentNationalityChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Pages\RepTeacherAnathesiChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Pages\RepTeacherCategoryChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Pages\RepTeacherGenderChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Pages\RepTeacherME.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Pages\RepTeacherPostGradChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Pages\StudentEgrafiType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Pages\StudentGenderChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Pages\StudentNationalityCount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Pages\TeacherKladosCount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Pages\TeacherPostGradStudies.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\ALL\Pages\RepStudentRegChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\Blank.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Charts\StudentEgrafiTypePieChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Charts\StudentGenderPieChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Charts\TeacherCategoryBarChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Charts\TeacherGenderBarChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Charts\TeacherProsontaBarChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Charts\TeacherTypeBarChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Pages\RepStudentGenderChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Pages\RepStudentNationalityChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Pages\RepStudentRegChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Pages\RepTeacherAnathesiChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Pages\RepTeacherCategoryChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Pages\RepTeacherGenderChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Pages\RepTeacherME.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Pages\RepTeacherPostGradChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Pages\StudentEgrafiType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Pages\StudentGenderChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Pages\StudentNationalityCount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Pages\TeacherKladosCount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\SM\Pages\TeacherPostGradStudies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Charts\StudentEgrafiTypePieChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Charts\StudentGenderPieChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Charts\TeacherCategoryBarChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Charts\TeacherGenderBarChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Charts\TeacherTypeBarChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Pages\RepStudentGenderChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Pages\RepStudentNationalityChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Pages\RepStudentRegChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Pages\RepTeacherAnathesiChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Pages\RepTeacherCategoryChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Pages\RepTeacherGenderChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Pages\RepTeacherME.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Pages\RepTeacherPostGradChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Pages\StudentEgrafiType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Pages\StudentGenderChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Pages\StudentNationalityCount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Pages\TeacherKladosCount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\SP\Pages\TeacherPostGradStudies.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Statistics\StatisticsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\BlankFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\Documents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\Printouts\BebeoseisPrintSP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Students\Printouts\BebeoseisPrintSM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Students\Printouts\StudentAitisi2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\Printouts\StudentAitisi3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\Printouts\StudentAitisi4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\Printouts\StudentCertificate1SP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\Printouts\StudentData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Students\Printouts\DemoReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\Printouts\StudentAitisi1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\Printouts\StudentDataWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\Printouts\StudentGradesReportSM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\Printouts\StudentGradesReportSP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\Printouts\StudentGradesSM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\Printouts\StudentCertificate1SM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\Printouts\YD1599.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Apousies\Apousies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Apousies\ApousiesPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Apousies\ApousiesSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Apousies\ApousiesTotal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Apousies\ApousiesTotalPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Bathmoi\Bathmoi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Bathmoi\BathmoiPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Bathmoi\BathmoiSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Bebeoseis\BebeoseisPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Egrafes\Egrafes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Egrafes\EgrafesPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Egrafes\EgrafesSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Practice\Practice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Practice\PracticePrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Practice\PracticeSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Ptixiakes\Ptixiaki.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Ptixiakes\PtixiakiPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SM\Ptixiakes\PtixiakiSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Apousies\Apousies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Apousies\ApousiesPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Apousies\ApousiesSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Apousies\ApousiesTotal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Apousies\ApousiesTotalPrint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Students\SP\Bathmoi\Bathmoi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Bathmoi\BathmoiPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Bathmoi\BathmoiSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Bebeoseis\BebeoseisPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Egrafes\Egrafes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Egrafes\EgrafesPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Egrafes\EgrafesSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Practice\Practice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Practice\PracticePrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Practice\PracticeSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Ptixiakes\Ptixiaki.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Ptixiakes\PtixiakiPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\SP\Ptixiakes\PtixiakiSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\StudentData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\StudentDataForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\StudentDataFormRO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\StudentSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Students\StudentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Anatheseis\SM\Anatheseis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Anatheseis\SM\AnatheseisPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Anatheseis\SM\AnatheseisSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Anatheseis\SM\AnathesiForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Anatheseis\SM\AnathesiFormRO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Anatheseis\SP\Anatheseis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Anatheseis\SP\AnatheseisPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Anatheseis\SP\AnatheseisSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Anatheseis\SP\AnathesiForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Anatheseis\SP\AnathesiFormRO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Bebeoseis\Bebeoseis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Bebeoseis\BebeoseisPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Bebeoseis\BebeoseisSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\BlankFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Documents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Printouts\TeacherAitisi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Printouts\TeacherBebaiosi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Printouts\TeacherListWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AppPages\Teachers\Printouts\DemoReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Printouts\Dilosi1599.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Printouts\TeacherList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Printouts\TeacherMonthHours.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Simbaseis\Simbaseis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Simbaseis\SimbaseisPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Simbaseis\SimbaseisSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Simbaseis\SimbasiForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Simbaseis\SimbasiFormRO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\TeacherDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\TeacherForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\TeacherFormRO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\Teachers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\TeacherSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Teachers\TeachersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Tools\BlankFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Tools\BookShips.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Tools\ImageEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Tools\PDFViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Tools\Spreadsheet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Tools\TextProcessor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppPages\Tools\ToolsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CircularProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\currentDate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\GlassPane.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\menuTooltip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\MessagePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\NavPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\RadMsgWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TileTimeDate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TileUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\W8Message.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\xClock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shell\ConnectPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shell\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shell\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Shell\Navigation\Navigator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell\Resources\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shell\Resources\Shared.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shell\Resources\ToolTip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SqlConnections\Connection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SqlConnections\LoadingCircle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SqlConnections\SqlConnectionStringBuilder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utilities\Loading.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Localization\GridViewResources.gr.resx" />
+    <EmbeddedResource Include="Localization\RadControlsResources.gr.resx" />
+    <EmbeddedResource Include="Reports\ALL\StudentGender.resx">
+      <DependentUpon>StudentGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ALL\StudentNationality.resx">
+      <DependentUpon>StudentNationality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ALL\StudentRegistration.resx">
+      <DependentUpon>StudentRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ALL\TeacherAnathesi.resx">
+      <DependentUpon>TeacherAnathesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ALL\TeacherCategory.resx">
+      <DependentUpon>TeacherCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ALL\TeacherDegree.resx">
+      <DependentUpon>TeacherDegree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ALL\TeacherGender.resx">
+      <DependentUpon>TeacherGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ALL\TeacherHoursMonth.resx">
+      <DependentUpon>TeacherHoursMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ALL\TeacherME.resx">
+      <DependentUpon>TeacherME.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DemoReport.resx">
+      <DependentUpon>DemoReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MISC\StudentAitisi1.resx">
+      <DependentUpon>StudentAitisi1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MISC\KladoiEidikotites.resx">
+      <DependentUpon>KladoiEidikotites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MISC\LessonsSM.resx">
+      <DependentUpon>LessonsSM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MISC\LessonsSP.resx">
+      <DependentUpon>LessonsSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MISC\Perifereies.resx">
+      <DependentUpon>Perifereies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MISC\Ships.resx">
+      <DependentUpon>Ships.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MISC\ShipTypes.resx">
+      <DependentUpon>ShipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MISC\StudentAitisi2.resx">
+      <DependentUpon>StudentAitisi2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MISC\StudentAitisi3.resx">
+      <DependentUpon>StudentAitisi3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MISC\StudentAitisi4.resx">
+      <DependentUpon>StudentAitisi4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MISC\TeacherBebeosi.resx">
+      <DependentUpon>TeacherBebeosi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MISC\TeacherBebeosiLessons.resx">
+      <DependentUpon>TeacherBebeosiLessons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MISC\TeacherList.resx">
+      <DependentUpon>TeacherList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MISC\TeacherSimbaseis.resx">
+      <DependentUpon>TeacherSimbaseis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MISC\YD1599.resx">
+      <DependentUpon>YD1599.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\AnatheseisSearchSM.resx">
+      <DependentUpon>AnatheseisSearchSM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\AnatheseisSM.resx">
+      <DependentUpon>AnatheseisSM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\ApousiesSM.resx">
+      <DependentUpon>ApousiesSM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\ApousiesTotalSM.resx">
+      <DependentUpon>ApousiesTotalSM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\EgrafesSM.resx">
+      <DependentUpon>EgrafesSM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\HoursTrack.resx">
+      <DependentUpon>HoursTrack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\PracticeSM.resx">
+      <DependentUpon>PracticeSM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\PtixiakesSM.resx">
+      <DependentUpon>PtixiakesSM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\StudentCertificate1.resx">
+      <DependentUpon>StudentCertificate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\StudentCertificateStudiesSM.resx">
+      <DependentUpon>StudentCertificateStudiesSM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\StudentGender.resx">
+      <DependentUpon>StudentGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\StudentGradesReportSM.resx">
+      <DependentUpon>StudentGradesReportSM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\StudentGradesSM.resx">
+      <DependentUpon>StudentGradesSM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\StudentNationality.resx">
+      <DependentUpon>StudentNationality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\StudentRegistration.resx">
+      <DependentUpon>StudentRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\TeacherAnathesi.resx">
+      <DependentUpon>TeacherAnathesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\TeacherBook.resx">
+      <DependentUpon>TeacherBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\TeacherCategory.resx">
+      <DependentUpon>TeacherCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\TeacherDegree.resx">
+      <DependentUpon>TeacherDegree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\TeacherGender.resx">
+      <DependentUpon>TeacherGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\TeacherHoursMonth.resx">
+      <DependentUpon>TeacherHoursMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SM\TeacherME.resx">
+      <DependentUpon>TeacherME.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\AnatheseisSearchSP.resx">
+      <DependentUpon>AnatheseisSearchSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\AnatheseisSP.resx">
+      <DependentUpon>AnatheseisSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\ApousiesSP.resx">
+      <DependentUpon>ApousiesSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\ApousiesTotalSP.resx">
+      <DependentUpon>ApousiesTotalSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\EgrafesSP.resx">
+      <DependentUpon>EgrafesSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\HoursTrack.resx">
+      <DependentUpon>HoursTrack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\PracticeSP.resx">
+      <DependentUpon>PracticeSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\PtixiakesSP.resx">
+      <DependentUpon>PtixiakesSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\StudentCertificate1.resx">
+      <DependentUpon>StudentCertificate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\StudentCertificateStudiesSP.resx">
+      <DependentUpon>StudentCertificateStudiesSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\StudentGender.resx">
+      <DependentUpon>StudentGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\StudentGradesReportSP.resx">
+      <DependentUpon>StudentGradesReportSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\StudentGradesSP.resx">
+      <DependentUpon>StudentGradesSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\StudentNationality.resx">
+      <DependentUpon>StudentNationality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\StudentRegistration.resx">
+      <DependentUpon>StudentRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\TeacherAnathesi.resx">
+      <DependentUpon>TeacherAnathesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\TeacherBook.resx">
+      <DependentUpon>TeacherBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\TeacherCategory.resx">
+      <DependentUpon>TeacherCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\TeacherDegree.resx">
+      <DependentUpon>TeacherDegree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\TeacherGender.resx">
+      <DependentUpon>TeacherGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\TeacherHoursMonth.resx">
+      <DependentUpon>TeacherHoursMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ALL\StudentData.resx">
+      <DependentUpon>StudentData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SP\TeacherME.resx">
+      <DependentUpon>TeacherME.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Model\Poseidon.dbml.layout">
+      <DependentUpon>Poseidon.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Model\Poseidon.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Poseidon.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shell\Images\Other\poseidon_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shell\Images\Metro\admin.png" />
+    <Resource Include="Shell\Images\Metro\Analysis.png" />
+    <Resource Include="Shell\Images\Metro\Anatheseis.png" />
+    <Resource Include="Shell\Images\Metro\Anatheseis2.png" />
+    <Resource Include="Shell\Images\Metro\Arrows-Left-round-icon.png" />
+    <Resource Include="Shell\Images\Metro\Arrows-Right-round-icon.png" />
+    <Resource Include="Shell\Images\Metro\ControlPanel.png" />
+    <Resource Include="Shell\Images\Metro\Document2.png" />
+    <Resource Include="Shell\Images\Metro\Documents.png" />
+    <Resource Include="Shell\Images\Metro\Editing-Delete-icon.png" />
+    <Resource Include="Shell\Images\Metro\Editing-Edit-icon.png" />
+    <Resource Include="Shell\Images\Metro\Exit.png" />
+    <Resource Include="Shell\Images\Metro\filter-del.png" />
+    <Resource Include="Shell\Images\Metro\filter-set.png" />
+    <Resource Include="Shell\Images\Metro\Home-icon.png" />
+    <Resource Include="Shell\Images\Metro\Home.png" />
+    <Resource Include="Shell\Images\Metro\icon-error.png" />
+    <Resource Include="Shell\Images\Metro\icon-ok.png" />
+    <Resource Include="Shell\Images\Metro\Lessons.png" />
+    <Resource Include="Shell\Images\Metro\People.png" />
+    <Resource Include="Shell\Images\Metro\printer-text.png" />
+    <Resource Include="Shell\Images\Metro\save.jpg" />
+    <Resource Include="Shell\Images\Metro\Security-Key-icon.png" />
+    <Resource Include="Shell\Images\Metro\students.png" />
+    <Resource Include="Shell\Images\Metro\System-Delete.ico" />
+    <Resource Include="Shell\Images\Metro\System-Save-icon.png" />
+    <Resource Include="Shell\Images\Metro\tools.png" />
+    <Resource Include="Shell\Images\Metro\user_metro.png" />
+    <Resource Include="Shell\Images\Metro\windowsWhiteLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shell\Images\Other\error_frame.png" />
+    <Resource Include="Shell\Images\Other\info_small.png" />
+    <Resource Include="Shell\Images\Other\oaed_logo.gif" />
+    <Resource Include="Shell\Images\Other\pegasus.png" />
+    <Resource Include="Shell\Images\Other\pegasus2.png" />
+    <Resource Include="Shell\Images\Other\pegasus3.png" />
+    <Resource Include="Shell\Images\Other\person_female.png" />
+    <Resource Include="Shell\Images\Other\person_male.png" />
+    <Resource Include="Shell\Images\Other\person_unknown.png" />
+    <Resource Include="Shell\Images\Other\Sticky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shell\Images\Walls\abstract01.png" />
+    <Resource Include="Shell\Images\Walls\abstract02.png" />
+    <Resource Include="Shell\Images\Walls\abstract03.png" />
+    <Resource Include="Shell\Images\Walls\abstract04.png" />
+    <Resource Include="Shell\Images\Walls\abstract05.png" />
+    <Resource Include="Shell\Images\Walls\abstract06.png" />
+    <Resource Include="Shell\Images\Walls\abstract07.png" />
+    <Resource Include="Shell\Images\Walls\blue01.jpg" />
+    <Resource Include="Shell\Images\Walls\blue03.jpg" />
+    <Resource Include="Shell\Images\Walls\blue_bg01.jpg" />
+    <Resource Include="Shell\Images\Walls\blue_bg06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shell\Images\Other\poseidon_ white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WpfFrameNavigation\WpfFrameNavigation\WpfFrameNavigation.csproj">
+      <Project>{6a067aa9-a4f0-4f98-bd49-75796743d204}</Project>
+      <Name>WpfFrameNavigation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WPFMessageBox\WPFMessageBox\WPFMessageBox.csproj">
+      <Project>{53f2d809-3e1a-422d-a507-abcb407ebf29}</Project>
+      <Name>WPFMessageBox</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="poseidon_ white.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shell\Images\Other\poseidon_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shell\Images\poseidon_ white.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shell\Images\Other\ethnosimo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shell\Images\Metro\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shell\Images\Other\ethnos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shell\Images\Metro\Word.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shell\Images\Other\frontcover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shell\Images\Other\cruise-ship-abstract.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shell\Images\Other\graphic_cruise_ship.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shell\Images\Other\steering-wheel.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

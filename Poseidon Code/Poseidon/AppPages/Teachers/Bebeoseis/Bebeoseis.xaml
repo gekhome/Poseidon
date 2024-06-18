@@ -1,0 +1,98 @@
+﻿<Page x:Class="Poseidon.AppPages.Teachers.Bebeoseis.Bebeoseis"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:telerikControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+      xmlns:my="clr-namespace:Poseidon.Controls"
+      xmlns:nav="clr-namespace:Poseidon.Shell.Navigation"
+      xmlns:local="clr-namespace:Poseidon.AppPages.Teachers.Anatheseis.SM"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1000"
+	Title="Βεβαιώσεις Εκπαιδευτικών">
+
+    <Page.Background>
+        <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+            <GradientStop Color="WhiteSmoke" Offset="0" />
+            <GradientStop Color="WhiteSmoke" Offset="1" />
+        </LinearGradientBrush>
+    </Page.Background>
+
+
+    <Grid>
+
+        <DockPanel LastChildFill="True">
+
+            <Expander Foreground="Black" BorderThickness="2" BorderBrush="White" HorizontalAlignment="Left" ExpandDirection="Right" Padding="4" IsExpanded="True">
+                <Expander.Header>
+                    <TextBlock Text="Εκπαιδευτικοί"
+                           FontSize="14"
+                           Foreground="Black"
+                           FontWeight="Bold">
+                        <TextBlock.LayoutTransform>
+                            <RotateTransform Angle="90" />
+                        </TextBlock.LayoutTransform>
+                    </TextBlock>
+                </Expander.Header>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Margin="2,2" HorizontalAlignment="Right" >
+                        <Label Content="Εύρεση..." Foreground="Black"/>
+                        <TextBox MinWidth="240" Height="22" Background="White" Name="txtSearch" KeyDown="txtSearch_KeyDown" ToolTip="Εύρεση με Επώνυμο ή ΑΦΜ" FontSize="12"/>
+                        <telerik:RadButton Name="btnFilterOn" Click="btnFilterOn_Click"  Margin="4,0,0,0" HorizontalAlignment="Right" ToolTip="Φίλτρο"
+                                   telerik:StyleManager.Theme="Windows8">
+                            <Image Source="/Poseidon;component/Shell/Images/Metro/filter-set.png" Width="20" Height="20" />
+                        </telerik:RadButton>
+                        <telerik:RadButton Name="btnFilterOff" Click="btnFilterOff_Click"  Margin="2,0,0,0"   HorizontalAlignment="Right" ToolTip="Διαγραφή φίλτρου"
+                                   telerik:StyleManager.Theme="Windows8">
+                            <Image Source="/Poseidon;component/Shell/Images/Metro/filter-del.png" Width="20" Height="20"/>
+                        </telerik:RadButton>
+                    </StackPanel>
+                    <telerik:RadGridView x:Name="teacherGrid" Height="400" MinWidth="300" IsReadOnly="True"
+                                     ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"                                     
+                                     AutoGenerateColumns="False" ShowGroupPanel="False" AlternationCount="2"  
+                                     SelectionChanged="teacherGrid_SelectionChanged" SelectionUnit="FullRow" 
+                                     Loaded="teacherGrid_Loaded" telerik:StyleManager.Theme="Windows8" >
+                        <telerik:RadGridView.Columns>
+
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΑΦΜ}" Header="Α.Φ.Μ." UniqueName="ΑΦΜ" IsReadOnly="False" />
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΕΠΩΝΥΜΟ}" Header="Επώνυμο" UniqueName="ΕΠΩΝΥΜΟ" IsReadOnly="False" />
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΟΝΟΜΑ}" Header="Όνομα" UniqueName="ΟΝΟΜΑ" IsReadOnly="False"/>
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+
+                </StackPanel>
+                
+            </Expander>
+
+            <Border BorderBrush="White"  BorderThickness="2" CornerRadius="0" Background="Transparent" MinHeight="570" Margin="4,0,4,0">
+
+                <StackPanel Orientation="Vertical">
+                    
+                    <StackPanel Orientation="Horizontal" Margin="2,10,0,10">
+                        <TextBlock Text="Επιλεγμένος εκπαιδευτικός: " Foreground="Black" FontSize="14"></TextBlock>
+                        <TextBlock Name ="txtTeacherInfo" Foreground="Black" FontSize="14"></TextBlock>
+                    </StackPanel>
+
+                    <telerik:RadDataForm x:Name="DataForm" Header="Βεβαίωση Προϋπηρεσίας" BeginningEdit="DataForm_BeginningEdit"
+                                     CancelButtonContent="Ακύρωση" CommitButtonContent="Αποθήκευση" 
+                                     ValidationSummaryVisibility="Visible" AutoGenerateFields="True"  
+                                     EditEnding="DataForm_EditEnding" 
+                                     ValidatingItem="DataForm_ValidatingItem"
+                                     AutoGeneratingField="DataForm_AutoGeneratingField"
+                                     DeletingItem="DataForm_DeletingItem" 
+                                     AddingNewItem="DataForm_AddingNewItem" 
+                                     telerik:StyleManager.Theme ="Windows8Touch"  Margin="0,-2,0,0" />
+
+                </StackPanel>
+
+
+                
+            </Border>
+
+        </DockPanel>
+
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,68 @@
+﻿<Page x:Class="Poseidon.AppPages.Programme.SP.HoursTrack"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+      xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+      xmlns:my="clr-namespace:Poseidon.Controls"
+      xmlns:local="clr-namespace:Poseidon.Utilities"
+      xmlns:nav="clr-namespace:Poseidon.Shell.Navigation"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+	Title="Υλοποιηθείσες ώρες μαθημάτων">
+
+    <Grid>
+        <StackPanel Name="mainPanel" Orientation="Vertical" HorizontalAlignment="Center">
+
+            <StackPanel Name="SelectionPanel" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Label Content="Διδακτικό έτος" Margin="4" FontSize="12" Foreground="Black"/>
+                <telerik:RadComboBox x:Name="cboSchoolYear" telerik:StyleManager.Theme="Windows8" Margin="4" Width="120"
+                 SelectedValuePath="ΣΧΟΛ_ΕΤΟΣ_ΚΩΔ" DisplayMemberPath="ΣΧΟΛ_ΕΤΟΣ" SelectionChanged="cboSchoolYear_SelectionChanged"
+                 ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="Διαγραφή επιλογής"/>
+
+                <Label Content="Τμήμα" Margin="4" FontSize="12" Foreground="Black"/>
+                <telerik:RadComboBox x:Name="cboTmima" telerik:StyleManager.Theme="Windows8" Margin="4" Width="90"
+                 SelectedValuePath="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" DisplayMemberPath="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ"
+                 ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="Διαγραφή επιλογής"/>
+
+                <telerik:RadButton Name="btnView" Click="btnView_Click"  Content=" Προβολή " Margin="4" Padding="4" Width="80" 
+                 telerik:StyleManager.Theme="Windows8"   FontSize="12" />
+                <telerik:RadButton Name="btnRefresh" Click="btnRefresh_Click"  Content=" Επαναφορά " Margin="4" Padding="4" Width="80" 
+                 telerik:StyleManager.Theme="Windows8"   FontSize="12" />
+                <telerik:RadButton Name="btnPrint" Click="btnPrint_Click"  Content=" Εκτύπωση " Margin="4" Padding="4" Width="80" 
+                 telerik:StyleManager.Theme="Windows8"   FontSize="12" />
+
+
+            </StackPanel>
+
+            <telerik:RadGridView x:Name="dataGrid" CanUserFreezeColumns="False" AutoGenerateColumns="False" ShowGroupPanel="True"
+                                     CanUserInsertRows="False" CanUserDeleteRows="False" ShowInsertRow="False"  
+                                     IsReadOnly="True" AlternationCount="2" Height="480" ShowColumnFooters="True" 
+                                     Margin="0,2,0,2" VerticalAlignment="Top" telerik:StyleManager.Theme="Windows8"
+                                 ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding ΣΧΟΛ_ΕΤΟΣ}" Header="Διδ. Έτος" IsGroupable="True">
+                        <telerik:GridViewDataColumn.AggregateFunctions>
+                            <telerik:CountFunction Caption="Πλήθος εγγρ.: " />
+                        </telerik:GridViewDataColumn.AggregateFunctions>
+                    </telerik:GridViewDataColumn>
+
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding ΕΞΑΜΗΝΟ_ΛΕΚΤΙΚΟ}" Header="Εξάμηνο" IsGroupable="True" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ}" Header="Τμήμα" IsGroupable="True" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding ΜΑΘΗΜΑ}" Header="Μάθημα" IsGroupable="True" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding ΩΡΕΣ}" Header="Πρ.ώρες" IsGroupable="True" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding ΣΥΝΟΛΟ_ΩΡΕΣ}" Header="Συν.ώρες" IsGroupable="True" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding ΥΠΟΛΟΙΠΟ}" Header="Υπόλ.ώρες" IsGroupable="True" />
+
+                </telerik:RadGridView.Columns>
+
+            </telerik:RadGridView>
+
+
+
+        </StackPanel>
+
+    </Grid>
+</Page>

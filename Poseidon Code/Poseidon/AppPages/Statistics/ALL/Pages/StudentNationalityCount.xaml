@@ -1,0 +1,85 @@
+﻿<Page x:Class="Poseidon.AppPages.Statistics.ALL.Pages.StudentNationalityCount"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:telerikControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1200"
+	Title="StudentNationalityCount">
+
+    <Grid>
+
+        <StackPanel Name="panelMain" Orientation="Vertical" Margin="10,10,10,20">
+
+            <TextBlock Text="Κατανομή Σπουδαστών ανά Υπηκοότητα" FontSize="20" Foreground="Black" FontWeight="Bold" Margin="20" HorizontalAlignment="Center"/>
+            
+            <StackPanel Name="panelGaugeSet1" Orientation="Horizontal"  Margin="10,10, 10, 20">
+                <StackPanel Orientation="Vertical">
+                    <telerik:RadRadialGauge x:Name="radialGaugeGR" Width="280" Height="280" telerik:StyleManager.Theme="Windows8" Margin="20">
+                        <telerik:RadialScale x:Name="radialScaleGR">
+                            <telerik:RadialScale.Ranges>
+                                <telerik:GaugeRange
+                                Min="0" Max="100"
+                                StartWidth="0.010"
+                                EndWidth="0.010"
+                                Background="Gray"  
+                                IndicatorBackground="Gray"/>
+                            </telerik:RadialScale.Ranges>
+                                <telerik:RadialScale.Indicators>
+                                <telerik:Needle x:Name="needleGR" IsAnimated="True" Background="DarkGray"/>
+                                <telerik:Pinpoint Background="DarkGray"/>
+                            </telerik:RadialScale.Indicators>
+                        </telerik:RadialScale>
+                    </telerik:RadRadialGauge>
+                    <TextBlock Text="Πλήθος (%) Ελληνική" FontFamily="Segoe UI" FontSize="16" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#024667"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <telerik:RadRadialGauge x:Name="radialGaugeEU" Width="280" Height="280" telerik:StyleManager.Theme="Windows8" Margin="20">
+                        <telerik:RadialScale x:Name="radialScaleEU">
+                            <telerik:RadialScale.Ranges>
+                                <telerik:GaugeRange
+                                Min="0" Max="100"
+                                StartWidth="0.010"
+                                EndWidth="0.010"
+                                Background="Gray"  
+                                IndicatorBackground="Gray"/>
+                            </telerik:RadialScale.Ranges>
+
+                            <telerik:RadialScale.Indicators>
+                                <telerik:Needle x:Name="needleEU" IsAnimated="True" Background="DarkGray"/>
+                                <telerik:Pinpoint Background="DarkGray"/>
+                            </telerik:RadialScale.Indicators>
+                        </telerik:RadialScale>
+                    </telerik:RadRadialGauge>
+                    <TextBlock Text="Πλήθος (%) Ευρωπαϊκή Ένωση" FontFamily="Segoe UI" FontSize="16" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#024667"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <telerik:RadRadialGauge x:Name="radialGaugeOT" Width="280" Height="280" telerik:StyleManager.Theme="Windows8" Margin="20">
+                        <telerik:RadialScale x:Name="radialScaleOT">
+                            <telerik:RadialScale.Ranges>
+                                <telerik:GaugeRange
+                                Min="0" Max="100"
+                                StartWidth="0.010"
+                                EndWidth="0.010"
+                                Background="Gray"  
+                                IndicatorBackground="Gray"/>
+                            </telerik:RadialScale.Ranges>
+
+                            <telerik:RadialScale.Indicators>
+                                <telerik:Needle x:Name="needleOT" IsAnimated="True" Background="DarkGray"/>
+                                <telerik:Pinpoint Background="DarkGray"/>
+                            </telerik:RadialScale.Indicators>
+                        </telerik:RadialScale>
+                    </telerik:RadRadialGauge>
+                    <TextBlock Text="Πλήθος (%) Άλλη" FontFamily="Segoe UI" FontSize="16" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#024667"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+
+
+        </StackPanel>
+
+
+    </Grid>
+</Page>

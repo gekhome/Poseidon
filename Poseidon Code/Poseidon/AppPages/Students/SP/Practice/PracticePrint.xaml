@@ -1,0 +1,48 @@
+﻿<Page x:Class="Poseidon.AppPages.Students.SP.PracticePrint"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:tr="http://schemas.telerik.com/wpf"
+        xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+        Height="768" Width="1024"
+        Title="ΚΕΠ σπουδαστών Σχολής Πλοιάρχων">
+
+    <Grid>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="1" Margin="0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="6">
+                <!--<TextBlock Text="Κωδ. Απόφασης : " FontFamily="Segoe UI" FontWeight="Bold" FontSize="12" Foreground="Black" VerticalAlignment="Center"/>
+                <TextBlock Name="txtApofasiID" FontFamily="Segoe UI" FontWeight="Bold" FontSize="12" Foreground="Black" VerticalAlignment="Center" Margin="0,0,20,0"/>-->
+                <TextBlock Text="Θέμα:" Margin="6,6,6,6" FontWeight="Bold" FontSize="12" Foreground="Black" VerticalAlignment="Center"/>
+                <telerikInput:RadComboBox x:Name="ThemeSelector"
+                                    Width="120"
+                                    VerticalAlignment="Center"
+                                    SelectedIndex="0"
+                                    telerik:StyleManager.Theme="{Binding SelectedItem, ElementName=ThemeSelector}">
+                    <telerik:Windows8Theme />
+                    <telerik:Office_BlackTheme />
+                    <telerik:Office_BlueTheme />
+                    <telerik:Office_SilverTheme />
+                    <telerik:SummerTheme />
+                    <telerik:VistaTheme />
+                    <telerik:Windows7Theme />
+                    <telerik:Windows8TouchTheme />
+                    <telerik:TransparentTheme />
+                    <telerik:Expression_DarkTheme />
+                </telerikInput:RadComboBox>
+            </StackPanel>
+            <Border BorderBrush="White" CornerRadius="0" BorderThickness="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,8">
+
+                <tr:ReportViewer Width="900" Height="620" UseLayoutRounding="True"
+                                 x:Name="ReportViewer1"
+                                 Report="Poseidon.Reports.SP.PracticeSP, Poseidon"
+                                 telerik:StyleManager.Theme="{Binding SelectedItem, ElementName=ThemeSelector}">
+                </tr:ReportViewer>
+
+            </Border>
+        </StackPanel>
+
+
+    </Grid>
+</Page>

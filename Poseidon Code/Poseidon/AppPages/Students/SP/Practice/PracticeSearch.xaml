@@ -1,0 +1,72 @@
+﻿<Page x:Class="Poseidon.AppPages.Students.SP.PracticeSearch"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:my="clr-namespace:Poseidon.Controls"
+      xmlns:nav="clr-namespace:Poseidon.Shell.Navigation"
+      xmlns:local="clr-namespace:Poseidon.AppPages.Students"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1000" Background="Transparent"
+	  Title="Ευρετήριο ΚΕΠ σπουδαστών Σχολής Πλοιάρχων">
+
+    <Grid>
+
+        <Border BorderBrush="White" BorderThickness="2" HorizontalAlignment="Center" VerticalAlignment=" Center" Margin="0,0,0,8">
+            <Border.Effect>
+                <DropShadowEffect Color="GhostWhite" Opacity=".50" ShadowDepth="4" />
+            </Border.Effect>
+
+            <StackPanel Orientation="Vertical" >
+                <Border CornerRadius="0,0,0,0" Background="#1B58B8" Height="40">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Πίνακας ΚΕΠ Σπουδαστών ΣΠ" FontSize="16" FontFamily="Segoe UI"  Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,0"/>
+                        <telerik:RadButton Name="btnRefresh" Content="Ανανέωση" HorizontalAlignment="Right" Click="btnRefresh_Click" 
+                                           telerik:StyleManager.Theme="Windows8" Height="30" Width="80" Margin="60 0 0 0"/>
+                    </StackPanel>
+                </Border>
+
+                <telerik:RadGridView x:Name="dataGrid" telerik:StyleManager.Theme="Windows8" Height="540" Width="900"
+                                     CanUserInsertRows="False" CanUserDeleteRows="False" SelectionMode="Extended" DataLoadMode="Asynchronous"
+                                     ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"                                        
+                                     AutoGenerateColumns="False" ShowGroupPanel="True" AlternationCount="2" SelectionUnit="FullRow"  
+                                     ShowColumnFooters="True" IsReadOnly="True" 
+                                     >
+
+
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewToggleRowDetailsColumn />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding ΑΜΚΑ}" Header="Α.Μ.Κ.Α." IsGroupable="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction Caption="Πλήθος: " />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΟΝΟΜΑΤΕΠΩΝΥΜΟ}" Header="Ονοματεπώνυμο"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΣΧΟΛ_ΕΤΟΣ}" Header="Διδ. έτος" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ}" Header="Τμήμα"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΑΜΚΑ}" Header="ΑΜΚΑ" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΚΕΠ}" Header="ΚΕΠ" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΑΠΟ}" Header="Ημ/νια Έναρξης" DataFormatString="{} {0:dd/MM/yyyy}" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΕΩΣ}" Header="Ημ/νια Λήξης" DataFormatString="{} {0:dd/MM/yyyy}" />
+
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=DAYS}" Header="Ημέρες"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=MONTHS}" Header="Μήνες"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΑΠΟΤΕΛΕΣΜΑ}" Header="Αποτέλεσμα"/>
+
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΠΛΟΙΟ_ΟΝΟΜΑ}" Header="Όνομα Πλοίου"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΠΛΟΙΟ_ΝΗΟΛΟΓΙΟ}" Header="Νηολόγιο Πλοίου"/>
+
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΠΛΟΙΟ_ΚΑΤΗΓΟΡΙΑ}" Header="Κατηγορία Πλοίου"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΠΛΟΙΟ_ΥΠΟΚΑΤΗΓΟΡΙΑ}" Header="Υποκατηγορία Πλοίου"/>
+
+
+
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+            </StackPanel>
+        </Border>
+
+
+    </Grid>
+</Page>

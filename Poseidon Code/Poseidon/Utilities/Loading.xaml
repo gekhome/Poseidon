@@ -1,0 +1,29 @@
+﻿<Window x:Class="Poseidon.Utilities.Loading"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        Title="Loading" WindowStartupLocation="Manual" ShowInTaskbar="False"
+        WindowStyle="None" Background="Transparent" AllowsTransparency="True" 
+        Opacity="0.8" SizeToContent="WidthAndHeight" Loaded="Window_Loaded" >
+    
+    
+    <Border BorderBrush="Transparent" CornerRadius="4" BorderThickness="2">
+        <!--
+        <Border.Effect>
+            <DropShadowEffect Color="Transparent"
+                        Opacity=".50"
+                        ShadowDepth="6" />
+        </Border.Effect>
+        -->
+        <Grid>       
+        <StackPanel Orientation="Vertical" Background="Transparent">
+            <Label Content="Φόρτωση. Περιμένετε..." FontWeight="Heavy" FontFamily="Segoe UI" FontSize="14" HorizontalAlignment="Center" Foreground="White"/>
+            <telerik:RadProgressBar x:Name="progressBar" Margin="10" IsIndeterminate="True" telerik:StyleManager.Theme="Windows8Touch"  />
+        </StackPanel>       
+        <!-- this works but throws exception when user returns to main menu and loads another page
+        <telerik:RadBusyIndicator BusyContent="Φόρτωση δεδομένων ..." IsBusy="True" telerik:StyleManager.Theme="Metro" IsIndeterminate="True" />
+        -->
+    </Grid>
+    </Border>
+    
+</Window>

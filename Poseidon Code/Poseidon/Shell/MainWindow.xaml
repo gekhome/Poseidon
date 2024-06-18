@@ -1,0 +1,20 @@
+﻿<Window x:Class="Poseidon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:tr="http://schemas.telerik.com/wpf"
+        Title="Poseidon - Διαχείριση Φυσικού Αντικειμένου ΑΕΝ" Height="700" Width="1000"
+        MinWidth="965" MinHeight="700"
+        WindowStyle="SingleBorderWindow" 
+        WindowState="Maximized" 
+        WindowStartupLocation="CenterScreen"
+        Icon="/Poseidon;component/poseidon_ white.ico">
+
+    <Grid>
+        <Frame 
+            Background="{x:Null}" 
+			HorizontalContentAlignment="Stretch"
+            VerticalContentAlignment="Stretch"
+		    Margin="0,0,0,0" 
+		    Source="LoginPage.xaml" />
+    </Grid>
+</Window>

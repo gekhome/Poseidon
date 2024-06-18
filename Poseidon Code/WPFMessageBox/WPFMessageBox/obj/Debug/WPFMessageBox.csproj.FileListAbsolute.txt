@@ -1,0 +1,569 @@
+F:\GEK\WPF GEK\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+F:\GEK\WPF GEK\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+F:\GEK\WPF GEK\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+F:\GEK\WPF GEK\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+F:\GEK\WPF GEK\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\GEK\WPF GEK\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+F:\GEK\WPF GEK\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+F:\GEK\WPF GEK\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+F:\GEK\WPF GEK\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+F:\GEK\WPF GEK\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+F:\GEK\WPF GEK\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+F:\GEK\WPF GEK\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+F:\GEK\WPF GEK\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+F:\GEK\WPF GEK\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+F:\GEK\WPF GEK\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+E:\WPF GEK\Projects\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+E:\WPF GEK\Projects\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+E:\WPF GEK\Projects\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+E:\WPF GEK\Projects\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+E:\WPF GEK\Projects\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\WPF GEK\Projects\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+E:\WPF GEK\Projects\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+E:\WPF GEK\Projects\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+E:\WPF GEK\Projects\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+E:\WPF GEK\Projects\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+E:\WPF GEK\Projects\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+E:\WPF GEK\Projects\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+E:\WPF GEK\Projects\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+E:\WPF GEK\Projects\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+E:\WPF GEK\Projects\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+E:\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+E:\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+E:\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+E:\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+E:\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+E:\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+E:\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+E:\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+E:\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+E:\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+E:\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+E:\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+E:\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+E:\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+F:\GEK\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+F:\GEK\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+F:\GEK\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+F:\GEK\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+F:\GEK\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\GEK\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+F:\GEK\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+F:\GEK\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+F:\GEK\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+F:\GEK\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+F:\GEK\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+F:\GEK\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+F:\GEK\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+F:\GEK\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+F:\GEK\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+E:\GEK USB\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+E:\GEK USB\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+E:\GEK USB\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+E:\GEK USB\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+E:\GEK USB\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\GEK USB\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+E:\GEK USB\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+E:\GEK USB\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+E:\GEK USB\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+E:\GEK USB\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+E:\GEK USB\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+E:\GEK USB\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+E:\GEK USB\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+E:\GEK USB\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+E:\GEK USB\WPF GEK\Projects\Prototypes\Prototype\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+E:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+E:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+E:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+E:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+E:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+E:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+E:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+E:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+E:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+E:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+E:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+E:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+E:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+E:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+F:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+F:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+F:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+F:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+F:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+F:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+F:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+F:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+F:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+F:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+F:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+F:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+F:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+F:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+I:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+I:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+I:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+I:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+I:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+I:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+I:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+I:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+I:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+I:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+I:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+I:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+I:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+I:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+I:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+J:\Thetis2\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+J:\Thetis2\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+J:\Thetis2\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+J:\Thetis2\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+J:\Thetis2\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+J:\Thetis2\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+J:\Thetis2\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+J:\Thetis2\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+J:\Thetis2\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+J:\Thetis2\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+J:\Thetis2\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+J:\Thetis2\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+J:\Thetis2\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+J:\Thetis2\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+J:\Thetis2\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+H:\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+H:\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+H:\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+H:\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+H:\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+H:\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+H:\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+H:\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+H:\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+H:\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+H:\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+H:\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+H:\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+H:\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+H:\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+H:\Thetis-Working\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+H:\Thetis-Working\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+H:\Thetis-Working\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+H:\Thetis-Working\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+H:\Thetis-Working\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+H:\Thetis-Working\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+H:\Thetis-Working\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+H:\Thetis-Working\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+H:\Thetis-Working\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+H:\Thetis-Working\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+H:\Thetis-Working\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+H:\Thetis-Working\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+H:\Thetis-Working\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+H:\Thetis-Working\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+H:\Thetis-Working\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+C:\Users\gek\Desktop\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+C:\Users\gek\Desktop\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+C:\Users\gek\Desktop\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\gek\Desktop\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+C:\Users\gek\Desktop\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\gek\Desktop\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+C:\Users\gek\Desktop\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+C:\Users\gek\Desktop\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+C:\Users\gek\Desktop\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+C:\Users\gek\Desktop\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+C:\Users\gek\Desktop\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+C:\Users\gek\Desktop\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\gek\Desktop\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\gek\Desktop\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+C:\Users\gek\Desktop\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+E:\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+E:\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+E:\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+E:\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+E:\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+E:\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+E:\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+E:\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+E:\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+E:\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+E:\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+E:\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+E:\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+E:\WPF GEK\Projects\Prototypes\Thetis-Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+C:\Users\gek\Desktop\Thetis_egk\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+C:\Users\gek\Desktop\Thetis_egk\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+C:\Users\gek\Desktop\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\gek\Desktop\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+C:\Users\gek\Desktop\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\gek\Desktop\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+C:\Users\gek\Desktop\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+C:\Users\gek\Desktop\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+C:\Users\gek\Desktop\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+C:\Users\gek\Desktop\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+C:\Users\gek\Desktop\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+C:\Users\gek\Desktop\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\gek\Desktop\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\gek\Desktop\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+C:\Users\gek\Desktop\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+E:\WPF GEK\Projects\Prototypes\Thetis_egk\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+E:\WPF GEK\Projects\Prototypes\Thetis_egk\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+E:\WPF GEK\Projects\Prototypes\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+E:\WPF GEK\Projects\Prototypes\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+E:\WPF GEK\Projects\Prototypes\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\WPF GEK\Projects\Prototypes\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+E:\WPF GEK\Projects\Prototypes\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+E:\WPF GEK\Projects\Prototypes\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+E:\WPF GEK\Projects\Prototypes\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+E:\WPF GEK\Projects\Prototypes\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+E:\WPF GEK\Projects\Prototypes\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+E:\WPF GEK\Projects\Prototypes\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+E:\WPF GEK\Projects\Prototypes\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+E:\WPF GEK\Projects\Prototypes\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+E:\WPF GEK\Projects\Prototypes\Thetis_egk\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+C:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+C:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+C:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+C:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+C:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+C:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+C:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+C:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+C:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+C:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+C:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+C:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+C:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+C:\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+F:\GEKDEV\WPF GEK\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+F:\GEKDEV\WPF GEK\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+F:\GEKDEV\WPF GEK\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+F:\GEKDEV\WPF GEK\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+F:\GEKDEV\WPF GEK\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\GEKDEV\WPF GEK\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+F:\GEKDEV\WPF GEK\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+F:\GEKDEV\WPF GEK\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+F:\GEKDEV\WPF GEK\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+F:\GEKDEV\WPF GEK\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+F:\GEKDEV\WPF GEK\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+F:\GEKDEV\WPF GEK\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+F:\GEKDEV\WPF GEK\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+F:\GEKDEV\WPF GEK\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+F:\GEKDEV\WPF GEK\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+C:\WPF\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+C:\WPF\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+C:\WPF\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+C:\WPF\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+C:\WPF\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\WPF\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+C:\WPF\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+C:\WPF\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+C:\WPF\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+C:\WPF\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+C:\WPF\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+C:\WPF\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+C:\WPF\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+C:\WPF\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+C:\WPF\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+C:\THETIS\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+C:\THETIS\Thetis\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+C:\THETIS\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+C:\THETIS\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+C:\THETIS\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\THETIS\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+C:\THETIS\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+C:\THETIS\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+C:\THETIS\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+C:\THETIS\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+C:\THETIS\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+C:\THETIS\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+C:\THETIS\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+C:\THETIS\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+C:\THETIS\Thetis\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+C:\THETIS\Thetis_Test\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+C:\THETIS\Thetis_Test\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+C:\THETIS\Thetis_Test\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+C:\THETIS\Thetis_Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+C:\THETIS\Thetis_Test\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\THETIS\Thetis_Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+C:\THETIS\Thetis_Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+C:\THETIS\Thetis_Test\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+C:\THETIS\Thetis_Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+C:\THETIS\Thetis_Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+C:\THETIS\Thetis_Test\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+C:\THETIS\Thetis_Test\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+C:\THETIS\Thetis_Test\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+C:\THETIS\Thetis_Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+C:\THETIS\Thetis_Test\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+C:\PROTEUS\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+C:\PROTEUS\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+C:\PROTEUS\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+C:\PROTEUS\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+C:\PROTEUS\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\PROTEUS\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+C:\PROTEUS\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+C:\PROTEUS\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+C:\PROTEUS\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+C:\PROTEUS\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+C:\PROTEUS\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+C:\PROTEUS\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+C:\PROTEUS\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+C:\PROTEUS\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+C:\PROTEUS\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+C:\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+C:\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+C:\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+C:\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+C:\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+C:\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+C:\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+C:\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+C:\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+C:\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+C:\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+C:\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+C:\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+C:\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+C:\WPF Projects Telerik 2012\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+C:\WPF Projects Telerik 2012\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+C:\WPF Projects Telerik 2012\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+C:\WPF Projects Telerik 2012\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+C:\WPF Projects Telerik 2012\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\WPF Projects Telerik 2012\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+C:\WPF Projects Telerik 2012\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+C:\WPF Projects Telerik 2012\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+C:\WPF Projects Telerik 2012\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+C:\WPF Projects Telerik 2012\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+C:\WPF Projects Telerik 2012\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+C:\WPF Projects Telerik 2012\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+C:\WPF Projects Telerik 2012\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+C:\WPF Projects Telerik 2012\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+C:\WPF Projects Telerik 2012\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+C:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+C:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+C:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\ResolveAssemblyReference.cache
+C:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+C:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+C:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+C:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+C:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+C:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+C:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+C:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.read.1.tlog
+C:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\GenerateResource.write.1.tlog
+C:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+C:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+E:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+E:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+E:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+E:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+E:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+E:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+E:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+E:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+E:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+E:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csproj.GenerateResource.Cache
+E:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+E:\WPF Projects Telerik 2013\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+C:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+C:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+C:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+C:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+C:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+C:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+C:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+C:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+C:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+C:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+C:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+E:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+E:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+E:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+E:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+E:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+E:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+E:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+E:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+E:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+E:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csproj.GenerateResource.Cache
+E:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+E:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+C:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csproj.GenerateResource.Cache
+C:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csprojResolveAssemblyReference.cache
+E:\WPF Projects\PROTEUS\Proteus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csprojResolveAssemblyReference.cache
+E:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+E:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+E:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+E:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+E:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+E:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+E:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+E:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+E:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+E:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csproj.GenerateResource.Cache
+E:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+E:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+C:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+C:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+C:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+C:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+C:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+C:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+C:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+C:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+C:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+C:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csproj.GenerateResource.Cache
+C:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+C:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+C:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csprojResolveAssemblyReference.cache
+E:\WPF Projects\PEGASUS\Pegasus Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csprojResolveAssemblyReference.cache
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csproj.GenerateResource.Cache
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csproj.GenerateResource.Cache
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csproj.GenerateResource.Cache
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csproj.GenerateResource.Cache
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csprojResolveAssemblyReference.cache
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csprojResolveAssemblyReference.cache
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csproj.GenerateResource.Cache
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csprojResolveAssemblyReference.cache
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csprojResolveAssemblyReference.cache
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csproj.GenerateResource.Cache
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csprojResolveAssemblyReference.cache
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csproj.GenerateResource.Cache
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.dll
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\bin\Debug\WPFMessageBox.pdb
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csprojResolveAssemblyReference.cache
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.g.cs
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.cache
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox_MarkupCompile.lref
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\Themes\Generic.baml
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBoxWindow.baml
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.g.resources
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\MessageBoxUtils.Properties.Resources.resources
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.csproj.GenerateResource.Cache
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.dll
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WPFMessageBox\WPFMessageBox\obj\Debug\WPFMessageBox.pdb

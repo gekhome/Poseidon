@@ -1,0 +1,30 @@
+E:\Development\Thetis\Thetis\WPFMessageBox\WPFMessageBox\bin\Release\WPFMessageBox.dll
+E:\Development\Thetis\Thetis\WPFMessageBox\WPFMessageBox\bin\Release\WPFMessageBox.pdb
+E:\Development\Thetis\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\ResolveAssemblyReference.cache
+E:\Development\Thetis\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\WPFMessageBoxWindow.g.cs
+E:\Development\Thetis\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\GeneratedInternalTypeHelper.g.cs
+E:\Development\Thetis\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\WPFMessageBox_MarkupCompile.cache
+E:\Development\Thetis\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\WPFMessageBox_MarkupCompile.lref
+E:\Development\Thetis\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\Themes\Generic.baml
+E:\Development\Thetis\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\WPFMessageBoxWindow.baml
+E:\Development\Thetis\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\WPFMessageBox.g.resources
+E:\Development\Thetis\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\MessageBoxUtils.Properties.Resources.resources
+E:\Development\Thetis\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\GenerateResource.read.1.tlog
+E:\Development\Thetis\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\GenerateResource.write.1.tlog
+E:\Development\Thetis\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\WPFMessageBox.dll
+E:\Development\Thetis\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\WPFMessageBox.pdb
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\bin\Release\WPFMessageBox.dll
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\bin\Release\WPFMessageBox.pdb
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\ResolveAssemblyReference.cache
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\WPFMessageBoxWindow.g.cs
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\GeneratedInternalTypeHelper.g.cs
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\WPFMessageBox_MarkupCompile.cache
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\WPFMessageBox_MarkupCompile.lref
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\Themes\Generic.baml
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\WPFMessageBoxWindow.baml
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\WPFMessageBox.g.resources
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\MessageBoxUtils.Properties.Resources.resources
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\GenerateResource.read.1.tlog
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\GenerateResource.write.1.tlog
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\WPFMessageBox.dll
+E:\GEKDEV\WPF GEK\Projects\Prototypes\Thetis\WPFMessageBox\WPFMessageBox\obj\Release\WPFMessageBox.pdb

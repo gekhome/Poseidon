@@ -1,0 +1,206 @@
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.dll
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.pdb
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.dll
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.xml
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\de\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\en\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\es\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\it\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\WpfFrameNavigation.csprojResolveAssemblyReference.cache
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.dll
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.pdb
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.dll
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.pdb
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.dll
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.xml
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\de\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\en\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\es\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\it\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.dll
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.pdb
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.dll
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.pdb
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.dll
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.xml
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.dll
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.pdb
+C:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\WpfFrameNavigation.csprojResolveAssemblyReference.cache
+E:\WPF Projects\PROTEUS\Proteus Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\WpfFrameNavigation.csprojResolveAssemblyReference.cache
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.dll
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.pdb
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.dll
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.xml
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\de\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\en\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\es\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\it\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.dll
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.pdb
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.dll
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.pdb
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.dll
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.xml
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.dll
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.pdb
+C:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\WpfFrameNavigation.csprojResolveAssemblyReference.cache
+E:\WPF Projects\PEGASUS\Pegasus Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\WpfFrameNavigation.csprojResolveAssemblyReference.cache
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.pdb
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.xml
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\de\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\en\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\es\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\it\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.pdb
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.dll
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.pdb
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.dll
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.xml
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\de\System.Windows.Interactivity.resources.dll
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\en\System.Windows.Interactivity.resources.dll
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\es\System.Windows.Interactivity.resources.dll
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\it\System.Windows.Interactivity.resources.dll
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.dll
+D:\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.pdb
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.dll
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.pdb
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.dll
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.xml
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\de\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\en\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\es\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\it\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.dll
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.pdb
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.dll
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.pdb
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.dll
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.xml
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\de\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\en\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\es\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\it\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.dll
+E:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.pdb
+D:\MYTHWARE FOLDER\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\WpfFrameNavigation.csprojResolveAssemblyReference.cache
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.dll
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.pdb
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.dll
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.xml
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\de\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\en\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\es\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\it\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\WpfFrameNavigation.csprojResolveAssemblyReference.cache
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.dll
+D:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.pdb
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\WpfFrameNavigation.csprojResolveAssemblyReference.cache
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.dll
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.pdb
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.dll
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.xml
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\de\System.Windows.Interactivity.resources.dll
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\en\System.Windows.Interactivity.resources.dll
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\es\System.Windows.Interactivity.resources.dll
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\it\System.Windows.Interactivity.resources.dll
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\WpfFrameNavigation.csprojResolveAssemblyReference.cache
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.dll
+D:\AEN\AEN POSEIDON\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.pdb
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.dll
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.pdb
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.dll
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.xml
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\WpfFrameNavigation.csprojResolveAssemblyReference.cache
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.dll
+C:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.pdb
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.dll
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\FrameNavigationWPF.pdb
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.dll
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\System.Windows.Interactivity.xml
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\de\System.Windows.Interactivity.resources.dll
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\en\System.Windows.Interactivity.resources.dll
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\es\System.Windows.Interactivity.resources.dll
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\it\System.Windows.Interactivity.resources.dll
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\WpfFrameNavigation.csprojResolveAssemblyReference.cache
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.dll
+E:\PROJECTS WPF\POSEIDON\Poseidon Code\WpfFrameNavigation\WpfFrameNavigation\obj\Debug\FrameNavigationWPF.pdb

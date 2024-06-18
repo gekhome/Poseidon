@@ -1,0 +1,142 @@
+﻿<Page x:Class="Poseidon.AppPages.Students.Documents"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+	Title="Documents">
+
+    
+    <Grid>
+
+        <telerik:RadTileView telerik:StyleManager.Theme="Windows8Touch" IsItemDraggingEnabled="True">
+
+            <telerik:RadTileViewItem Name="tile01" Header="Υ.Δ. 1599" TileStateChanged="tile01_TileStateChanged">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Image Source="/Poseidon;component/Shell/Images/Metro/Documents.png" Width="64" Height="64" Margin="0 10 0 10"/>
+                    <TextBlock Name="txtTitle01" Text="Υπεύθυνη Δήλωση" FontSize="14" Foreground="Black" TextWrapping="Wrap"/>
+                    <telerik:RadButton Name="btn01" Click="btn01_Click" Content="Άνοιγμα εντύπου" telerik:StyleManager.Theme="Windows8Touch" 
+                                       Visibility="Collapsed" Margin="0 20 0 0" 
+                                       FontSize="24" Width="260" Height="52" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </StackPanel>
+            </telerik:RadTileViewItem>
+
+            <telerik:RadTileViewItem Name="tile02" Header="Κατάλογος" TileStateChanged="tile02_TileStateChanged">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Image Source="/Poseidon;component/Shell/Images/Metro/Documents.png" Width="64" Height="64" Margin="0 10 0 10"/>
+                    <TextBlock Name="txtTitle02" Text="Κατάλογος σπουδαστών" FontSize="14" Foreground="Black" TextWrapping="Wrap" />
+                    <telerik:RadButton Name="btn02" Click="btn02_Click" Content="Άνοιγμα εντύπου" telerik:StyleManager.Theme="Windows8Touch" 
+                                       Visibility="Collapsed" Margin="0 20 0 0" 
+                                       FontSize="24" Width="260" Height="52" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </telerik:RadTileViewItem>
+
+            <telerik:RadTileViewItem Name="tile03" Header="Αιτήσεις Βεβ.Πιστ." TileStateChanged="tile03_TileStateChanged">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Image Source="/Poseidon;component/Shell/Images/Metro/Documents.png" Width="64" Height="64" Margin="0 10 0 10"/>
+                    <TextBlock Name="txtTitle03" Text="Αιτήσεις Βεβ./Πιστοπ." FontSize="14" Foreground="Black" TextWrapping="Wrap"/>
+                    <telerik:RadButton Name="btn03" Click="btn03_Click" Content="Άνοιγμα εντύπου" telerik:StyleManager.Theme="Windows8Touch" 
+                                       Visibility="Collapsed" Margin="0 20 0 0" 
+                                       FontSize="24" Width="260" Height="52" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </telerik:RadTileViewItem>
+
+            <telerik:RadTileViewItem Name="tile04" Header="Αιτήσεις Εγγρ." TileStateChanged="tile04_TileStateChanged">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Image Source="/Poseidon;component/Shell/Images/Metro/Documents.png" Width="64" Height="64" Margin="0 10 0 10"/>
+                    <TextBlock Name="txtTitle04" Text="Αιτήσεις Εγγραφών" FontSize="14" Foreground="Black" TextWrapping="Wrap"/>
+                    <telerik:RadButton Name="btn04" Click="btn04_Click" Content="Άνοιγμα εντύπου" telerik:StyleManager.Theme="Windows8Touch" 
+                                       Visibility="Collapsed" Margin="0 20 0 0" 
+                                       FontSize="24" Width="260" Height="52" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </telerik:RadTileViewItem>
+
+            <telerik:RadTileViewItem Name="tile05" Header="Αιτήσεις Π.Ε." TileStateChanged="tile05_TileStateChanged">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Image Source="/Poseidon;component/Shell/Images/Metro/Documents.png" Width="64" Height="64" Margin="0 10 0 10"/>
+                    <TextBlock Name="txtTitle05" Text="Αιτήσεις κατάθ. Π.Ε." FontSize="14" Foreground="Black" TextWrapping="Wrap"/>
+                    <telerik:RadButton Name="btn05" Click="btn05_Click" Content="Άνοιγμα εντύπου" telerik:StyleManager.Theme="Windows8Touch" 
+                                       Visibility="Collapsed" Margin="0 20 0 0" 
+                                       FontSize="24" Width="260" Height="52" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </telerik:RadTileViewItem>
+
+            <telerik:RadTileViewItem Name="tile06" Header="ΑΙτήσεις κ.π. Κ.Ε." TileStateChanged="tile06_TileStateChanged">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Image Source="/Poseidon;component/Shell/Images/Metro/Documents.png" Width="64" Height="64" Margin="0 10 0 10"/>
+                    <TextBlock Name="txtTitle06" Text="Αιτήσεις κατά παρέκκλιση ΚΕ" FontSize="14" Foreground="Black" TextWrapping="Wrap"/>
+                    <telerik:RadButton Name="btn06" Click="btn06_Click" Content="Άνοιγμα εντύπου" telerik:StyleManager.Theme="Windows8Touch" 
+                                       Visibility="Collapsed" Margin="0 20 0 0" 
+                                       FontSize="24" Width="260" Height="52" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </telerik:RadTileViewItem>
+
+            <telerik:RadTileViewItem Name="tile07" Header="Συγκ.Βαθμ. ΣΜ" TileStateChanged="tile07_TileStateChanged">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Image Source="/Poseidon;component/Shell/Images/Metro/Documents.png" Width="64" Height="64" Margin="0 10 0 10"/>
+                    <TextBlock Name="txtTitle07" Text="Συγκεντρωτική Βαθμ. ΣΜ" FontSize="14" Foreground="Black" TextWrapping="Wrap"/>
+                    <telerik:RadButton Name="btn07" Click="btn07_Click" Content="Άνοιγμα εντύπου" telerik:StyleManager.Theme="Windows8Touch" 
+                                       Visibility="Collapsed" Margin="0 20 0 0" 
+                                       FontSize="24" Width="260" Height="52" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </telerik:RadTileViewItem>
+
+            <telerik:RadTileViewItem Name="tile08" Header="Συγκ.Βαθμ. ΣΠ" TileStateChanged="tile08_TileStateChanged">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Image Source="/Poseidon;component/Shell/Images/Metro/Documents.png" Width="64" Height="64" Margin="0 10 0 10"/>
+                    <TextBlock Name="txtTitle08" Text="Συγκεντρωτική Βαθμ. ΣΠ" FontSize="14" Foreground="Black" TextWrapping="Wrap"/>
+                    <telerik:RadButton Name="btn08" Click="btn08_Click" Content="Άνοιγμα εντύπου" telerik:StyleManager.Theme="Windows8Touch" 
+                                       Visibility="Collapsed" Margin="0 20 0 0" 
+                                       FontSize="24" Width="260" Height="52" HorizontalAlignment="Center" VerticalAlignment="Center"/>                                 
+                </StackPanel>
+            </telerik:RadTileViewItem>
+
+            <telerik:RadTileViewItem Name="tile09" Header="Πιστ.Αποφ. ΣΜ" TileStateChanged="tile09_TileStateChanged">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Image Source="/Poseidon;component/Shell/Images/Metro/Documents.png" Width="64" Height="64" Margin="0 10 0 10"/>
+                    <TextBlock Name="txtTitle09" Text="Πιστοποιητικό Αποφ. ΣΜ" FontSize="14" Foreground="Black" TextWrapping="Wrap"/>
+                    <telerik:RadButton Name="btn09" Click="btn09_Click" Content="Άνοιγμα εντύπου" telerik:StyleManager.Theme="Windows8Touch" 
+                                       Visibility="Collapsed" Margin="0 20 0 0" 
+                                       FontSize="24" Width="260" Height="52" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </telerik:RadTileViewItem>
+
+            <telerik:RadTileViewItem Name="tile10" Header="Πιστ.Αποφ. ΣΠ" TileStateChanged="tile10_TileStateChanged">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Image Source="/Poseidon;component/Shell/Images/Metro/Documents.png" Width="64" Height="64" Margin="0 10 0 10"/>
+                    <TextBlock Name="txtTitle10" Text="Πιστοποιητικό Αποφ. ΣΠ" FontSize="14" Foreground="Black" TextWrapping="Wrap"/>
+                    <telerik:RadButton Name="btn10" Click="btn10_Click" Content="Άνοιγμα εντύπου" telerik:StyleManager.Theme="Windows8Touch" 
+                                       Visibility="Collapsed" Margin="0 20 0 0" 
+                                       FontSize="24" Width="260" Height="52" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </telerik:RadTileViewItem>
+
+            <telerik:RadTileViewItem Name="tile11" Header="Πιστ.Σπουδών ΣΠ" TileStateChanged="tile11_TileStateChanged">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Image Source="/Poseidon;component/Shell/Images/Metro/Documents.png" Width="64" Height="64" Margin="0 10 0 10"/>
+                    <TextBlock Name="txtTitle11" Text="Πιστοποιητικό Σπουδών ΣΠ" FontSize="14" Foreground="Black" TextWrapping="Wrap"/>
+                    <telerik:RadButton Name="btn11" Click="btn11_Click" Content="Άνοιγμα εντύπου" telerik:StyleManager.Theme="Windows8Touch" 
+                                       Visibility="Collapsed" Margin="0 20 0 0" 
+                                       FontSize="24" Width="260" Height="52" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </telerik:RadTileViewItem>
+
+            <telerik:RadTileViewItem Name="tile12" Header="Πιστ.Σπουδών ΣΜ" TileStateChanged="tile12_TileStateChanged">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Image Source="/Poseidon;component/Shell/Images/Metro/Documents.png" Width="64" Height="64" Margin="0 10 0 10"/>
+                    <TextBlock Name="txtTitle12" Text="Πιστοποιητικό Σπουδών ΣΜ" FontSize="14" Foreground="Black" TextWrapping="Wrap"/>
+                    <telerik:RadButton Name="btn12" Click="btn12_Click" Content="Άνοιγμα εντύπου" telerik:StyleManager.Theme="Windows8Touch" 
+                                       Visibility="Collapsed" Margin="0 20 0 0" 
+                                       FontSize="24" Width="260" Height="52" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </telerik:RadTileViewItem>
+
+
+        </telerik:RadTileView>
+
+
+    </Grid>
+    
+</Page>

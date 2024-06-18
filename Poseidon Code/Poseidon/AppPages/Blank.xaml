@@ -1,0 +1,37 @@
+﻿<Page x:Class="Poseidon.AppPages.Blank"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:my="clr-namespace:Poseidon.Controls"
+      mc:Ignorable="d"
+      d:DesignHeight="600" d:DesignWidth="800"
+	Title="Κενή σελίδα">
+
+    <Page.Background>
+        <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+            <GradientStop Color="#006AC1" Offset="0" />
+            <GradientStop Color="#006AC1" Offset="1" />
+        </LinearGradientBrush>
+    </Page.Background>
+
+
+    <Grid>
+        <my:NavPage/>
+        <my:xClock HorizontalAlignment="Right" VerticalAlignment="Top" Width="104" Height="92"/>
+        <StackPanel  Orientation="Vertical">
+
+            <TextBlock Foreground="White" Text ="Κενή σελίδα" FontFamily="Segoe UI" FontSize="28" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Top" MinHeight="50"/>
+            <Border BorderBrush="White" BorderThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="700" Height="400" Margin="0,60">
+
+                <TextBlock Text="Προς υλοποίηση" FontFamily="Segoe UI" FontSize="40" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            </Border>
+
+        </StackPanel>
+
+    </Grid>
+
+
+</Page>

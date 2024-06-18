@@ -1,0 +1,46 @@
+﻿<Page x:Class="Poseidon.AppPages.Programme.SP.ParousiesBook"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:tr="http://schemas.telerik.com/wpf"
+        xmlns:tk="clr-namespace:Telerik.ReportViewer.Wpf;assembly=Telerik.ReportViewer.Wpf"
+        xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+        Title="Βιβλίο Παρουσιών Εκπ. Σχολής Μηχανικών" Height="600" Width="800">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="1" Margin="0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="6">
+                <TextBlock Text="Θέμα:" Margin="6,6,6,6" FontWeight="Bold" FontSize="12" Foreground="Black" VerticalAlignment="Center"/>
+                <telerikInput:RadComboBox x:Name="ThemeSelector"
+                                    Width="120"
+                                    VerticalAlignment="Center"
+                                    SelectedIndex="0"
+                                    telerik:StyleManager.Theme="{Binding SelectedItem, ElementName=ThemeSelector}">
+                    <telerik:Windows8Theme />
+                    <telerik:Office_BlackTheme />
+                    <telerik:Office_BlueTheme />
+                    <telerik:Office_SilverTheme />
+                    <telerik:SummerTheme />
+                    <telerik:VistaTheme />
+                    <telerik:Windows7Theme />
+                    <telerik:Windows8TouchTheme />
+                    <telerik:TransparentTheme />
+                    <telerik:Expression_DarkTheme />
+                </telerikInput:RadComboBox>
+            </StackPanel>
+            <Border BorderBrush="White" CornerRadius="4" BorderThickness="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,8">
+                <Border.Effect>
+                    <DropShadowEffect Color="GhostWhite" Opacity=".50" ShadowDepth="4" />
+                </Border.Effect>
+
+                <tk:ReportViewer MinWidth="620" Height="500" UseLayoutRounding="True"
+                                 x:Name="ReportViewer1"
+                                 Report="Poseidon.Reports.SP.TeacherBook, Poseidon"
+                                 telerik:StyleManager.Theme="{Binding SelectedItem, ElementName=ThemeSelector}">
+                </tk:ReportViewer>
+
+            </Border>
+        </StackPanel>
+
+    </Grid>
+</Page>

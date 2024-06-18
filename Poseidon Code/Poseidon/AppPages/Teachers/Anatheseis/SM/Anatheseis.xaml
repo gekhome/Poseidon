@@ -1,0 +1,141 @@
+﻿<Page x:Class="Poseidon.AppPages.Teachers.Anatheseis.SM.Anatheseis"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:telerikControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+      xmlns:my="clr-namespace:Poseidon.Controls"
+      xmlns:nav="clr-namespace:Poseidon.Shell.Navigation"
+      xmlns:local="clr-namespace:Poseidon.AppPages.Teachers.Anatheseis.SM"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1000"
+	Title="Αναθέσεις Εκπαιδευτικών ΣΜ">
+
+
+    <Page.Background>
+        <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+            <GradientStop Color="WhiteSmoke" Offset="0" />
+            <GradientStop Color="WhiteSmoke" Offset="1" />
+        </LinearGradientBrush>
+    </Page.Background>
+
+    <Page.Resources>
+        <DataTemplate x:Key="FormTemplate">
+            <local:AnathesiForm />
+        </DataTemplate>
+        <DataTemplate x:Key="FormReadOnlyTemplate">
+            <local:AnathesiFormRO />
+        </DataTemplate>
+    </Page.Resources>
+
+
+    <Grid>
+
+        <DockPanel LastChildFill="True">
+
+            <Expander Foreground="Black" BorderThickness="2" BorderBrush="White" HorizontalAlignment="Left" ExpandDirection="Right" Padding="4" IsExpanded="True">
+                <Expander.Header>
+                    <TextBlock Text="Εκπαιδευτικοί, Διδακτικά έτη"
+                           FontSize="14"
+                           Foreground="Black"
+                           FontWeight="Bold">
+                        <TextBlock.LayoutTransform>
+                            <RotateTransform Angle="90" />
+                        </TextBlock.LayoutTransform>
+                    </TextBlock>
+                </Expander.Header>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Margin="2,2" HorizontalAlignment="Right" >
+                        <Label Content="Εύρεση..." Foreground="Black"/>
+                        <TextBox MinWidth="240" Height="22" Background="White" Name="txtSearch" KeyDown="txtSearch_KeyDown" ToolTip="Εύρεση με Επώνυμο ή ΑΦΜ" FontSize="12"/>
+                        <telerik:RadButton Name="btnFilterOn" Click="btnFilterOn_Click"  Margin="4,0,0,0" HorizontalAlignment="Right" ToolTip="Φίλτρο"
+                                   telerik:StyleManager.Theme="Windows8">
+                            <Image Source="/Poseidon;component/Shell/Images/Metro/filter-set.png" Width="20" Height="20" />
+                        </telerik:RadButton>
+                        <telerik:RadButton Name="btnFilterOff" Click="btnFilterOff_Click"  Margin="2,0,0,0"   HorizontalAlignment="Right" ToolTip="Διαγραφή φίλτρου"
+                                   telerik:StyleManager.Theme="Windows8">
+                            <Image Source="/Poseidon;component/Shell/Images/Metro/filter-del.png" Width="20" Height="20"/>
+                        </telerik:RadButton>
+                    </StackPanel>
+                    <telerik:RadGridView x:Name="teacherGrid" Height="400" MinWidth="300" IsReadOnly="True"
+                                     ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"                                     
+                                     AutoGenerateColumns="False" ShowGroupPanel="False" AlternationCount="2"  
+                                     SelectionChanged="teacherGrid_SelectionChanged" SelectionUnit="FullRow" 
+                                     Loaded="teacherGrid_Loaded" telerik:StyleManager.Theme="Windows8" >
+                        <telerik:RadGridView.Columns>
+
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΑΦΜ}" Header="Α.Φ.Μ." UniqueName="ΑΦΜ" IsReadOnly="False" />
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΕΠΩΝΥΜΟ}" Header="Επώνυμο" UniqueName="ΕΠΩΝΥΜΟ" IsReadOnly="False" />
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΟΝΟΜΑ}" Header="Όνομα" UniqueName="ΟΝΟΜΑ" IsReadOnly="False"/>
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+
+                    <TextBlock Text="Επιλογή Διδακτικού Έτους" FontFamily="Segoe UI" FontSize="14" Foreground="Black" Margin="2,10,0,5"  />
+                    <telerik:RadComboBox Name="cboSchoolYear" IsEnabled="True" SelectionChanged="cboSchoolYear_SelectionChanged" 
+                              SelectedValue="{Binding ΣΧΟΛ_ΕΤΟΣ_ΚΩΔ}" SelectedValuePath="ΣΧΟΛ_ΕΤΟΣ_ΚΩΔ" DisplayMemberPath="ΣΧΟΛ_ΕΤΟΣ" 
+                              Margin="2,10,0,10" ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="Διαγραφή επιλογής"
+                              telerik:StyleManager.Theme="Windows8"/>
+
+                </StackPanel>
+            </Expander>
+
+            <Border BorderBrush="White"  BorderThickness="2" CornerRadius="0" Background="Transparent" MinHeight="570" Margin="4,0,4,0">
+
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Margin="2,10,0,10">
+                        <TextBlock Text="Επιλεγμένος εκπαιδευτικός: " Foreground="Black" FontSize="14"></TextBlock>
+                        <TextBlock Name ="txtTeacherInfo" Foreground="Black" FontSize="14"></TextBlock>
+                    </StackPanel>
+
+                    <telerik:RadGridView x:Name="anathesiGrid" CanUserFreezeColumns="False" AutoGenerateColumns="False" ShowGroupPanel="False"
+                                     CanUserInsertRows="False" CanUserDeleteRows="False" MinHeight="120" ShowInsertRow="False" SelectionChanged="anathesiGrid_SelectionChanged"  
+                                     IsReadOnly="True" AlternationCount="2" Height="140"  
+                                     Margin="0,2,0,2" VerticalAlignment="Top" telerikControls:StyleManager.Theme="Windows8" Loaded="anathesiGrid_Loaded">
+
+                        <telerik:RadGridView.Columns>
+
+                            <telerik:GridViewComboBoxColumn Name="cboEidikotita" DataMemberBinding="{Binding ΕΙΔΙΚΟΤΗΤΑ}" Header="Ειδικότητα"
+                                                        SelectedValueMemberPath="ΕΙΔΙΚΟΤΗΤΑ_ΚΩΔ" DisplayMemberPath="ΕΙΔΙΚΟΤΗΤΑ"/>
+                            <telerik:GridViewComboBoxColumn Name="cboschoolyear" DataMemberBinding="{Binding ΣΧΟΛΙΚΟ_ΕΤΟΣ}" Header="Διδακτικό έτος"
+                                                        SelectedValueMemberPath="ΣΧΟΛ_ΕΤΟΣ_ΚΩΔ" DisplayMemberPath="ΣΧΟΛ_ΕΤΟΣ"/>
+                            <telerik:GridViewComboBoxColumn Name="cboterm" DataMemberBinding="{Binding ΕΞΑΜΗΝΟ}" Header="Εξάμηνο"
+                                                        SelectedValueMemberPath="ΕΞΑΜΗΝΟ_ΚΩΔ" DisplayMemberPath="ΕΞΑΜΗΝΟ"/>
+                            <telerik:GridViewComboBoxColumn Name="cboPost" DataMemberBinding="{Binding ΚΑΤΗΓΟΡΙΑ}" Header="Θέση"
+                                                        SelectedValueMemberPath="ΚΑΤΗΓΟΡΙΑ_ΚΩΔ" DisplayMemberPath="ΚΑΤΗΓΟΡΙΑ"/>
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding ΩΡΕΣ_ΕΒΔ}" Header="Ώρες/εβδ" />
+                            <telerik:GridViewComboBoxColumn Name="cboLesson" DataMemberBinding="{Binding ΜΑΘΗΜΑ}" Header="Μάθημα"
+                                                        SelectedValueMemberPath="ΚΩΔΙΚΟΣ" DisplayMemberPath="ΜΑΘΗΜΑ"/>
+
+                        </telerik:RadGridView.Columns>
+
+                    </telerik:RadGridView>
+
+                    <telerik:RadDataForm Name="anathesiForm" AutoGenerateFields="False" Header="Καρτέλα στοιχείων ανάθεσης" 
+                                     Height="360" Margin="0,0,0,0" AutoEdit="False"  
+                                     CancelButtonContent="Ακύρωση" CommitButtonContent="Αποθήκευση" CommandButtonsVisibility="All"
+                                     BeginningEdit="anathesiForm_BeginningEdit"
+                                     EditEnding="anathesiForm_EditEnding"
+                                     DeletingItem="anathesiForm_DeletingItem" 
+                                     AddingNewItem="anathesiForm_AddingNewItem"
+                                     ValidatingItem="anathesiForm_ValidatingItem"
+                                     ValidationSummaryVisibility="Visible"
+                                     ReadOnlyTemplate="{StaticResource FormReadOnlyTemplate}"
+                                     EditTemplate="{StaticResource FormTemplate}"
+                                     NewItemTemplate="{StaticResource FormTemplate}" telerik:StyleManager.Theme="Windows8" 
+                                     />
+                    <StackPanel Orientation="Horizontal" Margin="2,10,5,0" HorizontalAlignment="Left">
+                        <TextBlock Text="Τα πεδία με * είναι υποχρεωτικά." Foreground="Black" FontSize="12" Margin="0,0,100,0"/>
+                    </StackPanel>
+
+                </StackPanel>
+
+
+            </Border>
+
+        </DockPanel>
+
+
+    </Grid>
+    
+</Page>

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poseidon", "Poseidon\Poseidon.csproj", "{CD77A1E5-BE9A-4201-9518-6BE250E94ACC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfFrameNavigation", "WpfFrameNavigation\WpfFrameNavigation\WpfFrameNavigation.csproj", "{6A067AA9-A4F0-4F98-BD49-75796743D204}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFMessageBox", "WPFMessageBox\WPFMessageBox\WPFMessageBox.csproj", "{53F2D809-3E1A-422D-A507-ABCB407EBF29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD77A1E5-BE9A-4201-9518-6BE250E94ACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD77A1E5-BE9A-4201-9518-6BE250E94ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD77A1E5-BE9A-4201-9518-6BE250E94ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD77A1E5-BE9A-4201-9518-6BE250E94ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A067AA9-A4F0-4F98-BD49-75796743D204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A067AA9-A4F0-4F98-BD49-75796743D204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A067AA9-A4F0-4F98-BD49-75796743D204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A067AA9-A4F0-4F98-BD49-75796743D204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53F2D809-3E1A-422D-A507-ABCB407EBF29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F2D809-3E1A-422D-A507-ABCB407EBF29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F2D809-3E1A-422D-A507-ABCB407EBF29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F2D809-3E1A-422D-A507-ABCB407EBF29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

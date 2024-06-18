@@ -1,0 +1,56 @@
+﻿<Page x:Class="Poseidon.AppPages.Students.SM.Practice"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1000"
+	Title="ΚΕΠ - ΣΜ">
+
+    <Grid>
+
+        <StackPanel Orientation="Vertical">
+            <StackPanel Name="SelectionPanel" Orientation="Vertical">
+                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Left" Margin="10">
+                    <Label Content="Διδακτκό έτος:" Margin="4" FontSize="12" Foreground="DarkBlue" Width="120"/>
+                    <telerik:RadComboBox x:Name="cboSchoolYear" telerik:StyleManager.Theme="Windows8" Margin="4" Width="180"
+                                    SelectedValuePath="ΣΧΟΛ_ΕΤΟΣ_ΚΩΔ" DisplayMemberPath="ΣΧΟΛ_ΕΤΟΣ" SelectionChanged="cboSchoolYear_SelectionChanged"
+                                    ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="Διαγραφή επιλογής"/>
+                    <Label Content="Εκπαιδευτικό ταξίδι:" Margin="4" FontSize="12" Foreground="DarkBlue"/>
+                    <telerik:RadComboBox x:Name="cboTaxidi" telerik:StyleManager.Theme="Windows8" Margin="4" Width="400"
+                                    SelectedValuePath="ΚΕΠ_ΚΩΔ" DisplayMemberPath="ΚΕΠ" SelectionChanged="cboTaxidi_SelectionChanged"
+                                    ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="Διαγραφή επιλογής"/>
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal" Margin="4">
+                    <Label Content="Τμήμα:" Margin="4" FontSize="12" Foreground="DarkBlue" Width="125" Height="26"/>
+                    <telerik:RadComboBox x:Name="cboTmima" telerik:StyleManager.Theme="Windows8" Margin="4" Width="180"
+                                    SelectedValuePath="ΤΜΗΜΑ_ΚΩΔ" DisplayMemberPath="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" SelectionChanged="cboTmima_SelectionChanged"
+                                    ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="Διαγραφή επιλογής"/>
+
+                    <Label Content="Επιλογή σπουδαστή:" Foreground="Black" Width="125" Height="26" Margin="3"/>
+                    <telerik:RadComboBox x:Name="cboStudent" telerik:StyleManager.Theme="Windows8" Margin="3" Width="400"
+                                    SelectedValuePath="ΑΜΚΑ" DisplayMemberPath="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" SelectionChanged="cboStudent_SelectionChanged"
+                                    ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="Διαγραφή επιλογής"/>
+                </StackPanel>
+
+            
+            
+        </StackPanel>
+
+            <telerik:RadDataForm x:Name="DataForm" Header="Καρτέλα ΚΕΠ" Margin="10" 
+                                     BeginningEdit="DataForm_BeginningEdit" AutoGenerateFields="True" 
+                                     AutoGeneratingField="DataForm_AutoGeneratingField"
+                                     CancelButtonContent="Ακύρωση" CommitButtonContent="Αποθήκευση" 
+                                     ValidationSummaryVisibility="Visible"  AutoEdit="False" 
+                                     EditEnding="DataForm_EditEnding" 
+                                     ValidatingItem="DataForm_ValidatingItem"
+                                     DeletingItem="DataForm_DeletingItem" 
+                                     AddingNewItem="DataForm_AddingNewItem" 
+                                     telerik:StyleManager.Theme ="Windows8" />
+
+        </StackPanel>
+
+    </Grid>
+</Page>

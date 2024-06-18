@@ -1,0 +1,1468 @@
+﻿<UserControl x:Class="Poseidon.AppPages.Tools.Spreadsheet"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:spreadsheetControls="clr-namespace:Telerik.Windows.Controls.Spreadsheet.Controls;assembly=Telerik.Windows.Controls.Spreadsheet"
+             xmlns:spreadsheet="clr-namespace:Telerik.Windows.Controls.Spreadsheet;assembly=Telerik.Windows.Controls.Spreadsheet"
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="400"
+             Loaded="UserControl_Loaded" Unloaded="UserControl_Unloaded">
+
+    <UserControl.Resources>
+        <spreadsheetControls:BoolToVisibilityValueConverter x:Key="BoolToVisibilityValueConverter"/>
+    </UserControl.Resources>
+
+<Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <telerik:RadRibbonView Title="Υπολογιστικά Φύλλα"
+                               x:Name="ribbonView"
+                               DataContext="{Binding Path=CommandDescriptors, ElementName=radSpreadsheet}"
+                               HeaderBackground="LightGray"
+                               BackstageClippingElement="{Binding ElementName=LayoutRoot}" telerik:StyleManager.Theme="Windows8">
+
+            <telerik:RadRibbonView.Resources>
+                <spreadsheet:FunctionsProvider x:Key="FunctionsProvider" />
+            </telerik:RadRibbonView.Resources>
+
+            <telerik:RadRibbonView.QuickAccessToolBar>
+                <telerik:QuickAccessToolBar>
+                    <telerik:RadRibbonButton Text="Αποθήκευση"
+                                             telerik:IconManager.IconPropertyName="SmallImage"
+                                             telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/save.png"
+                                             Size="Small"
+                                             Command="{Binding Path=SaveFile.Command}"
+                                             IsEnabled="{Binding Path=SaveFile.IsEnabled}" />
+
+                    <telerik:RadRibbonButton Text="Αναίρεση"
+                                             telerik:IconManager.IconPropertyName="SmallImage"
+                                             telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/undo.png"
+                                             Size="Small"
+                                             Command="{Binding Path=Undo.Command}"
+                                             IsEnabled="{Binding Path=Undo.IsEnabled}" />
+
+                    <telerik:RadRibbonButton Text="Επαναφορά"
+                                             telerik:IconManager.IconPropertyName="SmallImage"
+                                             telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/redo.png"
+                                             Size="Small"
+                                             Command="{Binding Path=Redo.Command}"
+                                             IsEnabled="{Binding Path=Redo.IsEnabled}"/>
+                </telerik:QuickAccessToolBar>
+            </telerik:RadRibbonView.QuickAccessToolBar>
+
+            <telerik:RadRibbonView.ApplicationButtonContent>
+                <TextBlock Text="ΑΡΧΕΙΟ" Foreground="White"/>
+            </telerik:RadRibbonView.ApplicationButtonContent>
+            <telerik:RadRibbonView.ApplicationMenu>
+                <telerik:ApplicationMenu Height="350">
+                    <telerik:ApplicationMenu.Content>
+                        <StackPanel Width="300"/>
+                    </telerik:ApplicationMenu.Content>
+                    <telerik:RadRibbonButton Text="Νέο" 
+                                             telerik:IconManager.IconPropertyName="LargeImage"
+                                             telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/ApplicationMenu/new.png"
+                                             MinWidth="100"
+                                             Command="{Binding Path=NewFile.Command}"
+                                             IsEnabled="{Binding Path=NewFile.IsEnabled}" />
+                    <telerik:RadRibbonButton Text="Άνοιγμα" 
+                                             telerik:IconManager.IconPropertyName="LargeImage"
+                                             telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/ApplicationMenu/open.png" 
+                                             MinWidth="100"
+                                             Command="{Binding Path=OpenFile.Command}"
+                                             IsEnabled="{Binding Path=OpenFile.IsEnabled}"  />
+                    <telerik:RadRibbonButton Text="Αποθήκευση" 
+                                             telerik:IconManager.IconPropertyName="LargeImage"
+                                             telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/ApplicationMenu/save.png" 
+                                             MinWidth="100"
+                                             Command="{Binding Path=SaveFile.Command}"
+                                             IsEnabled="{Binding Path=SaveFile.IsEnabled}" />
+                </telerik:ApplicationMenu>
+            </telerik:RadRibbonView.ApplicationMenu>
+
+            <telerik:RadRibbonTab Header="ΑΡΧΙΚΗ">
+                <telerik:RadRibbonGroup Header="Clipboard"
+                                        telerik:ScreenTip.Title="Clipboard"
+                                        IsEnabled="{Binding Path=ClipboardGroup.IsEnabled}">
+                    <telerik:RadRibbonGroup.Variants>
+                        <telerik:GroupVariant Priority="0" Variant="Large" />
+                    </telerik:RadRibbonGroup.Variants>
+                    <telerik:RadRibbonSplitButton x:Name="PasteButton" Command="{Binding Path=Paste.Command}"
+                                                  IsEnabled="{Binding Path=Paste.IsEnabled}"
+                                                  Size="Large"
+                                                  Text="Επικόλληση"
+                                                  telerik:IconManager.IconPropertyName="LargeImage"
+                                                  telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/pasteActive.png"
+                                                  telerik:ScreenTip.Description="Paste the contents of the Clipboard."
+                                                  telerik:ScreenTip.Title="Paste (Ctrl+V)">
+                        <telerik:RadRibbonSplitButton.DropDownContent>
+                            <telerik:RadContextMenu BorderThickness="0" Padding="0" 
+                                                    IsOpen="{Binding Path=IsOpen,ElementName=PasteButton, Mode=TwoWay}">
+                                <telerik:RadMenuGroupItem Header="Επικόλληση" BorderThickness="0" Background="Transparent">
+                                    <telerik:RadMenuItem Header="Επικόλληση" 
+                                                         Command="{Binding Path=Paste.Command}"
+                                                         IsEnabled="{Binding Path=Paste.IsEnabled, Mode=TwoWay}">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/pasteNormal.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+                                    <telerik:RadMenuItem Header="ΤΥΠΟΙ" 
+                                                         Command="{Binding Path=PasteFormulas.Command}"
+                                                         CommandParameter="Formulas"
+                                                         IsEnabled="{Binding Path=PasteFormulas.IsEnabled, Mode=TwoWay}">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/pasteFormulas.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+                                    <telerik:RadMenuItem Header="Τύποι &amp; Μορφοποίηση Αριθμών" 
+                                                         Command="{Binding Path=PasteFormulasAndNumberFormats.Command}"
+                                                         CommandParameter="FormulasAndNumberFormats"
+                                                         IsEnabled="{Binding Path=PasteFormulasAndNumberFormats.IsEnabled, Mode=TwoWay}">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/pasteFormulasNumberFormatting.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+                                    <telerik:RadMenuItem Header="Πλάτη Στηλών" 
+                                                         Command="{Binding Path=PasteColumnWidths.Command}"
+                                                         CommandParameter="ColumnWidths"
+                                                         IsEnabled="{Binding Path=PasteColumnWidths.IsEnabled, Mode=TwoWay}">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/pasteKeepSourceColumnWidths.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+                                </telerik:RadMenuGroupItem>
+                                <telerik:RadMenuGroupItem Header="Επικόλληση Τιμών" BorderThickness="0" Background="Transparent" Margin="-1">
+                                    <telerik:RadMenuItem Header="Τιμές" 
+                                                         Command="{Binding Path=PasteValues.Command}"
+                                                         CommandParameter="Values"
+                                                         IsEnabled="{Binding Path=PasteValues.IsEnabled, Mode=TwoWay}">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/pasteValues.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+                                    <telerik:RadMenuItem Header="Τιμές &amp; Μορφοποίηση Αριθμών" 
+                                                         Command="{Binding Path=PasteValuesAndNumberFormats.Command}"
+                                                         CommandParameter="ValuesAndNumberFormats"
+                                                         IsEnabled="{Binding Path=PasteValuesAndNumberFormats.IsEnabled, Mode=TwoWay}">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/pasteValuesNumberFormatting.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+                                </telerik:RadMenuGroupItem>
+                                <telerik:RadMenuGroupItem Header="Άλλες Επιλογές Επικόλλησης" BorderThickness="0" Background="Transparent" Margin="-1">
+                                    <telerik:RadMenuItem Header="Μορφοποίηση" 
+                                                         Command="{Binding Path=PasteFormatting.Command}"
+                                                         CommandParameter="Formats"
+                                                         IsEnabled="{Binding Path=PasteFormatting.IsEnabled, Mode=TwoWay}">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/pasteFormatting.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+                                </telerik:RadMenuGroupItem>
+                            </telerik:RadContextMenu>
+                        </telerik:RadRibbonSplitButton.DropDownContent>
+
+                    </telerik:RadRibbonSplitButton>
+                    <StackPanel>
+                        <telerik:RadRibbonButton Command="{Binding Path=Cut.Command}"
+                                                 IsEnabled="{Binding Path=Cut.IsEnabled}"
+                                                 Size="Medium"
+                                                 telerik:IconManager.IconPropertyName="SmallImage"
+                                                 telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/cut.png"
+                                                 Text="Αποκοπή"
+                                                 telerik:ScreenTip.Description="Αποκοπή επιλογής και εισαγωγή στο Πρόχειρο."
+                                                 telerik:ScreenTip.Title="Αποκοπή" />
+
+                        <telerik:RadRibbonButton Command="{Binding Path=Copy.Command}"
+                                                 IsEnabled="{Binding Path=Copy.IsEnabled}"
+                                                 Size="Medium"
+                                                 telerik:IconManager.IconPropertyName="SmallImage"
+                                                 telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/copy.png"
+                                                 Text="Αντιγραφή"
+                                                 telerik:ScreenTip.Description="Αντιγραφή επιλογής και εισαγωγή στο Πρόχειρο."
+                                                 telerik:ScreenTip.Title="Αντιγραφή" />
+                    </StackPanel>
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Γραμματοσειρά"
+                                        IsEnabled="{Binding Path=FontGroup.IsEnabled}"
+                                        DialogLauncherVisibility="{Binding Path=ShowFormatCellsDialog.IsEnabled, Converter={StaticResource BoolToVisibilityValueConverter}}"
+                                        DialogLauncherCommand="{Binding Path=ShowFormatCellsDialog.Command}"
+                                        DialogLauncherCommandParameter="Font"
+                                        telerik:ScreenTip.Description="Εμφάνιση καρτέλας επιλογής γραμματοσειράς."
+                                        telerik:ScreenTip.Title="Μορφοποίηση Κελιών: Γραμματοσειρά">
+                    <telerik:RadRibbonGroup.Variants>
+                        <telerik:GroupVariant Priority="0" Variant="Large" />
+                    </telerik:RadRibbonGroup.Variants>
+                    <telerik:RadOrderedWrapPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel.Resources>
+                                <spreadsheetControls:UnitToDipConverter x:Key="unitToDipConverter" />
+                                <spreadsheetControls:DipToUnitConverter x:Key="dipToUnitConverter" />
+                                <spreadsheetControls:ThemeFontTypeToTextConverter x:Key="themeFontTypeToTextConverter" />
+                            </StackPanel.Resources>
+
+                            <telerik:RadRibbonComboBox telerik:ScreenTip.Title="Γραμματοσειρά"
+                                                       telerik:ScreenTip.Description="Αλλαγή Γραμματοσειράς."
+                                                       IsEditable="False"
+                                                       CanAutocompleteSelectItems="False"
+                                                       CanKeyboardNavigationSelectItems="False"
+                                                       Width="152"
+                                                       MaxDropDownHeight="400"
+                                                       ItemsSource="{Binding ElementName=radSpreadsheet, Path=FontsProvider.RegisteredFonts}"
+                                                       telerik:RadComboBoxExtensions.UIInteractionCommand="{Binding Path=SetFontFamily.Command}"
+                                                       telerik:RadComboBoxExtensions.UIInteractionCommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=SelectedItem}"
+                                                       IsEnabled="{Binding Path=SetFontFamily.IsEnabled}"
+                                                       SelectedValue="{Binding Path=SetFontFamily.SelectedValue, Mode=TwoWay}"
+                                                       ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                <telerik:RadRibbonComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Text="{Binding Path=FontFamily.Source}" FontFamily="{Binding Path=FontFamily}" FontSize="12" />
+                                            <TextBlock Text="{Binding Path=ThemeFontType, Converter={StaticResource themeFontTypeToTextConverter}}"
+                                                       FontFamily="{Binding Path=FontFamily}" 
+                                                       FontSize="12" 
+                                                       Grid.Column="1"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </telerik:RadRibbonComboBox.ItemTemplate>
+                                <telerik:RadRibbonComboBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <VirtualizingStackPanel Width="210"/>
+                                    </ItemsPanelTemplate>
+                                </telerik:RadRibbonComboBox.ItemsPanel>
+                            </telerik:RadRibbonComboBox>
+
+                            <telerik:RadRibbonComboBox Width="62"
+                                                       Margin="-1 0 0 0"
+                                                       MaxDropDownHeight="400"
+                                                       IsEditable="False"
+                                                       CanAutocompleteSelectItems="False"
+                                                       CanKeyboardNavigationSelectItems="False"
+                                                       IsEnabled="{Binding Path=SetFontSize.IsEnabled}"
+                                                       IsTabStop="False"
+                                                       ItemsSource="{Binding ElementName=radSpreadsheet, Path=FontsProvider.FontSizes}"
+                                                       telerik:RadComboBoxExtensions.UIInteractionCommand="{Binding Path=SetFontSize.Command}"
+                                                       telerik:RadComboBoxExtensions.UIInteractionCommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=SelectedItem, Converter={StaticResource unitToDipConverter}, ConverterParameter=Point}"
+                                                       SelectedValue="{Binding Path=SetFontSize.SelectedValue, Mode=TwoWay, Converter={StaticResource dipToUnitConverter}, ConverterParameter=Point}" />
+                        </StackPanel>
+
+                        <telerik:RadButtonGroup>
+                            <telerik:RadRibbonButton Command="{Binding Path=IncreaseFontSize.Command}"
+                                                     CommandParameter="{Binding Path=IncreaseFontSize.SelectedValue}"
+                                                     IsEnabled="{Binding Path=IncreaseFontSize.IsEnabled}"
+                                                     Size="Small"
+                                                     telerik:IconManager.IconPropertyName="SmallImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/fontSizeIncrease.png"
+                                                     telerik:ScreenTip.Description="Αύξηση του μεγέθους γραμματοσειράς."
+                                                     telerik:ScreenTip.Title="Αύξηση Μεγέθους Γραμματοσειράς" />
+
+                            <telerik:RadRibbonButton Command="{Binding Path=DecreaseFontSize.Command}"
+                                                     CommandParameter="{Binding Path=DecreaseFontSize.SelectedValue}"
+                                                     IsEnabled="{Binding Path=DecreaseFontSize.IsEnabled}"
+                                                     Size="Small"
+                                                     telerik:IconManager.IconPropertyName="SmallImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/fontSizeDecrease.png"
+                                                     telerik:ScreenTip.Description="Μείωση του μεγέθους γραμματοσειράς."
+                                                     telerik:ScreenTip.Title="Μείωση Μεγέθους Γραμματοσειράς" />
+                        </telerik:RadButtonGroup>
+
+                        <telerik:RadButtonGroup x:Name="FontStylesGroup">
+                            <telerik:RadButtonGroup.Resources>
+                                <spreadsheetControls:UnderlineTypeToBooleanConverter x:Key="underlineTypeToBooleanConverter" />
+                            </telerik:RadButtonGroup.Resources>
+
+                            <telerik:RadRibbonToggleButton Command="{Binding Path=SetIsBold.Command}"
+                                                           CommandParameter="{Binding Path=SetIsBold.SelectedValue}"
+                                                           IsChecked="{Binding Path=SetIsBold.SelectedValue, Mode=TwoWay}"
+                                                           IsEnabled="{Binding Path=SetIsBold.IsEnabled}"
+                                                           Size="Small"
+                                                           telerik:IconManager.IconPropertyName="SmallImage"
+                                                           telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/bold.png"
+                                                           telerik:ScreenTip.Description="Έντονη γραφή του επιλεγμένου κειμένου."
+                                                           telerik:ScreenTip.Title="Έντονη Γραφή (Ctrl+B)" />
+
+                            <telerik:RadRibbonToggleButton Command="{Binding Path=SetIsItalic.Command}"
+                                                           CommandParameter="{Binding Path=SetIsItalic.SelectedValue}"
+                                                           IsChecked="{Binding Path=SetIsItalic.SelectedValue, Mode=TwoWay}"
+                                                           IsEnabled="{Binding Path=SetIsItalic.IsEnabled}"
+                                                           Size="Small"
+                                                           telerik:IconManager.IconPropertyName="SmallImage"
+                                                           telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/italic.png"
+                                                           telerik:ScreenTip.Description="Πλάγια γραφή του επιλεγμένου κειμένου."
+                                                           telerik:ScreenTip.Title="Πλάγια Γραφή (Ctrl+I)" />
+
+                            <telerik:RadRibbonToggleButton Command="{Binding Path=SetUnderline.Command}"
+                                                           CommandParameter="{Binding Path=SetUnderline.SelectedValue}"
+                                                           IsChecked="{Binding Path=SetUnderline.SelectedValue, Mode=TwoWay, Converter={StaticResource underlineTypeToBooleanConverter}, ConverterParameter=Single}"
+                                                           IsEnabled="{Binding Path=SetUnderline.IsEnabled}"
+                                                           Size="Small"
+                                                           telerik:IconManager.IconPropertyName="SmallImage"
+                                                           telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/underline.png"
+                                                           telerik:ScreenTip.Description="Υπογράμμιση του επιλεγμένου κειμένου."
+                                                           telerik:ScreenTip.Title="Υπογράμμιση" />
+                        </telerik:RadButtonGroup>
+
+                        <telerik:RadButtonGroup>
+                            <spreadsheetControls:BordersMenu RadSpreadsheet="{Binding ElementName=radSpreadsheet, Mode=OneTime}"
+                                                             telerik:IconManager.IconPropertyName="SelectedItemImage"
+                                                             telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/bottomBorder.png"/>
+                        </telerik:RadButtonGroup>
+                        <telerik:RadButtonGroup>
+                            <telerik:RadColorPicker BorderThickness="0"
+                                                    AutomaticColor="Transparent"
+                                                    NoColorText="Χωρίς Γέμισμα"
+                                                    telerik:ScreenTip.Title="Χρώμα Γεμίσματος"
+                                                    telerik:ScreenTip.Description="Χρωματισμός του φόντου των επιλεγμένων κελιών."
+                                                    HeaderPaletteItemsSource="{Binding ElementName=radSpreadsheet, Path=ColorPalette.HeaderPaletteItemsSource}"
+                                                    MainPaletteItemsSource="{Binding ElementName=radSpreadsheet, Path=ColorPalette.MainPaletteItemsSource}"
+                                                    MainPaletteOrientation="{Binding ElementName=radSpreadsheet, Path=ColorPalette.MainPaletteOrientation}"
+                                                    RecentColorsVisibility="Visible"
+                                                    IsEnabled="{Binding Path=SetFillColor.IsEnabled}"
+                                                    IsRecentColorsActive="True"
+                                                    SelectedColor="{Binding Path=SetFillColor.SelectedValue, Mode=TwoWay}"
+                                                    Command="{Binding Path=SetFillColor.Command}"
+                                                    CommandParameter="{Binding Path=SetFillColor.SelectedValue}">
+                                <telerik:RadColorPicker.ContentTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/bucket.png" Stretch="None" Width="16" />
+                                            <Rectangle Height="4"
+                                                       HorizontalAlignment="Stretch"
+                                                       VerticalAlignment="Bottom">
+                                                <Rectangle.Fill>
+                                                    <SolidColorBrush Color="{Binding}" />
+                                                </Rectangle.Fill>
+                                            </Rectangle>
+                                        </Grid>
+                                    </DataTemplate>
+                                </telerik:RadColorPicker.ContentTemplate>
+                                <telerik:RadColorPicker.AdditionalContent>
+                                    <telerik:RadButton BorderThickness="0"
+                                                       Background="Transparent"
+                                                       Margin="0 -1 0 0"
+                                                       HorizontalContentAlignment="Left"
+                                                       IsEnabled="{Binding Path=ShowMoreColorsDialog.IsEnabled}"
+                                                       spreadsheetControls:RadControlsExtensions.ShouldCloseParentPopupOnClick="True"
+                                                       Command="{Binding Path=ShowMoreColorsDialog.Command}"
+                                                       CommandParameter="{Binding Path=SetFillColor}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/color.png" Width="16" Height="16" />
+                                            <TextBlock Text="Περισσότερα Χρώματα..." Margin="10 0 0 0" FontWeight="Normal" />
+                                        </StackPanel>
+                                    </telerik:RadButton>
+                                </telerik:RadColorPicker.AdditionalContent>
+                            </telerik:RadColorPicker>
+
+                            <telerik:RadColorPicker BorderThickness="0"
+                                                    NoColorText="Αυτόματο"
+                                                    telerik:ScreenTip.Title="Χρώμα Επισήμανσης Κειμένου"
+                                                    telerik:ScreenTip.Description="Αλλαγή του χρώματος κειμένου."
+                                                    HeaderPaletteItemsSource="{Binding ElementName=radSpreadsheet, Path=ColorPalette.HeaderPaletteItemsSource}"
+                                                    MainPaletteItemsSource="{Binding ElementName=radSpreadsheet, Path=ColorPalette.MainPaletteItemsSource}"
+                                                    MainPaletteOrientation="{Binding ElementName=radSpreadsheet, Path=ColorPalette.MainPaletteOrientation}"
+                                                    SelectedColor="{Binding Path=SetForeColor.SelectedValue, Mode=TwoWay}"
+                                                    IsEnabled="{Binding Path=SetForeColor.IsEnabled}"
+                                                    Command="{Binding Path=SetForeColor.Command}"
+                                                    CommandParameter="{Binding Path=SetForeColor.SelectedValue}">
+                                <telerik:RadColorPicker.ContentTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/foregroundColor.png" Stretch="None" Width="16" />
+                                            <Rectangle Height="3"
+                                                       HorizontalAlignment="Stretch"
+                                                       VerticalAlignment="Bottom">
+                                                <Rectangle.Fill>
+                                                    <SolidColorBrush Color="{Binding}" />
+                                                </Rectangle.Fill>
+                                            </Rectangle>
+                                        </Grid>
+                                    </DataTemplate>
+                                </telerik:RadColorPicker.ContentTemplate>
+                                <telerik:RadColorPicker.AdditionalContent>
+                                    <telerik:RadButton BorderThickness="0"
+                                                       Margin="0 -1 0 0"
+                                                       Background="Transparent"
+                                                       HorizontalContentAlignment="Left"
+                                                       spreadsheetControls:RadControlsExtensions.ShouldCloseParentPopupOnClick="True"
+                                                       IsEnabled="{Binding Path=ShowMoreColorsDialog.IsEnabled}"
+                                                       Command="{Binding Path=ShowMoreColorsDialog.Command}"
+                                                       CommandParameter="{Binding Path=SetForeColor}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/color.png" Width="16" Height="16" />
+                                            <TextBlock Text="Περισσότερα Χρώματα..." Margin="10 0 0 0" FontWeight="Normal" />
+                                        </StackPanel>
+                                    </telerik:RadButton>
+                                </telerik:RadColorPicker.AdditionalContent>
+                            </telerik:RadColorPicker>
+
+                        </telerik:RadButtonGroup>
+                    </telerik:RadOrderedWrapPanel>
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Ευθυγράμμιση"
+                                        IsEnabled="{Binding Path=AlignmentGroup.IsEnabled}"
+                                        DialogLauncherVisibility="{Binding Path=ShowFormatCellsDialog.IsEnabled, Converter={StaticResource BoolToVisibilityValueConverter}}"
+                                        DialogLauncherCommand="{Binding Path=ShowFormatCellsDialog.Command}"
+                                        DialogLauncherCommandParameter="Alignment"
+                                        telerik:ScreenTip.Description="Προβολή καρτέλας ευθυγράμμισης κελιών."
+                                        telerik:ScreenTip.Title="Μορφοποίηση Κελιών: Ευθυγράμμιση">
+                    <telerik:RadRibbonGroup.Variants>
+                        <telerik:GroupVariant Priority="0" Variant="Large" />
+                    </telerik:RadRibbonGroup.Variants>
+                    <telerik:RadRibbonGroup.Resources>
+                        <spreadsheetControls:RadHorizontalAlignmentToBooleanConverter x:Key="horizontalAlignmentToBooleanConverter" />
+                        <spreadsheetControls:RadVerticalAlignmentToBooleanConverter x:Key="verticalAlignmentToBooleanConverter" />
+                    </telerik:RadRibbonGroup.Resources>
+
+                    <telerik:RadOrderedWrapPanel>
+                        <telerik:RadButtonGroup >
+                            <telerik:RadRibbonToggleButton Command="{Binding Path=SetVerticalAlignment.Command}"
+                                                           CommandParameter="{Binding Path=SetVerticalAlignment.SelectedValue}"
+                                                           IsChecked="{Binding Path=SetVerticalAlignment.SelectedValue, Mode=TwoWay, Converter={StaticResource verticalAlignmentToBooleanConverter}, ConverterParameter=Top}"
+                                                           IsEnabled="{Binding Path=SetVerticalAlignment.IsEnabled}"
+                                                           Size="Small"
+                                                           telerik:IconManager.IconPropertyName="SmallImage"
+                                                           telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/alignTop.png"
+                                                           telerik:ScreenTip.Description="Στοίχιση του κειμένου στο πάνω μέρος του κελιού."
+                                                           telerik:ScreenTip.Title="Στοίχιση Επάνω" />
+
+                            <telerik:RadRibbonToggleButton Command="{Binding Path=SetVerticalAlignment.Command}"
+                                                           CommandParameter="{Binding Path=SetVerticalAlignment.SelectedValue}"
+                                                           IsChecked="{Binding Path=SetVerticalAlignment.SelectedValue, Mode=TwoWay, Converter={StaticResource verticalAlignmentToBooleanConverter}, ConverterParameter=Center}"
+                                                           IsEnabled="{Binding Path=SetVerticalAlignment.IsEnabled}"
+                                                           Size="Small"
+                                                           telerik:IconManager.IconPropertyName="SmallImage"
+                                                           telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/alignMiddle.png"
+                                                           telerik:ScreenTip.Description="Στοίχιση του κειμένου στο κέντρο του κελιού."
+                                                           telerik:ScreenTip.Title="Στοίχιση στο Κέντρο" />
+
+                            <telerik:RadRibbonToggleButton Command="{Binding Path=SetVerticalAlignment.Command}"
+                                                           CommandParameter="{Binding Path=SetVerticalAlignment.SelectedValue}"
+                                                           IsChecked="{Binding Path=SetVerticalAlignment.SelectedValue, Mode=TwoWay, Converter={StaticResource verticalAlignmentToBooleanConverter}, ConverterParameter=Bottom}"
+                                                           IsEnabled="{Binding Path=SetVerticalAlignment.IsEnabled}"
+                                                           Size="Small"
+                                                           telerik:IconManager.IconPropertyName="SmallImage"
+                                                           telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/alignBottom.png"
+                                                           telerik:ScreenTip.Description="Στοίχιση του κειμένου στο κάτω μέρος του κελιού."
+                                                           telerik:ScreenTip.Title="Στοίχιση Κάτω" />
+                        </telerik:RadButtonGroup>
+                        <telerik:RadButtonGroup>
+                            <telerik:RadRibbonToggleButton Command="{Binding Path=SetHorizontalAlignment.Command}"
+                                                           CommandParameter="{Binding Path=SetHorizontalAlignment.SelectedValue}"
+                                                           IsChecked="{Binding Path=SetHorizontalAlignment.SelectedValue, Mode=TwoWay, Converter={StaticResource horizontalAlignmentToBooleanConverter}, ConverterParameter=Left}"
+                                                           IsEnabled="{Binding Path=SetHorizontalAlignment.IsEnabled}"
+                                                           Size="Small"
+                                                           telerik:IconManager.IconPropertyName="SmallImage"
+                                                           telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/alignLeft.png"
+                                                           telerik:ScreenTip.Description="Αριστερή στοίχιση του κειμένου."
+                                                           telerik:ScreenTip.Title="Στοίχιση Αριστερά" />
+
+                            <telerik:RadRibbonToggleButton Command="{Binding Path=SetHorizontalAlignment.Command}"
+                                                           CommandParameter="{Binding Path=SetHorizontalAlignment.SelectedValue}"
+                                                           IsChecked="{Binding Path=SetHorizontalAlignment.SelectedValue, Mode=TwoWay, Converter={StaticResource horizontalAlignmentToBooleanConverter}, ConverterParameter=Center}"
+                                                           IsEnabled="{Binding Path=SetHorizontalAlignment.IsEnabled}"
+                                                           Size="Small"
+                                                           telerik:IconManager.IconPropertyName="SmallImage"
+                                                           telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/alignCenter.png"
+                                                           telerik:ScreenTip.Description="Στοίχιση του κειμένου στο κέντρο."
+                                                           telerik:ScreenTip.Title="Στοίχιση στο Κέντρο" />
+
+                            <telerik:RadRibbonToggleButton Command="{Binding Path=SetHorizontalAlignment.Command}"
+                                                           CommandParameter="{Binding Path=SetHorizontalAlignment.SelectedValue}"
+                                                           IsChecked="{Binding Path=SetHorizontalAlignment.SelectedValue, Mode=TwoWay, Converter={StaticResource horizontalAlignmentToBooleanConverter}, ConverterParameter=Right}"
+                                                           IsEnabled="{Binding Path=SetHorizontalAlignment.IsEnabled}"
+                                                           Size="Small"
+                                                           telerik:IconManager.IconPropertyName="SmallImage"
+                                                           telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/alignRight.png"
+                                                           telerik:ScreenTip.Description="Δεξιά στοίχιση του κειμένου."
+                                                           telerik:ScreenTip.Title="Στοίχιση Δεξιά" />
+                        </telerik:RadButtonGroup>
+
+                        <telerik:RadButtonGroup>
+                            <telerik:RadRibbonButton Command="{Binding Path=DecreaseIndent.Command}"
+                                                     CommandParameter="{Binding Path=DecreaseIndent.SelectedValue}"
+                                                     IsEnabled="{Binding Path=DecreaseIndent.IsEnabled}"
+                                                     Size="Small"
+                                                     telerik:IconManager.IconPropertyName="SmallImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/indentDecrease.png"
+                                                     telerik:ScreenTip.Description="Μείωση του περιθωρίου μεταξύ του πλαισίου και του κειμένου στο κελί."
+                                                     telerik:ScreenTip.Title="Μείωση Εσοχής" />
+
+                            <telerik:RadRibbonButton Command="{Binding Path=IncreaseIndent.Command}"
+                                                     CommandParameter="{Binding Path=IncreaseIndent.SelectedValue}"
+                                                     IsEnabled="{Binding Path=IncreaseIndent.IsEnabled}"
+                                                     Size="Small"
+                                                     telerik:IconManager.IconPropertyName="SmallImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/indentIncrease.png"
+                                                     telerik:ScreenTip.Description="Αύξηση του περιθωρίου μεταξύ του πλαισίου και του κειμένου στο κελί."
+                                                     telerik:ScreenTip.Title="Αύξηση Εσοχής" />
+
+                        </telerik:RadButtonGroup>
+                    </telerik:RadOrderedWrapPanel>
+
+                    <telerik:Separator />
+
+                    <telerik:RadOrderedWrapPanel>
+                        <telerik:RadOrderedWrapPanel.Resources>
+                            <telerik:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
+                        </telerik:RadOrderedWrapPanel.Resources>
+                        <telerik:RadRibbonToggleButton Command="{Binding Path=SetIsWrapped.Command}"
+                                                       CommandParameter="{Binding Path=SetIsWrapped.SelectedValue}"
+                                                       IsChecked="{Binding Path=SetIsWrapped.SelectedValue, Mode=TwoWay}"
+                                                       IsEnabled="{Binding Path=SetIsWrapped.IsEnabled}"
+                                                       Size="Medium"
+                                                       telerik:IconManager.IconPropertyName="SmallImage"
+                                                       telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/wrapText.png"
+                                                       Text="Αναδίπλωση Κειμένου"
+                                                       telerik:ScreenTip.Description="Όλο το περιεχόμενο του κελιού είναι ορατό καταλαμβάνοντας περισσότερες γραμμές."
+                                                       telerik:ScreenTip.Title="Αναδίπλωση Κειμένου" />
+
+                        <telerik:RadRibbonSplitButton x:Name="MergeAndCenterButton"
+                                                      Command="{Binding Path=MergeAndCenter.Command}"
+                                                      CommandParameter="{Binding Path=MergeAndCenter.SelectedValue, Converter={StaticResource InvertedBooleanConverter}}"
+                                                      IsChecked="{Binding Path=MergeAndCenter.SelectedValue, Mode=TwoWay}"
+                                                      IsEnabled="{Binding Path=MergeAndCenter.IsEnabled}"
+                                                      IsToggle="True"
+                                                      Size="Medium"
+                                                      telerik:IconManager.IconPropertyName="SmallImage"
+                                                      telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/mergeAndCenter.png"
+                                                      Text="Συγχώνευση &amp; Στοίχιση στο Κέντρο"
+                                                      telerik:ScreenTip.Description="Ενώνει τα επιλεγμένα κελιά σε ένα μεγαλύτερο και στοιχίζει στο κέντρο τα περιεχόμενα.&#10;                                                                                      This is often used to create labels that span multiple columns."
+                                                      telerik:ScreenTip.Title="Συγχώνευση &amp; Στοίχιση στο Κέντρο">
+
+                            <telerik:RadRibbonSplitButton.DropDownContent>
+                                <telerik:RadContextMenu BorderThickness="0" Padding="0" 
+                                                        IsOpen="{Binding Path=IsOpen, ElementName=MergeAndCenterButton, Mode=TwoWay}">
+                                    <telerik:RadMenuItem Command="{Binding Path=MergeAndCenter.Command}"
+                                                         CommandParameter="{Binding Path=MergeAndCenter.SelectedValue}"
+                                                         Header="Συγχώνευση &amp; Στοίχιση στο Κέντρο"
+                                                         IsChecked="{Binding Path=MergeAndCenter.SelectedValue, Mode=TwoWay}"
+                                                         IsEnabled="{Binding Path=MergeAndCenter.IsEnabled, Mode=TwoWay}"
+                                                         telerik:ScreenTip.Description="Ενώνει τα επιλεγμένα κελιά σε ένα μεγαλύτερο και στοιχίζει στο κέντρο τα περιεχόμενα.&#10;                                                                     This is often used to create labels that span multiple columns."
+                                                         telerik:ScreenTip.Title="Συγχώνευση &amp; Στοίχιση στο Κέντρο">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/mergeAndCenter.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem Command="{Binding Path=MergeAcross.Command}"
+                                                         Header="Εγκάρσια Συγχώνευση"
+                                                         IsEnabled="{Binding Path=MergeAcross.IsEnabled, Mode=TwoWay}"
+                                                         telerik:ScreenTip.Description="Ένωση κάθε γραμμής των επιλεγμένων κελιών σε ένα μεγαλύτερο."
+                                                         telerik:ScreenTip.Title="Εγκάρσια Συγχώνευση">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/mergeAcross.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem Command="{Binding Path=Merge.Command}"
+                                                         Header="Συγχώνευση Κελιών"
+                                                         IsEnabled="{Binding Path=Merge.IsEnabled, Mode=TwoWay}"
+                                                         telerik:ScreenTip.Description="Συγχώνευση των επιλεγμένων κελιών σε ένα κελί."
+                                                         telerik:ScreenTip.Title="Συγχώνευση Κελιών">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/merge.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem Command="{Binding Path=Unmerge.Command}"
+                                                         Header="Αναίρεση Συγχώνευσης Κελιών"
+                                                         IsEnabled="{Binding Path=Unmerge.IsEnabled, Mode=TwoWay}"
+                                                         telerik:ScreenTip.Description="Διαίρεση των επιλεγμένων κελιών σε νέα πολλαπλά κελιά."
+                                                         telerik:ScreenTip.Title="Αναίρεση Συγχώνευσης Κελιών">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/unmerge.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+                                </telerik:RadContextMenu>
+                            </telerik:RadRibbonSplitButton.DropDownContent>
+                        </telerik:RadRibbonSplitButton>
+                    </telerik:RadOrderedWrapPanel>
+
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Αριθμός"
+                                        IsEnabled="{Binding Path=NumberGroup.IsEnabled}"
+                                        DialogLauncherVisibility="{Binding Path=ShowFormatCellsDialog.IsEnabled, Converter={StaticResource BoolToVisibilityValueConverter}}"
+                                        DialogLauncherCommand="{Binding Path=ShowFormatCellsDialog.Command}"
+                                        DialogLauncherCommandParameter="Number"
+                                        telerik:ScreenTip.Description="Προβολή της καρτέλας μορφοποίησης αριθμού."
+                                        telerik:ScreenTip.Title="Μορφοποίηση Κελιών: Αριθμός" >
+                    <telerik:RadRibbonGroup.Variants>
+                        <telerik:GroupVariant Priority="0" Variant="Large" />
+                    </telerik:RadRibbonGroup.Variants>
+                    <telerik:RadOrderedWrapPanel>
+
+                        <spreadsheetControls:NumberFormatAutoCompleteComboBox IsEnabled="{Binding ElementName=radSpreadsheet, Path=CommandDescriptors.SetFormat.IsEnabled, Mode=TwoWay}"
+                                                                              CellValueFormat="{Binding ElementName=radSpreadsheet, Path=CommandDescriptors.SetFormat.SelectedValue, Mode=TwoWay}"
+                                                                              RadSpreadsheet="{Binding ElementName=radSpreadsheet, Mode=OneTime}"
+                                                                              telerik:ScreenTip.Title="Μορφή Αριθμού"
+                                                                              telerik:ScreenTip.Description="Επιλογή εμφάνισης αριθμού ως: ποσοστό, νομισματική μονάδα, ημερομηνία ή ώρα κ.λπ."/>
+
+                        <telerik:RadButtonGroup Margin="0 0 3 0">
+                            <telerik:RadRibbonSplitButton x:Name="AccountingNumberFormatButton"
+                                                          telerik:ScreenTip.Title="Λογιστική Μορφή Αριθμού"
+                                                          telerik:ScreenTip.Description="Επιλογή νομισματικής μονάδας για το επιλεγμένο κελί. &#13;&#13;Για παράδειγμα επιλογή Ευρώ αντί Δολαρίων."
+                                                          Size="Small" 
+                                                          Command="{Binding Path=SetStyle.Command}"
+                                                          CommandParameter="Currency"
+                                                          IsEnabled="{Binding Path=SetStyle.IsEnabled}"
+                                                          telerik:IconManager.IconPropertyName="SmallImage"
+                                                          telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/accountingNumberFormat.png">
+                                <telerik:RadRibbonSplitButton.DropDownContent>
+                                    <telerik:RadContextMenu BorderThickness="0" Padding="0" 
+                                                            IsOpen="{Binding Path=IsOpen, ElementName=AccountingNumberFormatButton, Mode=TwoWay}">
+                                        <telerik:RadMenuItem 
+                                            Header="$ English (U.S.)" 
+                                            Command="{Binding Path=SetFormat.Command}" 
+                                            CommandParameter="_([$$-409]* #,##0.00_);_([$$-409]* (#,##0.00);_([$$-409]* &quot;-&quot;??_);_(@_)"
+                                            IsEnabled="{Binding Path=SetFormat.IsEnabled, Mode=TwoWay}"/>
+
+                                        <telerik:RadMenuItem 
+                                            Header="&#163; English (U.K.)" 
+                                            Command="{Binding Path=SetFormat.Command}" 
+                                            CommandParameter="_-[$&#163;-809]* #,##0.00_-;-[$&#163;-809]* #,##0.00_-;_-[$&#163;-809]* &quot;-&quot;??_-;_-@_-"
+                                            IsEnabled="{Binding Path=SetFormat.IsEnabled, Mode=TwoWay}"/>
+
+                                        <telerik:RadMenuItem 
+                                            Header="&#8364; Euro (&#8364; 123)"
+                                            Command="{Binding Path=SetFormat.Command}"
+                                            CommandParameter="_([$&#8364;-2] * #,##0.00_);_([$&#8364;-2] * (#,##0.00);_([$&#8364;-2] * &quot;-&quot;??_);_(@_)"
+                                            IsEnabled="{Binding Path=SetFormat.IsEnabled, Mode=TwoWay}"/>
+
+                                        <telerik:RadMenuItem
+                                            Header="&#165; Chinese (PRC)"
+                                            Command="{Binding Path=SetFormat.Command}"
+                                            CommandParameter="_ [$&#165;-804]* #,##0.00_ ;_ [$&#165;-804]* -#,##0.00_ ;_ [$&#165;-804]* &quot;-&quot;??_ ;_ @_ "
+                                            IsEnabled="{Binding Path=SetFormat.IsEnabled, Mode=TwoWay}"/>
+
+                                        <telerik:RadMenuItem
+                                            Header="fr. French (Switzerland)"
+                                            Command="{Binding Path=SetFormat.Command}"
+                                            CommandParameter="_ [$fr.-100C] * #,##0.00_ ;_ [$fr.-100C] * -#,##0.00_ ;_ [$fr.-100C] * &quot;-&quot;??_ ;_ @_ "
+                                            IsEnabled="{Binding Path=SetFormat.IsEnabled, Mode=TwoWay}"/>
+
+                                        <telerik:RadMenuSeparatorItem />
+
+                                        <telerik:RadMenuItem
+                                            Header="Περισσότερες Λογιστικές Μορφές..."
+                                            Command="{Binding Path=ShowFormatCellsDialogNumberTab.Command}"
+                                            CommandParameter="_($* #,##0.00_);_($* (#,##0.00);_($* &quot;-&quot;??_);_(@_)"
+                                            IsEnabled="{Binding Path=ShowFormatCellsDialogNumberTab.IsEnabled, Mode=TwoWay}"/>
+                                    </telerik:RadContextMenu>
+                                </telerik:RadRibbonSplitButton.DropDownContent>
+                            </telerik:RadRibbonSplitButton>
+                            <telerik:RadRibbonButton 
+                                telerik:ScreenTip.Title="Στυλ Ποσοστού (Ctrl+Shift+%)"
+                                telerik:ScreenTip.Description="Εμφάνιση της τιμής ενός κελιού ως ποσοστό."
+                                Size="Small"
+                                Command="{Binding Path=SetStyle.Command}"
+                                CommandParameter="Percent"
+                                IsEnabled="{Binding Path=SetStyle.IsEnabled}"
+                                telerik:IconManager.IconPropertyName="SmallImage"
+                                telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/percent.png">
+
+                            </telerik:RadRibbonButton>
+                            <telerik:RadRibbonButton
+                                telerik:ScreenTip.Title="Στυλ Υποδιαστολής"
+                                telerik:ScreenTip.Description="Εμφάνιση τιμής με σημείο στίξης χιλιάδων. &#13;&#13;ΑΥτό θα αλλάξει την μορφή του κελιού σε λογιστική χωρίς νομισματικό σύμβολο."
+                                Size="Small"
+                                Command="{Binding Path=SetStyle.Command}" 
+                                CommandParameter="Comma"
+                                IsEnabled="{Binding Path=SetStyle.IsEnabled}"
+                                telerik:IconManager.IconPropertyName="SmallImage"
+                                telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/edit-comma.png">
+
+                            </telerik:RadRibbonButton>
+                        </telerik:RadButtonGroup>
+
+                        <telerik:RadButtonGroup>
+
+                            <telerik:RadRibbonButton 
+                                telerik:ScreenTip.Title="Αύξηση Δεκαδικού"
+                                Command="{Binding Path=IncreaseDecimalPlaces.Command}" 
+                                IsEnabled="{Binding Path=IncreaseDecimalPlaces.IsEnabled}"
+                                telerik:ScreenTip.Description="Εμφάνιση πιο ακριβείς τιμές με περισσότερα δεκαδικά ψηφία."
+                                Size="Small"
+                                telerik:IconManager.IconPropertyName="SmallImage"
+                                telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/decimal.png">
+
+                            </telerik:RadRibbonButton>
+                            <telerik:RadRibbonButton
+                                telerik:ScreenTip.Title="Μείωση Δεκαδικού"
+                                Command="{Binding Path=DecreaseDecimalPlaces.Command}" 
+                                IsEnabled="{Binding Path=DecreaseDecimalPlaces.IsEnabled}"
+                                telerik:ScreenTip.Description="Εμφάνιση λιγότερο ακριβείς τιμές με λιγότερα δεκαδικά ψηφία."
+                                Size="Small"
+                                telerik:IconManager.IconPropertyName="SmallImage"
+                                telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/decimalDecrease.png">
+
+                            </telerik:RadRibbonButton>
+                        </telerik:RadButtonGroup>
+                    </telerik:RadOrderedWrapPanel>
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Στυλ"
+                                        IsEnabled="{Binding Path=StylesGroup.IsEnabled}">
+                    <telerik:RadRibbonGroup.Variants>
+                        <telerik:GroupVariant Variant="Large" Priority="0" />
+                    </telerik:RadRibbonGroup.Variants>
+                    <spreadsheetControls:StyleGallery RadSpreadsheet="{Binding ElementName=radSpreadsheet, Mode=OneTime}"/>
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Κελιά"
+                                        IsEnabled="{Binding Path=CellsGroup.IsEnabled}">
+                    <telerik:RadRibbonGroup.Variants>
+                        <telerik:GroupVariant Variant="Large" Priority="0" />
+                    </telerik:RadRibbonGroup.Variants>
+                    <telerik:RadRibbonDropDownButton x:Name="InsertCellsButton"
+                                                     IsEnabled="{Binding Path=CellsGroupInsert.IsEnabled}"
+                                                     telerik:IconManager.IconPropertyName="LargeImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/cellsInsert.png"
+                                                     Size="Large"
+                                                     Text="Εισαγωγή"
+                                                     telerik:ScreenTip.Description="Εισαγωγή κελιών, γραμμών, ή στηλών στο φύλλο ή πίνακα."
+                                                     telerik:ScreenTip.Title="Εισαγωγή Κελιών">
+
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadContextMenu BorderThickness="0" Padding="0" 
+                                                    IsOpen="{Binding Path=IsOpen, ElementName=InsertCellsButton, Mode=TwoWay}">
+                                <telerik:RadMenuItem Header="Εισαγωγή Κελιών..."
+                                                     Command="{Binding Path=InsertCells.Command}" 
+                                                     IsEnabled="{Binding Path=InsertCells.IsEnabled, Mode=TwoWay}"
+                                                     telerik:ScreenTip.Description="Εισαγωγή νέων γραμμών, στηλών, κελιών ή φύλλων στο βιβλίο εργασίας.&#10;                                                                                         New rows will be added above the selection and new columns will be added to the left of the selection.&#10;                                                                                         Add three columns at once by selecting three existing columns first; this also works with rows."
+                                                     telerik:ScreenTip.Title="Εισαγωγή Κελιών">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image telerik:IconManager.IconPropertyName="Source"
+                                               telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/cellsInsert.png" Width="16" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuSeparatorItem />
+
+                                <telerik:RadMenuItem Header="Εισαγωγή Γραμμών Φύλλου"
+                                                     Command="{Binding Path=InsertRows.Command}"
+                                                     IsEnabled="{Binding Path=InsertRows.IsEnabled, Mode=TwoWay}">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image telerik:IconManager.IconPropertyName="Source"
+                                               telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/rowsInsert.png" Width="16"/>
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuItem Header="Εισαγωγή Στηλών Φύλλου"
+                                                     Command="{Binding Path=InsertColumns.Command}"
+                                                     IsEnabled="{Binding Path=InsertColumns.IsEnabled, Mode=TwoWay}">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image telerik:IconManager.IconPropertyName="Source"
+                                               telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/columnsInsert.png" Width="16"/>
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuSeparatorItem />
+
+                                <telerik:RadMenuItem Header="Εισαγωγή Φύλλου"
+                                                     Command="{Binding Path=InsertSheet.Command}"
+                                                     CommandParameter="Worksheet"
+                                                     IsEnabled="{Binding Path=InsertSheet.IsEnabled, Mode=TwoWay}">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image telerik:IconManager.IconPropertyName="Source"
+                                               telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/sheetInsert.png" Width="16"/>
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+                            </telerik:RadContextMenu>
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton x:Name="DeleteCellsButton"
+                                                     IsEnabled="{Binding Path=CellsGroupDelete.IsEnabled}"
+                                                     telerik:IconManager.IconPropertyName="LargeImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/cellsRemove.png"
+                                                     Size="Large"
+                                                     Text="Διαγραφή"
+                                                     telerik:ScreenTip.Description="Διαγραφή κελιών, γραμμών ή στηλών από το φύλλο ή πίνακα."
+                                                     telerik:ScreenTip.Title="Διαγραφή Κελιών">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadContextMenu BorderThickness="0" Padding="0" 
+                                                    IsOpen="{Binding Path=IsOpen, ElementName=DeleteCellsButton, Mode=TwoWay}">
+
+                                <telerik:RadMenuItem Header="Διαγραφή Κελιών..."
+                                                     Command="{Binding Path=RemoveCells.Command}"
+                                                     IsEnabled="{Binding Path=RemoveCells.IsEnabled, Mode=TwoWay}"
+                                                     telerik:ScreenTip.Description="Διαγραφή γραμμών, στηλών ή κελιών."
+                                                     telerik:ScreenTip.Title="Διαγραφή Κελιών">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image telerik:IconManager.IconPropertyName="Source"
+                                               telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/cellsRemove.png" Width="16"/>
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuSeparatorItem />
+
+                                <telerik:RadMenuItem Header="Διαγραφή Γραμμών Φύλλου"
+                                                     Command="{Binding Path=RemoveRows.Command}"
+                                                     IsEnabled="{Binding Path=RemoveRows.IsEnabled, Mode=TwoWay}">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image telerik:IconManager.IconPropertyName="Source"
+                                               telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/rowsRemove.png" Width="16"/>
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuItem Header="Διαγραφή Στηλών Φύλλου"
+                                                     Command="{Binding Path=RemoveColumns.Command}"
+                                                     IsEnabled="{Binding Path=RemoveColumns.IsEnabled, Mode=TwoWay}">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image telerik:IconManager.IconPropertyName="Source"
+                                               telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/columnsRemove.png" Width="16"/>
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuSeparatorItem />
+
+                                <telerik:RadMenuItem Header="Διαγραφή Φύλλου"
+                                                     Command="{Binding Path=RemoveSheet.Command}"
+                                                     IsEnabled="{Binding Path=RemoveSheet.IsEnabled, Mode=TwoWay}">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image telerik:IconManager.IconPropertyName="Source"
+                                               telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/sheetRemove.png" Width="16"/>
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+                            </telerik:RadContextMenu>
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton x:Name="FormatButton"
+                                                     IsEnabled="{Binding Path=CellsGroupFormat.IsEnabled}"
+                                                     telerik:IconManager.IconPropertyName="LargeImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/cellsFormat.png"
+                                                     Size="Large"
+                                                     Text="Μορφή"
+                                                     telerik:ScreenTip.Description="Αλλαγή του ύψους γραμμών, ή πλάτους στηλών, οργάνωση των φύλλων, εφαρμογή προστασίας ή απόκρυψης κελιών."
+                                                     telerik:ScreenTip.Title="Μορφή">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadContextMenu BorderThickness="0" Padding="0" IsOpen="{Binding Path=IsOpen, ElementName=FormatButton, Mode=TwoWay}">
+                                <telerik:RadMenuGroupItem Header="Μέγεθος Κελιών" BorderThickness="0" Background="Transparent" Margin="-1">
+
+                                    <telerik:RadMenuItem Command="{Binding Path=SetRowsHeight.Command}"
+                                                         Header="Ύψος Γραμμής..." 
+                                                         IsEnabled="{Binding Path=SetRowsHeight.IsEnabled, Mode=TwoWay}">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/rowHeight.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem Command="{Binding Path=AutoFitRowsHeight.Command}"
+                                                         Header="Αυτόματο Ύψος Γραμμής"
+                                                         IsEnabled="{Binding Path=AutoFitRowsHeight.IsEnabled, Mode=TwoWay}" />
+
+                                    <telerik:RadMenuItem Command="{Binding Path=SetDefaultRowHeight.Command}"
+                                                         Header="Προεπιλεγμένο Ύψος..."
+                                                         IsEnabled="{Binding Path=SetDefaultRowHeight.IsEnabled, Mode=TwoWay}" />
+
+                                    <telerik:RadMenuSeparatorItem />
+
+                                    <telerik:RadMenuItem Command="{Binding Path=SetColumnsWidth.Command}"
+                                                         Header="Πλάτος Στήλης..."
+                                                         IsEnabled="{Binding Path=SetColumnsWidth.IsEnabled, Mode=TwoWay}">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/columnWidth.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem Command="{Binding Path=AutoFitColumnsWidth.Command}"
+                                                         Header="Αυτόματη Προσαρμογή Πλάτους Στήλης"
+                                                         IsEnabled="{Binding Path=AutoFitColumnsWidth.IsEnabled, Mode=TwoWay}" />
+
+                                    <telerik:RadMenuItem Command="{Binding Path=SetDefaultColumnWidth.Command}"
+                                                         Header="Προεπιλεγμένο Πλάτος..."
+                                                         IsEnabled="{Binding Path=SetDefaultColumnWidth.IsEnabled, Mode=TwoWay}" />
+
+                                    <telerik:RadMenuSeparatorItem />
+
+                                    <telerik:RadMenuItem Command="{Binding Path=ShowFormatCellsDialog.Command}"
+                                                         Header="Μορφή Κελιών..."
+                                                         IsEnabled="{Binding Path=ShowFormatCellsDialog.IsEnabled, Mode=TwoWay}"
+                                                         telerik:ScreenTip.Description="Datasheet formatting">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/formatCells.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+                                </telerik:RadMenuGroupItem>
+                            </telerik:RadContextMenu>
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Επεξεργασία"
+                                        IsEnabled="{Binding Path=EditingGroup.IsEnabled}">
+                    <telerik:RadRibbonGroup.Variants>
+                        <telerik:GroupVariant Variant="Large" Priority="0" />
+                    </telerik:RadRibbonGroup.Variants>
+                    <telerik:RadOrderedWrapPanel>
+
+                        <telerik:RadRibbonDropDownButton x:Name="FillButton"
+                                                         Size="Medium"
+                                                         Text="Γέμισμα"
+                                                         telerik:IconManager.IconPropertyName="SmallImage"
+                                                         telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/fillDown.png"
+                                                         telerik:ScreenTip.Description="Συνέχιση του μοτίβου σε ένα ή περισσότερα γειτονικά κελιά. &#13;&#13;Μπορεί να γίνει γέμισμα κελιών σε οποιαδήποτε διεύθυνση και σε οποιαδήποτε περιοχή γειτονικών κελιών."
+                                                         telerik:ScreenTip.Title="Γέμισμα">
+                            <telerik:RadRibbonDropDownButton.DropDownContent>
+                                <telerik:RadContextMenu BorderThickness="0" Padding="0" 
+                                                        IsOpen="{Binding Path=IsOpen, ElementName=FillButton, Mode=TwoWay}">
+
+                                    <telerik:RadMenuItem Header="Κάτω"
+                                                         ToolTipService.ToolTip="Γέμισμα κάτω (Ctrl+D)"
+                                                         Command="{Binding Path=FillDown.Command}"
+                                                         IsEnabled="{Binding Path=FillDown.IsEnabled, Mode=TwoWay}">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/fillDown.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+                                    <telerik:RadMenuItem Header="Δεξιά"
+                                                         ToolTipService.ToolTip="Γέμισμα δεξιά (Ctrl+R)"
+                                                         Command="{Binding Path=FillRight.Command}"
+                                                         IsEnabled="{Binding Path=FillRight.IsEnabled, Mode=TwoWay}">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/fillRight.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem Header="Επάνω"
+                                                         ToolTipService.ToolTip="Γέμισμα επάνω"
+                                                         Command="{Binding Path=FillUp.Command}"
+                                                         IsEnabled="{Binding Path=FillUp.IsEnabled, Mode=TwoWay}">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/fillUp.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem Header="Αριστερά"
+                                                         ToolTipService.ToolTip="Γέμισμα αριστερά"
+                                                         Command="{Binding Path=FillLeft.Command}"
+                                                         IsEnabled="{Binding Path=FillLeft.IsEnabled, Mode=TwoWay}">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/fillLeft.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem Header="Σειρά..." 
+                                                         ToolTipService.ToolTip="Γέμισμα σειράς"
+                                                         Command="{Binding Path=ShowSeriesDialog.Command}"
+                                                         IsEnabled="{Binding Path=ShowSeriesDialog.IsEnabled, Mode=TwoWay}"/>
+                                </telerik:RadContextMenu>
+                            </telerik:RadRibbonDropDownButton.DropDownContent>
+                        </telerik:RadRibbonDropDownButton>
+
+                        <telerik:RadRibbonDropDownButton x:Name="ClearButton"
+                                                         Size="Medium"
+                                                         Text="Απαλοιφή"
+                                                         telerik:IconManager.IconPropertyName="SmallImage"
+                                                         telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/clear.png"
+                                                         telerik:ScreenTip.Description="Διαγραφή όλων από το κελί, ή επιλεκτικά απαλοιφή της μορφοποίησης, των περιεχομένων, ή των σχολίων."
+                                                         telerik:ScreenTip.Title="Απαλοιφή">
+                            <telerik:RadRibbonDropDownButton.DropDownContent>
+                                <telerik:RadContextMenu BorderThickness="0" Padding="0" 
+                                                        IsOpen="{Binding Path=IsOpen, ElementName=ClearButton, Mode=TwoWay}">
+
+                                    <telerik:RadMenuItem Header="Απαλοιφή Όλων"
+                                                         Command="{Binding Path=Clear.Command}"
+                                                         IsEnabled="{Binding Path=Clear.IsEnabled, Mode=TwoWay}"
+                                                         telerik:ScreenTip.Description="Απαλοιφή όλων από τα επιλεγμένα κελιά. &#13;&#13;Όλο το περιεχόμενο, μορφοποιήσεις και σχόλια απαλοίφονται από τα επιλεγμένα κελιά."
+                                                         telerik:ScreenTip.Title="Απαλοιφή Όλων">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/clear.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem Header="Απαλοιφή Μορφών"
+                                                         Command="{Binding Path=Clear.Command}"
+                                                         CommandParameter="Formats"
+                                                         IsEnabled="{Binding Path=Clear.IsEnabled, Mode=TwoWay}"
+                                                         telerik:ScreenTip.Description="Απαλοιφή μόνο της μορφοποίησης στα επιλεγμένα κελιά."
+                                                         telerik:ScreenTip.Title="Απαλοιφή Μορφών">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/clearFormats.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem Header="Απαλοιφή Περιεχομένων" 
+                                                         Command="{Binding Path=Clear.Command}"
+                                                         CommandParameter="Contents"
+                                                         IsEnabled="{Binding Path=Clear.IsEnabled, Mode=TwoWay}"
+                                                         telerik:ScreenTip.Description="Απαλοιφή μόνο των περιεχομένων των επιλεγμένων κελιών. &#13;&#13;Η μορφοποίηση και τα σχόλια δεν απαλοίφονται."
+                                                         telerik:ScreenTip.Title="Απαλοιφή Περιεχομένων (Del)"/>
+
+                                    <telerik:RadMenuItem Header="Απαλοιφή Υπερ-συνδέσμων" 
+                                                         Command="{Binding Path=Clear.Command}"
+                                                         CommandParameter="Hyperlinks"
+                                                         IsEnabled="{Binding Path=Clear.IsEnabled, Mode=TwoWay}"
+                                                         telerik:ScreenTip.Description="Απαλοιφή των υπερ-συνδέσμων από τα επιλεγμένα κελιά."
+                                                         telerik:ScreenTip.Title="Απαλοιφή Υπερ-συνδέσμων"/>
+
+                                    <telerik:RadMenuSeparatorItem />
+
+                                    <telerik:RadMenuItem Command="{Binding Path=RemoveHyperlink.Command}"
+                                                         IsEnabled="{Binding Path=RemoveHyperlink.IsEnabled, Mode=TwoWay}"
+                                                         Header="Απαλοιφή Υπερ-συνδέσμου">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/removeHyperlink.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+                                </telerik:RadContextMenu>
+                            </telerik:RadRibbonDropDownButton.DropDownContent>
+                        </telerik:RadRibbonDropDownButton>
+                    </telerik:RadOrderedWrapPanel>
+
+                    <telerik:RadRibbonButton Command="{Binding Path=ShowFindAndReplaceDialog.Command}" 
+                                             CommandParameter="Find"
+                                             Content="Εύρεση"
+                                             Size="Large"
+                                             telerik:IconManager.IconPropertyName="LargeImage"
+                                             telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/findAndSelect.png"/>
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+
+            <telerik:RadRibbonTab Header="ΕΙΣΑΓΩΓΗ">
+                <telerik:RadRibbonGroup Header="Σύνδεσμοι"
+                                        IsEnabled="{Binding Path=LinksGroup.IsEnabled}"
+                                        telerik:ScreenTip.Title="Εισαγωγή Υπερ-συνδέσμου"
+                                        telerik:ScreenTip.Description="Δημιουργία συνδέσμου στο έγγραφο για γρήγορη πρόσβαση σε ιστοσελίδες και αρχεία.&#13;&#13;Οι υπερ-σύνδεσμοι οδηγούν επίσης σε τμήματα του εγγράφου.">
+                    <telerik:RadRibbonGroup.Variants>
+                        <telerik:GroupVariant Priority="0" Variant="Large" />
+                    </telerik:RadRibbonGroup.Variants>
+                    <telerik:RadRibbonButton Command="{Binding Path=ShowHyperlinkDialog.Command}"
+                                             IsEnabled="{Binding Path=ShowHyperlinkDialog.IsEnabled}"
+                                             Content="Υπερ-Σύνδεσμος"
+                                             Size="Large"
+                                             telerik:IconManager.IconPropertyName="LargeImage"
+                                             telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/insertHyperlink.png"/>
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+
+            <telerik:RadRibbonTab Header="ΔΙΑΤΑΞΗ ΣΕΛΙΔΑΣ">
+                <telerik:RadRibbonGroup Header="Θέματα"
+                                        IsEnabled="{Binding Path=ThemesGroup.IsEnabled}"
+                                        telerik:ScreenTip.Title="Θέματα">
+                    <telerik:RadRibbonDropDownButton Size="Large"
+                                                     Text="Θέματα"                  
+                                                     telerik:ScreenTip.Title="Θέματα"
+                                                     telerik:ScreenTip.Description=""
+                                                     IsOpen="{Binding ElementName=ThemeGallery, Path=IsParentDropDownOpened, Mode=TwoWay}" >
+                        <telerik:RadRibbonDropDownButton.Content>
+                            <spreadsheetControls:SmallThemePreviewControl RadSpreadsheet="{Binding ElementName=radSpreadsheet, Mode=OneTime}" />
+                        </telerik:RadRibbonDropDownButton.Content>
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <spreadsheetControls:ThemeGallery x:Name="ThemeGallery" 
+                                                              RadSpreadsheet="{Binding ElementName=radSpreadsheet, Mode=OneTime}" />
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+                    <telerik:RadOrderedWrapPanel>
+                        <telerik:RadRibbonDropDownButton Size="Medium"
+                                                         Text="Χρώματα"
+                                                         telerik:ScreenTip.Title="Χρώματα Θεμάτων"
+                                                         telerik:ScreenTip.Description=""
+                                                         IsOpen="{Binding ElementName=ColorGallery, Path=IsParentDropDownOpened, Mode=TwoWay}" >
+                            <telerik:RadRibbonDropDownButton.Content>
+                                <spreadsheetControls:SmallThemeColorPreviewControl RadSpreadsheet="{Binding ElementName=radSpreadsheet, Mode=OneTime}" />
+                            </telerik:RadRibbonDropDownButton.Content>
+                            <telerik:RadRibbonDropDownButton.DropDownContent>
+                                <spreadsheetControls:ColorGallery x:Name="ColorGallery" RadSpreadsheet="{Binding ElementName=radSpreadsheet, Mode=OneTime}" />
+                            </telerik:RadRibbonDropDownButton.DropDownContent>
+                        </telerik:RadRibbonDropDownButton>
+
+                        <telerik:RadRibbonDropDownButton Size="Medium"
+                                                         Text="Γραμματοσειρές"                  
+                                                         telerik:ScreenTip.Title="Γραμματοσειρές Θεμάτων"
+                                                         telerik:ScreenTip.Description=""
+                                                         IsOpen="{Binding ElementName=FontGallery, Path=IsParentDropDownOpened, Mode=TwoWay}" >
+                            <telerik:RadRibbonDropDownButton.Content>
+                                <spreadsheetControls:SmallThemeFontPreviewControl RadSpreadsheet="{Binding ElementName=radSpreadsheet, Mode=OneTime}" />
+                            </telerik:RadRibbonDropDownButton.Content>
+                            <telerik:RadRibbonDropDownButton.DropDownContent>
+                                <spreadsheetControls:FontGallery x:Name="FontGallery" RadSpreadsheet="{Binding ElementName=radSpreadsheet, Mode=OneTime}" />
+                            </telerik:RadRibbonDropDownButton.DropDownContent>
+                        </telerik:RadRibbonDropDownButton>
+                    </telerik:RadOrderedWrapPanel>
+
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+
+            <telerik:RadRibbonTab Header="ΤΥΠΟΙ">
+                <telerik:RadRibbonGroup Header="Βιβλιοθήκη Συναρτήσεων"
+                                        IsEnabled="{Binding Path=FunctionLibraryGroup.IsEnabled}"
+                                        telerik:ScreenTip.Title="Function Library">
+                    <telerik:RadRibbonButton CollapseToSmall="WhenGroupIsSmall"
+                                             Command="{Binding Path=ShowInsertFunctionDialog.Command}"
+                                             IsEnabled="{Binding Path=ShowInsertFunctionDialog.IsEnabled}"
+                                             telerik:IconManager.IconPropertyName="LargeImage"
+                                             telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/insertFunction.png"
+                                             Size="Large"
+                                             Text="Εισαγωγή Συνάρτησης"
+                                             telerik:ScreenTip.Title="Εισαγωγή Συνάρτησης"
+                                             telerik:ScreenTip.Description="Επεξεργασία του τύπου στο τρέχον κελί επιλέγοντας συναρτήσεις και επεξεργασία των ορισμάτων τους." />
+
+                    <telerik:Separator />
+
+                    <telerik:RadRibbonDropDownButton x:Name="AutoSumButton"
+                                                     telerik:IconManager.IconPropertyName="LargeImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/autoSum.png"
+                                                     Size="Large"
+                                                     Text="Αυτόματη Άθροιση"
+                                                     telerik:ScreenTip.Description="Προβολή αποτελεσμάτων απλών υπολογισμών, όπως Μέση Τιμή, Ελάχιστη Τιμή ή Μέγιστη Τιμή, μετά από τα επιλεγμένα κελιά."
+                                                     telerik:ScreenTip.Title="Αυτόματη Άθροιση">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadContextMenu BorderThickness="0" Padding="0" 
+                                                    IsOpen="{Binding Path=IsOpen, ElementName=AutoSumButton, Mode=TwoWay}">
+
+                                <telerik:RadMenuItem Command="{Binding Path=ApplyFunction.Command}"
+                                                     CommandParameter="Sum"
+                                                     Header="Άθροιση"
+                                                     IsEnabled="{Binding Path=ApplyFunction.IsEnabled, Mode=TwoWay}"
+                                                     telerik:ScreenTip.Description="Προβολή του αθροίσματος των επιλεγμένων κελιών μετά από αυτά"
+                                                     telerik:ScreenTip.Title="Άθροιση">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image telerik:IconManager.IconPropertyName="Source"
+                                               telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/sum.png" Stretch="None" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuItem Command="{Binding Path=ApplyFunction.Command}"
+                                                     CommandParameter="Average"
+                                                     Header="Μέση τιμή"
+                                                     IsEnabled="{Binding Path=ApplyFunction.IsEnabled, Mode=TwoWay}" />
+
+                                <telerik:RadMenuItem Command="{Binding Path=ApplyFunction.Command}"
+                                                     CommandParameter="Max"
+                                                     Header="Μέγιστη τιμή"
+                                                     IsEnabled="{Binding Path=ApplyFunction.IsEnabled, Mode=TwoWay}" />
+
+                                <telerik:RadMenuItem Command="{Binding Path=ApplyFunction.Command}"
+                                                     CommandParameter="Min"
+                                                     Header="Ελάχιστη τιμή"
+                                                     IsEnabled="{Binding Path=ApplyFunction.IsEnabled, Mode=TwoWay}" />
+
+                                <telerik:RadMenuSeparatorItem />
+
+                                <telerik:RadMenuItem Command="{Binding Path=ShowInsertFunctionDialog.Command}"
+                                                     Header="Περισσότερες Συναρτήσεις..."
+                                                     IsEnabled="{Binding Path=ShowInsertFunctionDialog.IsEnabled, Mode=TwoWay}" />
+
+                            </telerik:RadContextMenu>
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton x:Name="RecentlyUsed"
+                                                     telerik:IconManager.IconPropertyName="LargeImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/recentlyUsed.png"
+                                                     Size="Large"
+                                                     Text="Πρόσφατες"
+                                                     telerik:ScreenTip.Description="Προβολή και επιλογή από λίστα των συναρτήσεων που χρησιμοποιήθηκαν πρόσφατα."
+                                                     telerik:ScreenTip.Title="Πρόσφατες">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <spreadsheetControls:FunctionsMenu Category="MostRecentlyUsed"
+                                                               DataContext="{Binding}"
+                                                               Items="{Binding Source={StaticResource FunctionsProvider}, Path=MostRecentlyUsed}" />
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton x:Name="Financial"
+                                                     telerik:ScreenTip.Title="Οικονομικές"
+                                                     Text="Οικονομικές"
+                                                     Size="Large"
+                                                     telerik:IconManager.IconPropertyName="LargeImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/financial.png">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <spreadsheetControls:FunctionsMenu Category="Financial"
+                                                               DataContext="{Binding}"
+                                                               BorderThickness="0"
+                                                               Items="{Binding Source={StaticResource FunctionsProvider}, Path=Financial}" />
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton x:Name="Logical"
+                                                     telerik:ScreenTip.Title="Λογικές"
+                                                     Text="Λογικές"
+                                                     Size="Large"
+                                                     telerik:IconManager.IconPropertyName="LargeImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/logical.png">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <spreadsheetControls:FunctionsMenu Category="Logical"
+                                                               DataContext="{Binding}"
+                                                               BorderThickness="0"
+                                                               Items="{Binding Source={StaticResource FunctionsProvider}, Path=Logical}" />
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton x:Name="Text"
+                                                     telerik:ScreenTip.Title="Κειμένου"
+                                                     Text="Κειμένου"
+                                                     Size="Large"
+                                                     telerik:IconManager.IconPropertyName="LargeImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/text.png">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <spreadsheetControls:FunctionsMenu Category="Text"
+                                                               DataContext="{Binding}"
+                                                               BorderThickness="0"
+                                                               Items="{Binding Source={StaticResource FunctionsProvider}, Path=Text}" />
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton x:Name="DateAndTime"
+                                                     telerik:ScreenTip.Title="Ημερομηνία &amp; Ώρα"
+                                                     Text="Ημερομηνία &amp; Ώρα"
+                                                     Size="Large"
+                                                     telerik:IconManager.IconPropertyName="LargeImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/dateTime.png">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <spreadsheetControls:FunctionsMenu Category="DateTime"
+                                                               DataContext="{Binding}"
+                                                               BorderThickness="0"
+                                                               Items="{Binding Source={StaticResource FunctionsProvider}, Path=DateTime}" />
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton x:Name="LookupAndReference"
+                                                     telerik:ScreenTip.Title="Αναζήτηση &amp; Αναφοράς"
+                                                     Text="Αναζήτηση &amp; Αναφοράς"
+                                                     Size="Large"
+                                                     telerik:IconManager.IconPropertyName="LargeImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/lookupReference.png">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <spreadsheetControls:FunctionsMenu Category="LookupReference"
+                                                               DataContext="{Binding}"
+                                                               BorderThickness="0"
+                                                               Items="{Binding Source={StaticResource FunctionsProvider}, Path=LookupReference}" />
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton x:Name="MathAndTrig"
+                                                     telerik:ScreenTip.Title="Μαθηματικές &amp; Τριγωνομετρίας"
+                                                     Text="Μαθηματικές &amp; Τριγωνομετρίας"
+                                                     Size="Large"
+                                                     telerik:IconManager.IconPropertyName="LargeImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/mathTrig.png">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <spreadsheetControls:FunctionsMenu Category="MathTrig"
+                                                               DataContext="{Binding}"
+                                                               BorderThickness="0"
+                                                               Items="{Binding Source={StaticResource FunctionsProvider}, Path=MathTrig}" />
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+
+                    <telerik:RadRibbonDropDownButton x:Name="MoreFunctionsButton"
+                                                     telerik:ScreenTip.Title="Περισσότερες Συναρτήσεις"
+                                                     Text="Περισσότερες Συναρτήσεις"
+                                                     Size="Large"
+                                                     telerik:IconManager.IconPropertyName="LargeImage"
+                                                     telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/moreFunctions.png">
+                        <telerik:RadRibbonDropDownButton.DropDownContent>
+                            <telerik:RadContextMenu BorderThickness="0" Padding="0" 
+                                                    IsOpen="{Binding Path=IsOpen, ElementName=MoreFunctionsButton, Mode=TwoWay}">
+                                <telerik:RadMenuItem Header="Στατιστικές">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image telerik:IconManager.IconPropertyName="Source"
+                                               telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/statistical.png" Width="16"/>
+                                    </telerik:RadMenuItem.Icon>
+                                    <telerik:RadMenuGroupItem BorderThickness="0">
+                                        <spreadsheetControls:FunctionsMenu Category="Statistical"
+                                                                           Margin="0"
+                                                                           DataContext="{Binding}"
+                                                                           Items="{Binding Source={StaticResource FunctionsProvider}, Path=Statistical}" />
+                                    </telerik:RadMenuGroupItem>
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuItem Header="Τεχνολογικές">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image telerik:IconManager.IconPropertyName="Source"
+                                               telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/engineering.png" Width="16"/>
+                                    </telerik:RadMenuItem.Icon>
+                                    <telerik:RadMenuGroupItem BorderThickness="0">
+                                        <spreadsheetControls:FunctionsMenu Category="Engineering"
+                                                                           Margin="0"
+                                                                           DataContext="{Binding}"
+                                                                           Items="{Binding Source={StaticResource FunctionsProvider}, Path=Engineering}" />
+                                    </telerik:RadMenuGroupItem>
+                                </telerik:RadMenuItem>
+
+                                <telerik:RadMenuItem Header="Πληροφορίας">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image telerik:IconManager.IconPropertyName="Source"
+                                               telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/information.png" Width="16"/>
+                                    </telerik:RadMenuItem.Icon>
+                                    <telerik:RadMenuGroupItem BorderThickness="0">
+                                        <spreadsheetControls:FunctionsMenu Category="Information"
+                                                                           Margin="0"
+                                                                           DataContext="{Binding}"
+                                                                           Items="{Binding Source={StaticResource FunctionsProvider}, Path=Information}" />
+                                    </telerik:RadMenuGroupItem>
+                                </telerik:RadMenuItem>
+                            </telerik:RadContextMenu>
+                        </telerik:RadRibbonDropDownButton.DropDownContent>
+                    </telerik:RadRibbonDropDownButton>
+                </telerik:RadRibbonGroup>
+
+                <telerik:RadRibbonGroup Header="Ορισμοί Ονομάτων"
+                                        IsEnabled="{Binding Path=FunctionLibraryGroup.IsEnabled}"
+                                        telerik:ScreenTip.Title="Ορισμοί Ονομάτων">
+
+                    <telerik:RadRibbonButton CollapseToSmall="WhenGroupIsSmall"
+                                             Command="{Binding Path=ShowNameManagerDialog.Command}"
+                                             IsEnabled="{Binding Path=ShowNameManagerDialog.IsEnabled}"
+                                             telerik:IconManager.IconPropertyName="LargeImage"
+                                             telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/32/nameManager.png"
+                                             Size="Large"
+                                             Text="Διαχειριστής Ονομάτων"
+                                             telerik:ScreenTip.Title="Διαχειριστής Ονομάτων"
+                                             telerik:ScreenTip.Description="Δημιουργία, επεξεργασία, διαγραφή και εύρεση όλων των ονομάτων του βιβλίου εργασίας.\nΤα ονόματα χρησιμοποιούνται στους τύπους αντί για αναφορές κελιών.\nΓια παράδειγμα:=SUM(Sales) αντί =SUM(C20:D30)." />
+
+                    <telerik:RadOrderedWrapPanel VerticalAlignment="Top">
+                        <telerik:RadRibbonSplitButton Command="{Binding Path=ShowCreateDefinedNameDialog.Command}"
+                                                      IsEnabled="{Binding Path=ShowCreateDefinedNameDialog.IsEnabled}"
+                                                      Text="Ορισμός Ονόματος"
+                                                      Size="Medium"
+                                                      telerik:IconManager.IconPropertyName="SmallImage"
+                                                      telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/defineName.png">
+                            <telerik:RadRibbonSplitButton.DropDownContent>
+                                <telerik:RadContextMenu BorderThickness="0" Padding="0">
+                                    <telerik:RadMenuItem Command="{Binding Path=ShowCreateDefinedNameDialog.Command}"
+                                                         IsEnabled="{Binding Path=ShowCreateDefinedNameDialog.IsEnabled}"
+                                                         Header="Ορισμός Ονόματος">
+                                        <telerik:RadMenuItem.Icon>
+                                            <Image telerik:IconManager.IconPropertyName="Source"
+                                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/defineName.png" Width="16"/>
+                                        </telerik:RadMenuItem.Icon>
+                                    </telerik:RadMenuItem>
+                                </telerik:RadContextMenu>
+                            </telerik:RadRibbonSplitButton.DropDownContent>
+                        </telerik:RadRibbonSplitButton>
+                    </telerik:RadOrderedWrapPanel>
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup/>
+            </telerik:RadRibbonTab>
+        </telerik:RadRibbonView>
+        <!--  RibbonView End  -->
+
+        <!--  FormulaBar  -->
+        <spreadsheetControls:RadSpreadsheetFormulaBar Grid.Row="1" RadSpreadsheet="{Binding ElementName=radSpreadsheet, Mode=OneTime}" />
+
+        <!--  radSpreadsheet  -->
+        <telerik:RadSpreadsheet x:Name="radSpreadsheet" Grid.Row="2" DataContext="{Binding Path=CommandDescriptors, ElementName=radSpreadsheet}" >
+            <telerik:RadSpreadsheet.WorksheetEditorContextMenu>
+                <telerik:RadContextMenu>
+                    <telerik:RadMenuItem Header="Αποκοπή"
+                                         Command="{Binding Path=Cut.Command}"
+                                         Visibility="{Binding Path=Cut.IsEnabled, Mode=TwoWay, Converter={StaticResource BoolToVisibilityValueConverter}}">
+                        <telerik:RadMenuItem.Icon>
+                            <Image telerik:IconManager.IconPropertyName="Source"
+                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/cut.png" Width="16"/>
+                        </telerik:RadMenuItem.Icon>
+                    </telerik:RadMenuItem>
+
+                    <telerik:RadMenuItem Header="Αντιγραφή"
+                                         Command="{Binding Path=Copy.Command}"
+                                         Visibility="{Binding Path=Copy.IsEnabled, Mode=TwoWay, Converter={StaticResource BoolToVisibilityValueConverter}}">
+                        <telerik:RadMenuItem.Icon>
+                            <Image telerik:IconManager.IconPropertyName="Source"
+                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/copy.png" Width="16"/>
+                        </telerik:RadMenuItem.Icon>
+                    </telerik:RadMenuItem>
+
+                    <telerik:RadMenuItem Header="Επικόλληση"
+                                         Command="{Binding Path=Paste.Command}"
+                                         Visibility="{Binding Path=Paste.IsEnabled, Mode=TwoWay, Converter={StaticResource BoolToVisibilityValueConverter}}">
+                        <telerik:RadMenuItem.Icon>
+                            <Image telerik:IconManager.IconPropertyName="Source"
+                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/pasteNormal.png" Width="16"/>
+                        </telerik:RadMenuItem.Icon>
+                    </telerik:RadMenuItem>
+
+                    <telerik:RadMenuSeparatorItem />
+
+                    <telerik:RadMenuItem Header="Εισαγωγή..."
+                                         Command="{Binding Path=InsertCells.Command}" 
+                                         Visibility="{Binding Path=InsertCells.IsEnabled, Mode=TwoWay, Converter={StaticResource BoolToVisibilityValueConverter}}" />
+
+                    <telerik:RadMenuItem Header="Διαγραφή..."
+                                         Command="{Binding Path=RemoveCells.Command}"
+                                         Visibility="{Binding Path=RemoveCells.IsEnabled, Mode=TwoWay, Converter={StaticResource BoolToVisibilityValueConverter}}"/>
+
+                    <telerik:RadMenuItem Header="Απαλοιφή Περιεχομένων" 
+                                         Command="{Binding Path=Clear.Command}"
+                                         CommandParameter="Contents"
+                                         Visibility="{Binding Path=Clear.IsEnabled, Mode=TwoWay, Converter={StaticResource BoolToVisibilityValueConverter}}"/>
+
+                    <telerik:RadMenuSeparatorItem Visibility="{Binding Path=ShowFormatCellsDialog.IsEnabled, Mode=TwoWay, Converter={StaticResource BoolToVisibilityValueConverter}}"/>
+
+                    <telerik:RadMenuItem Command="{Binding Path=ShowFormatCellsDialog.Command}"
+                                         Header="Μορφοποίηση Κελιών..."
+                                         Visibility="{Binding Path=ShowFormatCellsDialog.IsEnabled, Mode=TwoWay, Converter={StaticResource BoolToVisibilityValueConverter}}">
+
+                        <telerik:RadMenuItem.Icon>
+                            <Image telerik:IconManager.IconPropertyName="Source"
+                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/formatCells.png" Width="16"/>
+                        </telerik:RadMenuItem.Icon>
+                    </telerik:RadMenuItem>
+
+                    <telerik:RadMenuItem Command="{Binding Path=ShowHyperlinkDialog.Command}"
+                                         Header="Υπερ-σύνδεσμος..."
+                                         Visibility="{Binding Path=ShowHyperlinkDialog.IsEnabled, Mode=TwoWay, Converter={StaticResource BoolToVisibilityValueConverter}}">
+                        <telerik:RadMenuItem.Icon>
+                            <Image telerik:IconManager.IconPropertyName="Source"
+                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/insertHyperlink.png" Width="16"/>
+                        </telerik:RadMenuItem.Icon>
+                    </telerik:RadMenuItem>
+
+                    <telerik:RadMenuItem Command="{Binding Path=RemoveHyperlink.Command}"
+                                         Header="Διαγραφή Υπερ-συνδέσμου"
+                                         Visibility="{Binding Path=RemoveHyperlink.IsEnabled, Mode=TwoWay, Converter={StaticResource BoolToVisibilityValueConverter}}">
+                        <telerik:RadMenuItem.Icon>
+                            <Image telerik:IconManager.IconPropertyName="Source"
+                                   telerik:IconManager.IconSource="/Telerik.Windows.Controls.Spreadsheet;component/Images/Light/16/removeHyperlink.png" Width="16"/>
+                        </telerik:RadMenuItem.Icon>
+                    </telerik:RadMenuItem>
+                </telerik:RadContextMenu>
+            </telerik:RadSpreadsheet.WorksheetEditorContextMenu>
+        </telerik:RadSpreadsheet>
+
+        <!--  StatusBar  -->
+        <spreadsheetControls:RadSpreadsheetStatusBar Grid.Row="3" RadSpreadsheet="{Binding ElementName=radSpreadsheet, Mode=OneTime}" />
+
+    </Grid>    
+</UserControl>

@@ -1,0 +1,51 @@
+﻿<Page x:Class="Poseidon.AppPages.Auxiliary.aenData"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:my="clr-namespace:Poseidon.Controls"
+      xmlns:local="clr-namespace:Poseidon.AppPages.Auxiliary"
+      xmlns:Telerik_Windows_Controls_Data_DataForm="clr-namespace:Telerik.Windows.Controls.Data.DataForm;assembly=Telerik.Windows.Controls.Data" 
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+	Title="ΑΕΝ - Διαχείριση">
+
+    <Page.Background>
+        <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+            <GradientStop Color="WhiteSmoke" Offset="0" />
+            <GradientStop Color="WhiteSmoke" Offset="1" />
+        </LinearGradientBrush>
+    </Page.Background>
+
+    <Page.Resources>
+        <DataTemplate x:Key="FormTemplate">
+            <local:aenDataForm />
+        </DataTemplate>
+        <DataTemplate x:Key="FormROTemplate">
+            <local:aenDataFormRO />
+        </DataTemplate>
+    </Page.Resources>
+
+
+    <Grid>
+
+        <Border BorderBrush="White" BorderThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="800" Height="600" Margin="0,10">
+
+            <telerik:RadDataForm x:Name="FormAenData" Header="Α.Ε.Ν. - Διαχείριση" Width="800" FontSize="20"
+                                     CancelButtonContent="Ακύρωση" CommitButtonContent="Αποθήκευση" 
+                                     ValidationSummaryVisibility="Visible" 
+                                     AutoGenerateFields="False"
+                                     AddingNewItem="FormAenData_AddingNewItem"   
+                                     EditEnding="FormAenData_EditEnding" 
+                                     ValidatingItem="FormAenData_ValidatingItem"
+                                     DeletingItem="FormAenData_DeletingItem" 
+                                     ReadOnlyTemplate="{StaticResource FormROTemplate}" 
+                                     EditTemplate="{StaticResource FormTemplate}"
+                                     NewItemTemplate="{StaticResource FormTemplate}" 
+                                     telerik:StyleManager.Theme="Windows8Touch"/>
+           
+        </Border>
+
+    </Grid>
+</Page>

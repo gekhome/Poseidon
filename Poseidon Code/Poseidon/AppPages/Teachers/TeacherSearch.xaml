@@ -1,0 +1,69 @@
+﻿<Page x:Class="Poseidon.AppPages.Teachers.TeacherSearch"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:telerikControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+      xmlns:my="clr-namespace:Poseidon.Controls"
+      xmlns:nav="clr-namespace:Poseidon.Shell.Navigation"
+      xmlns:local="clr-namespace:Poseidon.AppPages.Teachers"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1000" Background="Transparent"
+	  Title="Εκπαιδευτικοί">
+
+    
+    <Grid>
+
+        <Grid.Resources>
+            <DataTemplate x:Key="TeacherDetailsTemplate">
+                <local:TeacherDetail />
+            </DataTemplate>
+        </Grid.Resources>
+        
+        <Border BorderBrush="White" BorderThickness="2" HorizontalAlignment="Center" VerticalAlignment=" Center" Margin="0,0,0,8">
+            <Border.Effect>
+                <DropShadowEffect Color="GhostWhite" Opacity=".50" ShadowDepth="4" />
+            </Border.Effect>
+
+            <StackPanel Orientation="Vertical" >
+                <Border CornerRadius="0,0,0,0" Background="#1B58B8" Height="40">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Πίνακας Εκπαιδευτικών" FontSize="16" FontFamily="Segoe UI"  Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,0"/>
+                        <telerik:RadButton Name="btnRefresh" Content="Ανανέωση" HorizontalAlignment="Right" Click="btnRefresh_Click" 
+                                           telerik:StyleManager.Theme="Windows8" Height="30" Width="80" Margin="60 0 0 0"/>
+                    </StackPanel>
+                </Border>
+                <telerik:RadGridView x:Name="teacherGrid" telerik:StyleManager.Theme="Windows8Touch" Height="560" Width="900"
+                                     CanUserInsertRows="False" CanUserDeleteRows="False" SelectionMode="Extended" DataLoadMode="Asynchronous"
+                                     ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"                                        
+                                     AutoGenerateColumns="False" ShowGroupPanel="True" AlternationCount="2" SelectionUnit="FullRow"  
+                                     ItemsSource ="{Binding TeacherCollection}" ShowColumnFooters="True" IsReadOnly="True" 
+                                     RowDetailsVisibilityMode="Collapsed" Loaded="teacherGrid_Loaded" 
+                                     RowDetailsVisibilityChanged="teacherGrid_RowDetailsVisibilityChanged" 
+                                     RowDetailsTemplate="{StaticResource TeacherDetailsTemplate}">
+                    
+                    
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewToggleRowDetailsColumn />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding ΑΦΜ}" Header="Α.Φ.Μ." IsGroupable="True">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:CountFunction Caption="Πλήθος: " />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΕΠΩΝΥΜΟ}" Header="Επώνυμο"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΟΝΟΜΑ}" Header="Όνομα" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΠΑΤΡΩΝΥΜΟ}" Header="Πατρώνυμο"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΜΗΤΡΩΝΥΜΟ}" Header="Μητρώνυμο" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΤΗΛΕΦΩΝΟ1}" Header="Τηλέφωνο (1)"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΤΗΛΕΦΩΝΟ2}" Header="Τηλέφωνο (2)"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=ΔΝΣΗ_ΠΟΛΗ}" Header="Πόλη Κατοικίας"/>
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+            </StackPanel>
+        </Border>
+
+
+    </Grid>
+    
+</Page>

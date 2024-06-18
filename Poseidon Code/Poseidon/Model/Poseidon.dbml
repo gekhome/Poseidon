@@ -1,0 +1,1482 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PoseidonDB" Class="PoseidonDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=GEK-PC\SQLSERVER;Initial Catalog=PoseidonDB;Integrated Security=True;Pooling=False" SettingsObjectName="Poseidon.Properties.Settings" SettingsPropertyName="PoseidonDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.USERS" Member="USERs">
+    <Type Name="USER">
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USER_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="USER_PASSWORD" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="USER_KEY" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΣΧΟΛΙΚΟ_ΕΤΟΣ" Member="ΣΧΟΛΙΚΟ_ΕΤΟΣs">
+    <Type Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="ΣΧ_ΕΤΟΣ_ΕΝΑΡΞΗ" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ΣΧ_ΕΤΟΣ_ΛΗΞΗ" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΕΚΠ_ΚΛΑΔΟΙ" Member="ΕΚΠ_ΚΛΑΔΟΙs">
+    <Type Name="ΕΚΠ_ΚΛΑΔΟΙ">
+      <Column Name="ΚΛΑΔΟΣ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ΕΚΠ_ΚΛΑΔΟΙ_ΕΚΠ_ΕΙΔΙΚΟΤΗΤΕΣ" Member="ΕΚΠ_ΕΙΔΙΚΟΤΗΤΕΣs" ThisKey="ΚΛΑΔΟΣ_ΚΩΔ" OtherKey="ΒΑΘΜΙΔΑ" Type="ΕΚΠ_ΕΙΔΙΚΟΤΗΤΕΣ" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΕΚΠ_ΕΙΔΙΚΟΤΗΤΕΣ" Member="ΕΚΠ_ΕΙΔΙΚΟΤΗΤΕΣs">
+    <Type Name="ΕΚΠ_ΕΙΔΙΚΟΤΗΤΕΣ">
+      <Column Name="ΕΙΔΙΚΟΤΗΤΑ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΕΙΔΙΚΟΤΗΤΑ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΙΔΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ΕΚΠ_ΚΛΑΔΟΙ_ΕΚΠ_ΕΙΔΙΚΟΤΗΤΕΣ" Member="ΕΚΠ_ΚΛΑΔΟΙ" ThisKey="ΒΑΘΜΙΔΑ" OtherKey="ΚΛΑΔΟΣ_ΚΩΔ" Type="ΕΚΠ_ΚΛΑΔΟΙ" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΝΟΜΟΙ" Member="ΝΟΜΟΙs">
+    <Type Name="ΝΟΜΟΙ">
+      <Column Name="ΝΟΜΟΣ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΝΟΜΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΡΩΤΕΥΟΥΣΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΕΡΙΦΕΡΕΙΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ΠΕΡΙΦΕΡΕΙΕΣ_ΝΟΜΟΙ" Member="ΠΕΡΙΦΕΡΕΙΕΣ" ThisKey="ΠΕΡΙΦΕΡΕΙΑ" OtherKey="ΠΕΡΙΦΕΡΕΙΑ_ΚΩΔ" Type="ΠΕΡΙΦΕΡΕΙΕΣ" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΠΕΡΙΦΕΡΕΙΕΣ" Member="ΠΕΡΙΦΕΡΕΙΕΣs">
+    <Type Name="ΠΕΡΙΦΕΡΕΙΕΣ">
+      <Column Name="ΠΕΡΙΦΕΡΕΙΑ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΠΕΡΙΦΕΡΕΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΟΛΕΙΣ" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ΕΙΚΟΝΑ" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="ΠΕΡΙΦΕΡΕΙΕΣ_ΝΟΜΟΙ" Member="ΝΟΜΟΙs" ThisKey="ΠΕΡΙΦΕΡΕΙΑ_ΚΩΔ" OtherKey="ΠΕΡΙΦΕΡΕΙΑ" Type="ΝΟΜΟΙ" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΑΕΝ_ΕΛΛΑΔΑ" Member="ΑΕΝ_ΕΛΛΑΔΑs">
+    <Type Name="ΑΕΝ_ΕΛΛΑΔΑ">
+      <Column Name="ΑΕΝ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΑΕΝ_ΕΠΩΝΥΜΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΩΡΕΣ" Member="ΩΡΕΣs">
+    <Type Name="ΩΡΕΣ">
+      <Column Name="ΩΡΑ" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ΕΝΑΡΞΗ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΛΗΞΗ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΠΡΟΚΗΡΥΞΕΙΣ" Member="ΠΡΟΚΗΡΥΞΕΙΣs">
+    <Type Name="ΠΡΟΚΗΡΥΞΕΙΣ">
+      <Column Name="ΠΡΟΚΗΡΥΞΗ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΠΡΟΚΗΡΥΞΗ_ΑΠ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΝΑΡΞΗ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΛΗΞΗ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΑΕΝ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ΠΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΑΔΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΜΑΘΗΜΑΤΑ_ΕΙΔΗ" Member="ΜΑΘΗΜΑΤΑ_ΕΙΔΗs">
+    <Type Name="ΜΑΘΗΜΑΤΑ_ΕΙΔΗ">
+      <Column Name="ΜΑΘΗΜΑ_ΕΙΔΟΣ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΜΑΘΗΜΑ_ΕΙΔΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΕΚΠ_ΚΑΤΗΓΟΡΙΕΣ" Member="ΕΚΠ_ΚΑΤΗΓΟΡΙΕΣs">
+    <Type Name="ΕΚΠ_ΚΑΤΗΓΟΡΙΕΣ">
+      <Column Name="ΚΑΤΗΓΟΡΙΑ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΚΑΤΗΓΟΡΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΦΥΛΑ" Member="ΦΥΛΑs">
+    <Type Name="ΦΥΛΑ">
+      <Column Name="ΦΥΛΟ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΦΥΛΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΜΑΘΗΜΑΤΑ_ΘΕ" Member="ΜΑΘΗΜΑΤΑ_ΘΕs">
+    <Type Name="ΜΑΘΗΜΑΤΑ_ΘΕ">
+      <Column Name="ΘΕ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΘΕ_ΣΥΝΤΟΜΕΥΣΗ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΘΕ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΠΛΟΙΑ_ΕΙΔΗ" Member="ΠΛΟΙΑ_ΕΙΔΗs">
+    <Type Name="ΠΛΟΙΑ_ΕΙΔΗ">
+      <Column Name="SHIP_TYPE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SHIP_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SHIP_DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SHIP_PICTURE" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΣΧΟΛΕΣ" Member="ΣΧΟΛΕΣs">
+    <Type Name="ΣΧΟΛΕΣ">
+      <Column Name="ΣΧΟΛΗ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΣΧΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ_ΣΥΝΤΟΜΟΓΡΑΦΙΑ" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="ΔΙΕΥΘΥΝΤΗΣ_ΟΝΟΜΑ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΔΙΕΥΘΥΝΤΗΣ_ΤΗΛΕΦΩΝΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΔΙΕΥΘΥΝΤΗΣ_ΦΑΞ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΔΙΕΥΘΥΝΤΗΣ_EMAIL" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="ΥΠΟΔΙΕΥΘ_ΟΝΟΜΑ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΥΠΟΔΙΕΥΘ_ΤΗΛΕΦΩΝΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΥΠΟΔΙΕΥΘ_ΦΑΞ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΥΠΟΔΙΕΥΘ_EMAIL" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΤΜΗΜΑΤΑ_ΣΜ" Member="ΤΜΗΜΑΤΑ_ΣΜs">
+    <Type Name="ΤΜΗΜΑΤΑ_ΣΜ">
+      <Column Name="ΤΜΗΜΑ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΔΙΔ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΤΜΗΜΑΤΑ_ΣΠ" Member="ΤΜΗΜΑΤΑ_ΣΠs">
+    <Type Name="ΤΜΗΜΑΤΑ_ΣΠ">
+      <Column Name="ΤΜΗΜΑ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΔΙΔ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΔΙΔΑΚΤΙΚΟ_ΕΡΓΟ" Member="ΔΙΔΑΚΤΙΚΟ_ΕΡΓΟs">
+    <Type Name="ΔΙΔΑΚΤΙΚΟ_ΕΡΓΟ">
+      <Column Name="ΕΡΓΟ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΕΡΓΟ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΕΚΠΑΙΔΕΥΤΙΚΟΙ" Member="ViewΕΚΠΑΙΔΕΥΤΙΚΟΙs">
+    <Type Name="ViewΕΚΠΑΙΔΕΥΤΙΚΟΙ">
+      <Column Name="ΑΦΜ" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(51)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΕΒΔΟΜΑΔΕΣ" Member="ΕΒΔΟΜΑΔΕΣs">
+    <Type Name="ΕΒΔΟΜΑΔΕΣ">
+      <Column Name="WEEK" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sqlΩΡΕΣ_ΕΚΠ_ΣΜ" Member="sqlΩΡΕΣ_ΕΚΠ_ΣΜs">
+    <Type Name="sqlΩΡΕΣ_ΕΚΠ_ΣΜ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="ΗΜΕΡΟΜΗΝΙΑ" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="HOURS_TOTAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sqlΤΠΗ_ΕΚΠ_ALL_ΣΜ" Member="sqlΤΠΗ_ΕΚΠ_ALL_ΣΜs">
+    <Type Name="sqlΤΠΗ_ΕΚΠ_ALL_ΣΜ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΗΜΕΡΟΜΗΝΙΑ" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="ΣΥΝΟΛΟ_ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΠΑΡΑΚΟΛΟΥΘΗΣΗ_ΩΡΕΣ_ΣΜ" Member="ViewΠΑΡΑΚΟΛΟΥΘΗΣΗ_ΩΡΕΣ_ΣΜs">
+    <Type Name="ViewΠΑΡΑΚΟΛΟΥΘΗΣΗ_ΩΡΕΣ_ΣΜ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ΣΥΝΟΛΟ_ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΥΠΟΛΟΙΠΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sqlΣΧΟΛΙΚΟ_ΕΤΟΣ" Member="sqlΣΧΟΛΙΚΟ_ΕΤΟΣs">
+    <Type Name="sqlΣΧΟΛΙΚΟ_ΕΤΟΣ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΠΑΡΑΚΟΛΟΥΘΗΣΗ_ΩΡΕΣ_ΣΠ" Member="ViewΠΑΡΑΚΟΛΟΥΘΗΣΗ_ΩΡΕΣ_ΣΠs">
+    <Type Name="ViewΠΑΡΑΚΟΛΟΥΘΗΣΗ_ΩΡΕΣ_ΣΠ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ΣΥΝΟΛΟ_ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΥΠΟΛΟΙΠΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sqlΤΠΗ_ΕΚΠ_ALL_ΣΠ" Member="sqlΤΠΗ_ΕΚΠ_ALL_ΣΠs">
+    <Type Name="sqlΤΠΗ_ΕΚΠ_ALL_ΣΠ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΗΜΕΡΟΜΗΝΙΑ" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="ΣΥΝΟΛΟ_ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sqlΩΡΕΣ_ΕΚΠ_ΣΠ" Member="sqlΩΡΕΣ_ΕΚΠ_ΣΠs">
+    <Type Name="sqlΩΡΕΣ_ΕΚΠ_ΣΠ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="ΗΜΕΡΟΜΗΝΙΑ" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="HOURS_TOTAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΕΚΠΑΙΔΕΥΤΙΚΟΣ" Member="ΕΚΠΑΙΔΕΥΤΙΚΟΣs">
+    <Type Name="ΕΚΠΑΙΔΕΥΤΙΚΟΣ">
+      <Column Name="ΑΦΜ" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ΔΟΥ" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΠΑΤΡΩΝΥΜΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΜΗΤΡΩΝΥΜΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΦΥΛΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΔΤ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΗΜΝΙΑ_ΓΕΝΝΗΣΗ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΔΝΣΗ_ΟΔΟΣ" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="ΔΝΣΗ_ΤΚ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΔΝΣΗ_ΠΟΛΗ" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ΤΗΛΕΦΩΝΟ1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΗΛΕΦΩΝΟ2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΑΡΑΤΗΡΗΣΕΙΣ" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ΕΡΓΑΣΙΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΕΚΠ_ΕΡΓΑΣΙΑ" Member="ΕΚΠ_ΕΡΓΑΣΙΑs">
+    <Type Name="ΕΚΠ_ΕΡΓΑΣΙΑ">
+      <Column Name="ΕΡΓΑΣΙΑ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΕΡΓΑΣΙΑ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΜΕ_ΣΜ" Member="statΜΕ_ΣΜs">
+    <Type Name="statΜΕ_ΣΜ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΡΓΑΣΙΑ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΜΕ_ΣΠ" Member="statΜΕ_ΣΠs">
+    <Type Name="statΜΕ_ΣΠ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΡΓΑΣΙΑ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΦΥΛΟ_ΣΜ" Member="statΦΥΛΟ_ΣΜs">
+    <Type Name="statΦΥΛΟ_ΣΜ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΦΥΛΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΦΥΛΟ_ΣΠ" Member="statΦΥΛΟ_ΣΠs">
+    <Type Name="statΦΥΛΟ_ΣΠ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΦΥΛΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΦΥΛΟ_ΣΠ_ΣΜ" Member="statΦΥΛΟ_ΣΠ_ΣΜs">
+    <Type Name="statΦΥΛΟ_ΣΠ_ΣΜ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΦΥΛΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΚΑΤΗΓΟΡΙΕΣ_ΣΜ" Member="statΚΑΤΗΓΟΡΙΕΣ_ΣΜs">
+    <Type Name="statΚΑΤΗΓΟΡΙΕΣ_ΣΜ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΚΑΤΗΓΟΡΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΚΑΤΗΓΟΡΙΕΣ_ΣΠ" Member="statΚΑΤΗΓΟΡΙΕΣ_ΣΠs">
+    <Type Name="statΚΑΤΗΓΟΡΙΕΣ_ΣΠ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΚΑΤΗΓΟΡΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΦΥΛΟ_ΣΥΝΟΨΗ_ΣΠ_ΣΜ" Member="statΦΥΛΟ_ΣΥΝΟΨΗ_ΣΠ_ΣΜs">
+    <Type Name="statΦΥΛΟ_ΣΥΝΟΨΗ_ΣΠ_ΣΜ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΦΥΛΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TOTAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΑΝΑΘΕΣΕΙΣ_ΣΜ" Member="statΑΝΑΘΕΣΕΙΣ_ΣΜs">
+    <Type Name="statΑΝΑΘΕΣΕΙΣ_ΣΜ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΑΝΑΘΕΣΕΙΣ_ΣΠ" Member="statΑΝΑΘΕΣΕΙΣ_ΣΠs">
+    <Type Name="statΑΝΑΘΕΣΕΙΣ_ΣΠ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΑΝΑΘΕΣΕΙΣ_ΣΠ_ΣΜ" Member="statΑΝΑΘΕΣΕΙΣ_ΣΠ_ΣΜs">
+    <Type Name="statΑΝΑΘΕΣΕΙΣ_ΣΠ_ΣΜ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TOTAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΑΝΑΘΕΣΕΙΣ_ΩΡΕΣ_ΣΜ" Member="statΑΝΑΘΕΣΕΙΣ_ΩΡΕΣ_ΣΜs">
+    <Type Name="statΑΝΑΘΕΣΕΙΣ_ΩΡΕΣ_ΣΜ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΩΡΕΣ_ΣΥΝ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΑΝΑΘΕΣΕΙΣ_ΩΡΕΣ_ΣΠ" Member="statΑΝΑΘΕΣΕΙΣ_ΩΡΕΣ_ΣΠs">
+    <Type Name="statΑΝΑΘΕΣΕΙΣ_ΩΡΕΣ_ΣΠ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΩΡΕΣ_ΣΥΝ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΚΑΤΗΓΟΡΙΕΣ_ΣΠ_ΣΜ" Member="statΚΑΤΗΓΟΡΙΕΣ_ΣΠ_ΣΜs">
+    <Type Name="statΚΑΤΗΓΟΡΙΕΣ_ΣΠ_ΣΜ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΚΑΤΗΓΟΡΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TOTAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΣΠΟΥΔΕΣ" Member="ΣΠΟΥΔΕΣs">
+    <Type Name="ΣΠΟΥΔΕΣ">
+      <Column Name="ΣΠΟΥΔΕΣ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΣΠΟΥΔΕΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sqlΑΝΑΘΕΣΕΙΣ_ΣΜ" Member="sqlΑΝΑΘΕΣΕΙΣ_ΣΜs">
+    <Type Name="sqlΑΝΑΘΕΣΕΙΣ_ΣΜ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΑΦΜ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΙΔΙΚΟΤΗΤΑ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ΩΡΕΣ_ΕΒΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΘΕ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="ΚΑΤΗΓΟΡΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sqlΑΝΑΘΕΣΕΙΣ_ΣΠ" Member="sqlΑΝΑΘΕΣΕΙΣ_ΣΠs">
+    <Type Name="sqlΑΝΑΘΕΣΕΙΣ_ΣΠ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΑΦΜ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΙΔΙΚΟΤΗΤΑ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ΩΡΕΣ_ΕΒΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΘΕ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="ΚΑΤΗΓΟΡΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΑΝΑΘΕΣΕΙΣ_ΣΜ" Member="ΑΝΑΘΕΣΕΙΣ_ΣΜs">
+    <Type Name="ΑΝΑΘΕΣΕΙΣ_ΣΜ">
+      <Column Name="ΑΝΑΘΕΣΗ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΑΦΜ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟΦΑΣΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΗΜΝΙΑ_ΠΡΟΣΛΗΨΗ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΚΑΤΗΓΟΡΙΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ_ΕΙΔΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΩΡΕΣ_ΕΒΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΘΕ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΙΔΙΚΟΤΗΤΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΕΤΑΠΤΥΧΙΑΚΟ" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΟΡΙΚΟ" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ΠΑΡΑΤΗΡΗΣΕΙΣ" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΑΝΑΘΕΣΕΙΣ_ΣΠ" Member="ΑΝΑΘΕΣΕΙΣ_ΣΠs">
+    <Type Name="ΑΝΑΘΕΣΕΙΣ_ΣΠ">
+      <Column Name="ΑΝΑΘΕΣΗ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΑΦΜ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟΦΑΣΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΗΜΝΙΑ_ΠΡΟΣΛΗΨΗ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΚΑΤΗΓΟΡΙΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ_ΕΙΔΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΩΡΕΣ_ΕΒΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΘΕ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΙΔΙΚΟΤΗΤΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΕΤΑΠΤΥΧΙΑΚΟ" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΟΡΙΚΟ" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ΠΑΡΑΤΗΡΗΣΕΙΣ" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΠΡΟΣΟΝΤΑ_ΣΜ" Member="statΠΡΟΣΟΝΤΑ_ΣΜs">
+    <Type Name="statΠΡΟΣΟΝΤΑ_ΣΜ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΕΤΑΠΤΥΧΙΑΚΟ" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΟΡΙΚΟ" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΠΡΟΣΟΝΤΑ_ΣΠ" Member="statΠΡΟΣΟΝΤΑ_ΣΠs">
+    <Type Name="statΠΡΟΣΟΝΤΑ_ΣΠ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΕΤΑΠΤΥΧΙΑΚΟ" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΟΡΙΚΟ" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΠΡΟΣΟΝΤΑ_ΣΠ_ΣΜ" Member="statΠΡΟΣΟΝΤΑ_ΣΠ_ΣΜs">
+    <Type Name="statΠΡΟΣΟΝΤΑ_ΣΠ_ΣΜ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΕΤΑΠΤΥΧΙΑΚΟ" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΟΡΙΚΟ" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TOTAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.certΕΚΠ_ΒΕΒΑΙΩΣΗ" Member="certΕΚΠ_ΒΕΒΑΙΩΣΗs">
+    <Type Name="certΕΚΠ_ΒΕΒΑΙΩΣΗ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΦΜ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΠΡΩΤΟΚΟΛΛΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΗΜΕΡΟΜΗΝΙΑ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΠΡΟΣΛΗΨΗ_ΩΣ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ΣΤΙΣ_ΕΙΔΙΚΟΤΗΤΕΣ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ΑΕΝ_ΕΠΩΝΥΜΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΔΙΕΥΘΥΝΣΗ" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="ΤΚ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΠΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΗΡΟΦΟΡΙΕΣ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΤΗΛΕΦΩΝΑ" Type="System.String" DbType="NVarChar(160)" CanBeNull="true" />
+      <Column Name="FAX" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΕΚΠ_ΒΕΒΑΙΩΣΗ" Member="ViewΕΚΠ_ΒΕΒΑΙΩΣΗs">
+    <Type Name="ViewΕΚΠ_ΒΕΒΑΙΩΣΗ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΠΡΩΤΟΚΟΛΛΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΗΜΕΡΟΜΗΝΙΑ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΑΦΜ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="ΠΡΟΣΛΗΨΗ_ΩΣ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ΣΤΙΣ_ΕΙΔΙΚΟΤΗΤΕΣ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΕΞΟΔΟΣ_ΕΙΔΗ" Member="ΕΞΟΔΟΣ_ΕΙΔΗs">
+    <Type Name="ΕΞΟΔΟΣ_ΕΙΔΗ">
+      <Column Name="ΚΩΔΙΚΟΣ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΕΞΟΔΟΣ_ΕΙΔΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΕΙΣΟΔΟΣ_ΕΙΔΗ" Member="ΕΙΣΟΔΟΣ_ΕΙΔΗs">
+    <Type Name="ΕΙΣΟΔΟΣ_ΕΙΔΗ">
+      <Column Name="ΚΩΔΙΚΟΣ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΕΙΣΟΔΟΣ_ΕΙΔΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΥΠΗΚΟΟΤΗΤΕΣ" Member="ΥΠΗΚΟΟΤΗΤΕΣs">
+    <Type Name="ΥΠΗΚΟΟΤΗΤΕΣ">
+      <Column Name="ΚΩΔΙΚΟΣ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΥΠΗΚΟΟΤΗΤΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΕΞΑΜΗΝΑ" Member="ΕΞΑΜΗΝΑs">
+    <Type Name="ΕΞΑΜΗΝΑ">
+      <Column Name="ΕΞΑΜΗΝΟ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΦΟΙΤΗΣΗ_ΕΙΔΗ" Member="ΦΟΙΤΗΣΗ_ΕΙΔΗs">
+    <Type Name="ΦΟΙΤΗΣΗ_ΕΙΔΗ">
+      <Column Name="ΦΟΙΤΗΣΗ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΦΟΙΤΗΣΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΣΠΟΥΔΑΣΤΗΣ" Member="ViewΣΠΟΥΔΑΣΤΗΣs">
+    <Type Name="ViewΣΠΟΥΔΑΣΤΗΣ">
+      <Column Name="ΣΧΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ΑΜΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΠΑΤΡΩΝΥΜΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΗΤΡΩΝΥΜΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΦΥΛΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΥΠΗΚΟΟΤΗΤΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΔΙΕΥΘΥΝΣΗ1" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΔΙΕΥΘΥΝΣΗ2" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΤΗΛΕΦΩΝΑ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΕΙΣΟΔΟΣ_ΕΙΔΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΞΟΔΟΣ_ΕΙΔΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΗΜΝΙΑ_ΓΕΝΝΗΣΗ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΤΟΠΟΣ_ΓΕΝΝΗΣΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΔΗΜΟΤΗΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΡ_ΔΗΜΟΤΟΛΟΓΙΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΔΤ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΑΔΤ_ΑΡΧΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΔΤ_ΕΚΔΟΣΗ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΜΗΤΡΩΟ_ΑΡΡΕΝΩΝ_ΤΟΠΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΗΤΡΩΟ_ΑΡΡΕΝΩΝ_ΑΡ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΕΙΣΟΔΟΣ_ΗΜΝΙΑ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΕΞΟΔΟΣ_ΗΜΝΙΑ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΠΡΑΚΤΙΚΗ_ΑΣΚΗΣΗ" Member="ΠΡΑΚΤΙΚΗ_ΑΣΚΗΣΗs">
+    <Type Name="ΠΡΑΚΤΙΚΗ_ΑΣΚΗΣΗ">
+      <Column Name="ΚΕΠ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΚΕΠ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΠΛΟΙΟ_ΚΑΤΗΓΟΡΙΑ" Member="ΠΛΟΙΟ_ΚΑΤΗΓΟΡΙΑs">
+    <Type Name="ΠΛΟΙΟ_ΚΑΤΗΓΟΡΙΑ">
+      <Column Name="ΚΑΤΗΓΟΡΙΑ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΚΑΤΗΓΟΡΙΑ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ΠΛΟΙΟ_ΚΑΤΗΓΟΡΙΑ_ΠΛΟΙΟ_ΥΠΟΚΑΤΗΓΟΡΙΑ" Member="ΠΛΟΙΟ_ΥΠΟΚΑΤΗΓΟΡΙΑs" ThisKey="ΚΑΤΗΓΟΡΙΑ_ΚΩΔ" OtherKey="ΚΑΤΗΓΟΡΙΑ_ΚΩΔ" Type="ΠΛΟΙΟ_ΥΠΟΚΑΤΗΓΟΡΙΑ" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΠΛΟΙΟ_ΥΠΟΚΑΤΗΓΟΡΙΑ" Member="ΠΛΟΙΟ_ΥΠΟΚΑΤΗΓΟΡΙΑs">
+    <Type Name="ΠΛΟΙΟ_ΥΠΟΚΑΤΗΓΟΡΙΑ">
+      <Column Name="ΥΠΟΚΑΤΗΓΟΡΙΑ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΥΠΟΚΑΤΗΓΟΡΙΑ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ΥΠΟΚΑΤΗΓΟΡΙΑ_ΠΛΟΙΑ" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ΚΑΤΗΓΟΡΙΑ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ΠΛΟΙΟ_ΚΑΤΗΓΟΡΙΑ_ΠΛΟΙΟ_ΥΠΟΚΑΤΗΓΟΡΙΑ" Member="ΠΛΟΙΟ_ΚΑΤΗΓΟΡΙΑ" ThisKey="ΚΑΤΗΓΟΡΙΑ_ΚΩΔ" OtherKey="ΚΑΤΗΓΟΡΙΑ_ΚΩΔ" Type="ΠΛΟΙΟ_ΚΑΤΗΓΟΡΙΑ" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΑΡΙΘΜΟΙ" Member="ΑΡΙΘΜΟΙs">
+    <Type Name="ΑΡΙΘΜΟΙ">
+      <Column Name="NUMBER" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣ_ΣΜ" Member="ViewΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣ_ΣΜs">
+    <Type Name="ViewΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣ_ΣΜ">
+      <Column Name="ΣΧΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΗΜΝΙΑ_ΕΓΓΡΑΦΗ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΦΥΛΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΦΟΙΤΗΣΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣ_ΣΠ" Member="ViewΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣ_ΣΠs">
+    <Type Name="ViewΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣ_ΣΠ">
+      <Column Name="ΣΧΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΗΜΝΙΑ_ΕΓΓΡΑΦΗ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΦΥΛΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΦΟΙΤΗΣΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣ_ΣΠ_ΣΜ" Member="ViewΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣ_ΣΠ_ΣΜs">
+    <Type Name="ViewΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣ_ΣΠ_ΣΜ">
+      <Column Name="ΣΧΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΗΜΝΙΑ_ΕΓΓΡΑΦΗ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΦΥΛΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΦΟΙΤΗΣΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΠΡΟΓΡΑΜΜΑ_ΣΜ" Member="ViewΠΡΟΓΡΑΜΜΑ_ΣΜs">
+    <Type Name="ViewΠΡΟΓΡΑΜΜΑ_ΣΜ">
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ΗΜΕΡΟΜΗΝΙΑ" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ΜΑΘΗΜΑ_ΕΡΓΟ" Type="System.String" DbType="NVarChar(253)" CanBeNull="true" />
+      <Column Name="Σ_ΩΡΕΣ_ΘΕΩΡΙΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Σ_ΩΡΕΣ_ΕΦΑΡΜΟΓΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΔ_ΕΡΓΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΡΓΟ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΠΡΟΓΡΑΜΜΑ_ΣΠ" Member="ViewΠΡΟΓΡΑΜΜΑ_ΣΠs">
+    <Type Name="ViewΠΡΟΓΡΑΜΜΑ_ΣΠ">
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ΗΜΕΡΟΜΗΝΙΑ" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ΜΑΘΗΜΑ_ΕΡΓΟ" Type="System.String" DbType="NVarChar(253)" CanBeNull="true" />
+      <Column Name="Σ_ΩΡΕΣ_ΘΕΩΡΙΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Σ_ΩΡΕΣ_ΕΦΑΡΜΟΓΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΔ_ΕΡΓΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΡΓΟ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΣΠΟΥΔΑΣΤΗΣ_ΤΜΗΜΑ_ΣΜ" Member="ViewΣΠΟΥΔΑΣΤΗΣ_ΤΜΗΜΑ_ΣΜs">
+    <Type Name="ViewΣΠΟΥΔΑΣΤΗΣ_ΤΜΗΜΑ_ΣΜ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΣΠΟΥΔΑΣΤΗΣ_ΤΜΗΜΑ_ΣΠ" Member="ViewΣΠΟΥΔΑΣΤΗΣ_ΤΜΗΜΑ_ΣΠs">
+    <Type Name="ViewΣΠΟΥΔΑΣΤΗΣ_ΤΜΗΜΑ_ΣΠ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΑΠΟΥΣΙΕΣ_ΣΥΝΟΛΟ_ΟΡΙΟ_ΣΜ" Member="ViewΑΠΟΥΣΙΕΣ_ΣΥΝΟΛΟ_ΟΡΙΟ_ΣΜs">
+    <Type Name="ViewΑΠΟΥΣΙΕΣ_ΣΥΝΟΛΟ_ΟΡΙΟ_ΣΜ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΣΥΝΟΛΟ_ΑΠΟΥΣΙΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ_ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟΥΣΙΕΣ_ΟΡΙΟ" Type="System.Decimal" DbType="Decimal(13,2)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΑΠΟΥΣΙΕΣ_ΣΥΝΟΛΟ_ΟΡΙΟ_ΣΠ" Member="ViewΑΠΟΥΣΙΕΣ_ΣΥΝΟΛΟ_ΟΡΙΟ_ΣΠs">
+    <Type Name="ViewΑΠΟΥΣΙΕΣ_ΣΥΝΟΛΟ_ΟΡΙΟ_ΣΠ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΣΥΝΟΛΟ_ΑΠΟΥΣΙΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ_ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟΥΣΙΕΣ_ΟΡΙΟ" Type="System.Decimal" DbType="Decimal(13,2)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΤΑΞΙΔΙΑ" Member="ΤΑΞΙΔΙΑs">
+    <Type Name="ΤΑΞΙΔΙΑ">
+      <Column Name="ΚΕΠ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΚΕΠ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΗΝΕΣ_ΜΙΝ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΗΝΕΣ_ΜΑΧ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΤΑΞΙΔΙ_ΑΠΟΤΕΛΕΣΜΑ" Member="ΤΑΞΙΔΙ_ΑΠΟΤΕΛΕΣΜΑs">
+    <Type Name="ΤΑΞΙΔΙ_ΑΠΟΤΕΛΕΣΜΑ">
+      <Column Name="ΑΠΟΤΕΛΕΣΜΑ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΑΠΟΤΕΛΕΣΜΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΚΕΠ" Member="ΚΕΠs">
+    <Type Name="ΚΕΠ">
+      <Column Name="ΚΩΔΙΚΟΣ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΑΞΙΔΙ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΕΩΣ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΑΠΟΤΕΛΕΣΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΠΛΟΙΟ_ΟΝΟΜΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΟΙΟ_ΝΗΟΛΟΓΙΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SHIP_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SHIP_SUBTYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΚΕΠ_ΣΜ" Member="ViewΚΕΠ_ΣΜs">
+    <Type Name="ViewΚΕΠ_ΣΜ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΚΕΠ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΠΟ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΕΩΣ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DAYS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONTHS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΑΠΟΤΕΛΕΣΜΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΟΙΟ_ΟΝΟΜΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΟΙΟ_ΝΗΟΛΟΓΙΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΟΙΟ_ΚΑΤΗΓΟΡΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΟΙΟ_ΥΠΟΚΑΤΗΓΟΡΙΑ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΑΞΙΔΙ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΚΕΠ_ΣΠ" Member="ViewΚΕΠ_ΣΠs">
+    <Type Name="ViewΚΕΠ_ΣΠ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΚΕΠ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΠΟ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΕΩΣ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DAYS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONTHS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΑΠΟΤΕΛΕΣΜΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΟΙΟ_ΟΝΟΜΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΟΙΟ_ΝΗΟΛΟΓΙΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΟΙΟ_ΚΑΤΗΓΟΡΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΟΙΟ_ΥΠΟΚΑΤΗΓΟΡΙΑ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΑΞΙΔΙ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΜΑΘΗΜΑΤΑ_ΣΜ" Member="ΜΑΘΗΜΑΤΑ_ΣΜs">
+    <Type Name="ΜΑΘΗΜΑΤΑ_ΣΜ">
+      <Column Name="ΚΩΔΙΚΟΣ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="STCW_FCT" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Σ_ΩΡΕΣ_ΘΕΩΡΙΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Σ_ΩΡΕΣ_ΕΦΑΡΜΟΓΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΩΡΕΣ_ΕΒΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΣΥΝΟΛΟ_ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΘΕ" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΜΑΘΗΜΑΤΑ_ΣΠ" Member="ΜΑΘΗΜΑΤΑ_ΣΠs">
+    <Type Name="ΜΑΘΗΜΑΤΑ_ΣΠ">
+      <Column Name="ΚΩΔΙΚΟΣ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="STCW_FCT" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Σ_ΩΡΕΣ_ΘΕΩΡΙΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Σ_ΩΡΕΣ_ΕΦΑΡΜΟΓΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΩΡΕΣ_ΕΒΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΣΥΝΟΛΟ_ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΘΕ" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sqlΤΜΗΜΑΤΑ_ΣΜ" Member="sqlΤΜΗΜΑΤΑ_ΣΜs">
+    <Type Name="sqlΤΜΗΜΑΤΑ_ΣΜ">
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ΔΙΔ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sqlΤΜΗΜΑΤΑ_ΣΠ" Member="sqlΤΜΗΜΑΤΑ_ΣΠs">
+    <Type Name="sqlΤΜΗΜΑΤΑ_ΣΠ">
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ΔΙΔ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΜΑΘΗΜΑΤΑ_ΣΜ" Member="ViewΜΑΘΗΜΑΤΑ_ΣΜs">
+    <Type Name="ViewΜΑΘΗΜΑΤΑ_ΣΜ">
+      <Column Name="ΚΩΔΙΚΟΣ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ_ΘΕ" Type="System.String" DbType="NVarChar(205)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΜΑΘΗΜΑΤΑ_ΣΠ" Member="ViewΜΑΘΗΜΑΤΑ_ΣΠs">
+    <Type Name="ViewΜΑΘΗΜΑΤΑ_ΣΠ">
+      <Column Name="ΚΩΔΙΚΟΣ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ_ΘΕ" Type="System.String" DbType="NVarChar(205)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΣΠΟΥΔΑΣΤΗΣ_ΒΑΘΜΟΙ_ΣΜ" Member="ViewΣΠΟΥΔΑΣΤΗΣ_ΒΑΘΜΟΙ_ΣΜs">
+    <Type Name="ViewΣΠΟΥΔΑΣΤΗΣ_ΒΑΘΜΟΙ_ΣΜ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ΘΕ" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΟΣ_ΠΡΟΟΔΟΣ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΟΣ_ΕΞΕΤΑΣΗ_ΘΕΩΡΙΑ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΟΣ_ΕΞΕΤΑΣΗ_ΠΡΑΚΤΙΚΗ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΟΣ_ΜΟ_ΘΕ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΟΣ_ΜΟ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΣΠΟΥΔΑΣΤΗΣ_ΒΑΘΜΟΙ_ΣΠ" Member="ViewΣΠΟΥΔΑΣΤΗΣ_ΒΑΘΜΟΙ_ΣΠs">
+    <Type Name="ViewΣΠΟΥΔΑΣΤΗΣ_ΒΑΘΜΟΙ_ΣΠ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ΘΕ" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΟΣ_ΠΡΟΟΔΟΣ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΟΣ_ΕΞΕΤΑΣΗ_ΘΕΩΡΙΑ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΟΣ_ΕΞΕΤΑΣΗ_ΠΡΑΚΤΙΚΗ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΟΣ_ΜΟ_ΘΕ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΟΣ_ΜΟ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ" Member="ΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣs">
+    <Type Name="ΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ">
+      <Column Name="ΚΩΔΙΚΟΣ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΗΜΕΡΟΜΗΝΙΑ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟΥΣΙΕΣ_ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟΥΣΙΕΣ_ΕΙΔΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΑΠΟΥΣΙΕΣ_ΕΙΔΗ" Member="ΑΠΟΥΣΙΕΣ_ΕΙΔΗs">
+    <Type Name="ΑΠΟΥΣΙΕΣ_ΕΙΔΗ">
+      <Column Name="ΑΠΟΥΣΙΑ_ΕΙΔΟΣ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΑΠΟΥΣΙΑ_ΕΙΔΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΑΝΑΛ_ΣΜ" Member="ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΑΝΑΛ_ΣΜs">
+    <Type Name="ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΑΝΑΛ_ΣΜ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ΣΥΝΟΛΟ_ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟΥΣΙΕΣ_ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟΥΣΙΑ_ΕΙΔΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΠΟΥΣΙΕΣ_ΕΙΔΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΑΝΑΛ_ΣΠ" Member="ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΑΝΑΛ_ΣΠs">
+    <Type Name="ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΑΝΑΛ_ΣΠ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ΣΥΝΟΛΟ_ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟΥΣΙΕΣ_ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟΥΣΙΑ_ΕΙΔΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΠΟΥΣΙΕΣ_ΕΙΔΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΣΥΝ_ΣΜ" Member="ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΣΥΝ_ΣΜs">
+    <Type Name="ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΣΥΝ_ΣΜ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΥΝΟΛΟ_ΑΠΟΥΣΙΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟΥΣΙΑ_ΕΙΔΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΠΟΥΣΙΕΣ_ΕΙΔΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΣΥΝ_ΣΠ" Member="ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΣΥΝ_ΣΠs">
+    <Type Name="ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΣΥΝ_ΣΠ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΥΝΟΛΟ_ΑΠΟΥΣΙΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ_ΚΩΔ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟΥΣΙΑ_ΕΙΔΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΠΟΥΣΙΕΣ_ΕΙΔΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΠΤΥΧΙΑΚΗ_ΑΠΟΤΕΛΕΣΜΑ" Member="ΠΤΥΧΙΑΚΗ_ΑΠΟΤΕΛΕΣΜΑs">
+    <Type Name="ΠΤΥΧΙΑΚΗ_ΑΠΟΤΕΛΕΣΜΑ">
+      <Column Name="ΑΠΟΤΕΛΕΣΜΑ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΑΠΟΤΕΛΕΣΜΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΩΡΕΣ_ΜΗΝΑΣ_ΣΜ" Member="ViewΩΡΕΣ_ΜΗΝΑΣ_ΣΜs">
+    <Type Name="ViewΩΡΕΣ_ΜΗΝΑΣ_ΣΜ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΗΝΑΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΗΝΑΣ_ΛΕΚΤΙΚΟ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ΗΜΕΡΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="HOURS_TOTAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΚΠΑΙΔΕΥΤΗΣ1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΩΡΕΣ_ΜΗΝΑΣ_ΣΠ" Member="ViewΩΡΕΣ_ΜΗΝΑΣ_ΣΠs">
+    <Type Name="ViewΩΡΕΣ_ΜΗΝΑΣ_ΣΠ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΗΝΑΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΗΝΑΣ_ΛΕΚΤΙΚΟ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ΗΜΕΡΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="HOURS_TOTAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΚΠΑΙΔΕΥΤΗΣ1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΩΡΕΣ_ΜΗΝΑΣ_ΣΠ_ΣΜ" Member="ViewΩΡΕΣ_ΜΗΝΑΣ_ΣΠ_ΣΜs">
+    <Type Name="ViewΩΡΕΣ_ΜΗΝΑΣ_ΣΠ_ΣΜ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΗΝΑΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΗΝΑΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΗΜΕΡΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="ΣΥΝΟΛΟ_ΩΡΕΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΚΠΑΙΔΕΥΤΗΣ1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pvtΩΡΕΣ_ΜΗΝΑΣ_ΣΜ" Member="pvtΩΡΕΣ_ΜΗΝΑΣ_ΣΜs">
+    <Type Name="pvtΩΡΕΣ_ΜΗΝΑΣ_ΣΜ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="ΜΗΝΑΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΏΝΥΜΟ" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="[1]" Member="_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[2]" Member="_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[3]" Member="_3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[4]" Member="_4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[5]" Member="_5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[6]" Member="_6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[7]" Member="_7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[8]" Member="_8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[9]" Member="_9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[10]" Member="_10" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[11]" Member="_11" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[12]" Member="_12" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[13]" Member="_13" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[14]" Member="_14" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[15]" Member="_15" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[16]" Member="_16" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[17]" Member="_17" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[18]" Member="_18" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[19]" Member="_19" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[20]" Member="_20" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[21]" Member="_21" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[22]" Member="_22" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[23]" Member="_23" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[24]" Member="_24" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[25]" Member="_25" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[26]" Member="_26" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[27]" Member="_27" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[28]" Member="_28" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[29]" Member="_29" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[30]" Member="_30" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[31]" Member="_31" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pvtΩΡΕΣ_ΜΗΝΑΣ_ΣΠ" Member="pvtΩΡΕΣ_ΜΗΝΑΣ_ΣΠs">
+    <Type Name="pvtΩΡΕΣ_ΜΗΝΑΣ_ΣΠ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΗΝΑΣ_ΛΕΚΤΙΚΟ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ΟΝΟΜΑΤΕΠΏΝΥΜΟ" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="[1]" Member="_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[2]" Member="_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[3]" Member="_3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[4]" Member="_4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[5]" Member="_5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[6]" Member="_6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[7]" Member="_7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[8]" Member="_8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[9]" Member="_9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[10]" Member="_10" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[11]" Member="_11" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[12]" Member="_12" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[13]" Member="_13" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[14]" Member="_14" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[15]" Member="_15" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[16]" Member="_16" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[17]" Member="_17" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[18]" Member="_18" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[19]" Member="_19" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[20]" Member="_20" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[21]" Member="_21" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[22]" Member="_22" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[23]" Member="_23" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[24]" Member="_24" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[25]" Member="_25" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[26]" Member="_26" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[27]" Member="_27" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[28]" Member="_28" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[29]" Member="_29" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[30]" Member="_30" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[31]" Member="_31" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΣΠΟΥΔΑΣΤΗΣ_ΦΥΛΟ" Member="statΣΠΟΥΔΑΣΤΗΣ_ΦΥΛΟs">
+    <Type Name="statΣΠΟΥΔΑΣΤΗΣ_ΦΥΛΟ">
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΦΥΛΟ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΕΙΔΟΣ" Member="statΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΕΙΔΟΣs">
+    <Type Name="statΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΕΙΔΟΣ">
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΣΠΟΥΔΑΣΤΗΣ" Member="ΣΠΟΥΔΑΣΤΗΣs">
+    <Type Name="ΣΠΟΥΔΑΣΤΗΣ">
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ΑΜΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΑΤΡΩΝΥΜΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΗΤΡΩΝΥΜΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΗΤΡΩΝΥΜΟ_ΓΕΝΟΣ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ΦΥΛΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΗΜΝΙΑ_ΓΕΝΝΗΣΗ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΤΟΠΟΣ_ΓΕΝΝΗΣΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΗΛΙΚΙΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΗΜΟΤΗΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΡ_ΔΗΜΟΤΟΛΟΓΙΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΔΤ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΑΔΤ_ΑΡΧΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΔΤ_ΕΚΔΟΣΗ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΜΗΤΡΩΟ_ΑΡΡΕΝΩΝ_ΤΟΠΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΗΤΡΩΟ_ΑΡΡΕΝΩΝ_ΑΡ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΥΠΗΚΟΟΤΗΤΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΕΥΘΥΝΣΗ1" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΔΙΕΥΘΥΝΣΗ2" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΤΗΛΕΦΩΝΑ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΙΣΟΔΟΣ_ΕΙΔΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΞΟΔΟΣ_ΕΙΔΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΙΣΟΔΟΣ_ΗΜΝΙΑ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΕΞΟΔΟΣ_ΗΜΝΙΑ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΑΦΜ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΣΠΟΥΔΑΣΤΗΣ_ΦΥΛΟ_ΣΜ" Member="statΣΠΟΥΔΑΣΤΗΣ_ΦΥΛΟ_ΣΜs">
+    <Type Name="statΣΠΟΥΔΑΣΤΗΣ_ΦΥΛΟ_ΣΜ">
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΦΥΛΟ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΣΠΟΥΔΑΣΤΗΣ_ΦΥΛΟ_ΣΠ" Member="statΣΠΟΥΔΑΣΤΗΣ_ΦΥΛΟ_ΣΠs">
+    <Type Name="statΣΠΟΥΔΑΣΤΗΣ_ΦΥΛΟ_ΣΠ">
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΦΥΛΟ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΕΙΔΟΣ_ΣΜ" Member="statΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΕΙΔΟΣ_ΣΜs">
+    <Type Name="statΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΕΙΔΟΣ_ΣΜ">
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΕΙΔΟΣ_ΣΠ" Member="statΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΕΙΔΟΣ_ΣΠs">
+    <Type Name="statΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΕΙΔΟΣ_ΣΠ">
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΣΠΟΥΔΑΣΤΗΣ_ΥΠΗΚΟΟΤΗΤΑ" Member="statΣΠΟΥΔΑΣΤΗΣ_ΥΠΗΚΟΟΤΗΤΑs">
+    <Type Name="statΣΠΟΥΔΑΣΤΗΣ_ΥΠΗΚΟΟΤΗΤΑ">
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΥΠΗΚΟΟΤΗΤΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.certΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΣΜ" Member="certΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΣΜs">
+    <Type Name="certΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΣΜ">
+      <Column Name="ΣΧΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΗΜΝΙΑ_ΕΓΓΡΑΦΗ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ΑΜΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΑΤΡΩΝΥΜΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΗΤΡΩΝΥΜΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΗΤΡΩΟ_ΑΡΡΕΝΩΝ_ΤΟΠΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΗΤΡΩΟ_ΑΡΡΕΝΩΝ_ΑΡ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.certΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΣΠ" Member="certΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΣΠs">
+    <Type Name="certΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΣΠ">
+      <Column Name="ΣΧΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΞΑΜΗΝΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΗΜΝΙΑ_ΕΓΓΡΑΦΗ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ΑΜΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΑΤΡΩΝΥΜΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΗΤΡΩΝΥΜΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΗΤΡΩΟ_ΑΡΡΕΝΩΝ_ΤΟΠΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΜΗΤΡΩΟ_ΑΡΡΕΝΩΝ_ΑΡ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΕΚΠ_ΣΥΜΒΑΣΗ" Member="ViewΕΚΠ_ΣΥΜΒΑΣΗs">
+    <Type Name="ViewΕΚΠ_ΣΥΜΒΑΣΗ">
+      <Column Name="ΠΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΔΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΡΩΤΟΚΟΛΛΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΗΜΕΡΟΜΗΝΙΑ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΑΔΤ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΦΜ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="ΔΝΣΗ_ΟΔΟΣ" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="ΔΝΣΗ_ΤΚ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΔΝΣΗ_ΠΟΛΗ" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ΤΗΛΕΦΩΝΟ1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΗΛΕΦΩΝΟ2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΡ_ΠΡΟΚΗΡΥΞΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΡ_ΑΠΟΦΑΣΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΡΟΣΛΗΨΗ_ΩΣ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΕΙΔΙΚΟΤΗΤΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΣΦΑΛΙΣΤΙΚΟΣ_ΦΟΡΕΑΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΕΝ_ΕΠΩΝΥΜΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΟΥ_ΔΙΟΙΚΗΤΗ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΤΟΥ_ΕΚΠΑΙΔΕΥΤΙΚΟΥ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ_ΕΔΡΑ" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΑΕΝ" Member="ΑΕΝs">
+    <Type Name="ΑΕΝ">
+      <Column Name="ΕΠΩΝΥΜΙΑ" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ΔΙΕΥΘΥΝΣΗ" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="ΤΚ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΠΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΕΡΙΦΕΡΕΙΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΝΟΜΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΗΛΕΦΩΝΑ" Type="System.String" DbType="NVarChar(160)" CanBeNull="true" />
+      <Column Name="FAX" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="WEBSITE" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sqlAEN_DATA" Member="sqlAEN_DATAs">
+    <Type Name="sqlAEN_DATA">
+      <Column Name="ΑΕΝ_ΕΠΩΝΥΜΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΔΙΕΥΘΥΝΣΗ" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="ΤΚ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΠΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΗΛΕΦΩΝΑ" Type="System.String" DbType="NVarChar(160)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΕΚΠ_ΒΕΒΑΙΩΣΗ" Member="ΕΚΠ_ΒΕΒΑΙΩΣΗs">
+    <Type Name="ΕΚΠ_ΒΕΒΑΙΩΣΗ">
+      <Column Name="ΒΕΒΑΙΩΣΗ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΑΦΜ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΠΡΩΤΟΚΟΛΛΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΗΜΕΡΟΜΗΝΙΑ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΠΡΟΣΛΗΨΗ_ΩΣ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ΣΤΙΣ_ΕΙΔΙΚΟΤΗΤΕΣ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΕΚΠ_ΣΥΜΒΑΣΗ" Member="ΕΚΠ_ΣΥΜΒΑΣΗs">
+    <Type Name="ΕΚΠ_ΣΥΜΒΑΣΗ">
+      <Column Name="ΣΥΜΒΑΣΗ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΠΡΩΤΟΚΟΛΛΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΔΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΦΜ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΠΟΛΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΗΜΕΡΟΜΗΝΙΑ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΤΟΥ_ΔΙΟΙΚΗΤΗ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΤΟΥ_ΕΚΠΑΙΔΕΥΤΙΚΟΥ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΑΡ_ΠΡΟΚΗΡΥΞΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΡ_ΑΠΟΦΑΣΗ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΡΟΣΛΗΨΗ_ΩΣ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΕΙΔΙΚΟΤΗΤΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΣΦΑΛΙΣΤΙΚΟΣ_ΦΟΡΕΑΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΠΡΟΓΡΑΜΜΑ_ΣΜ" Member="ΠΡΟΓΡΑΜΜΑ_ΣΜs">
+    <Type Name="ΠΡΟΓΡΑΜΜΑ_ΣΜ">
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ΗΜΕΡΟΜΗΝΙΑ" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ΩΡΑ" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ΩΡΑΡΙΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΕΒΔΟΜΑΔΑ" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΔ_ΕΡΓΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΚΠΑΙΔΕΥΤΗΣ1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΕΚΠΑΙΔΕΥΤΗΣ2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΕΚΠΑΙΔΕΥΤΗΣ3" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Π1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Π2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Π3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΠΡΟΓΡΑΜΜΑ_ΣΠ" Member="ΠΡΟΓΡΑΜΜΑ_ΣΠs">
+    <Type Name="ΠΡΟΓΡΑΜΜΑ_ΣΠ">
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ΗΜΕΡΟΜΗΝΙΑ" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ΩΡΑ" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ΩΡΑΡΙΟ" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ΕΒΔΟΜΑΔΑ" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΔ_ΕΡΓΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΕΚΠΑΙΔΕΥΤΗΣ1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΕΚΠΑΙΔΕΥΤΗΣ2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΕΚΠΑΙΔΕΥΤΗΣ3" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Π1" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Π2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Π3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΑΕΝ_ΔΙΑΧΕΙΡΙΣΗ" Member="ΑΕΝ_ΔΙΑΧΕΙΡΙΣΗs">
+    <Type Name="ΑΕΝ_ΔΙΑΧΕΙΡΙΣΗ">
+      <Column Name="ΚΩΔΙΚΟΣ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ_ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ_ΒΑΘΜΟΣ" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ_ΕΔΡΑ" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="ΔΙΕΥΘΥΝΤΗΣ_ΣΜ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΔΝΤΗΣ_ΒΑΘΜΟΣ_ΣΜ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΔΙΕΥΘΥΝΤΗΣ_ΣΠ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΔΝΤΗΣ_ΒΑΘΜΟΣ_ΣΠ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΝΑΠΛΗΡΩΤΗΣ_ΣΜ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΑΝΑΠΛ_ΒΑΘΜΟΣ_ΣΜ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΝΑΠΛΗΡΩΤΗΣ_ΣΠ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΑΝΑΠΛ_ΒΑΘΜΟΣ_ΣΠ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΗΡΟΦΟΡΙΕΣ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΣΠΟΥΔΑΣΤΗΣ_ΒΑΘΜΟΙ" Member="ΣΠΟΥΔΑΣΤΗΣ_ΒΑΘΜΟΙs">
+    <Type Name="ΣΠΟΥΔΑΣΤΗΣ_ΒΑΘΜΟΙ">
+      <Column Name="ΚΩΔΙΚΟΣ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΜΑΘΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΟΣ_ΠΡΟΟΔΟΣ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΟΣ_ΕΞΕΤΑΣΗ_ΘΕΩΡΙΑ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΟΣ_ΕΞΕΤΑΣΗ_ΠΡΑΚΤΙΚΗ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΟΣ_ΜΟ_ΘΕ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ΒΑΘΜΟΣ_ΜΟ" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣ" Member="ΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣs">
+    <Type Name="ΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣ">
+      <Column Name="ΚΩΔΙΚΟΣ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΑΜΚΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΗΜΝΙΑ_ΕΓΓΡΑΦΗ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ΦΟΙΤΗΣΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ΣΠΟΥΔΑΣΤΗΣ_ΠΤΥΧΙΑΚΗ" Member="ΣΠΟΥΔΑΣΤΗΣ_ΠΤΥΧΙΑΚΗs">
+    <Type Name="ΣΠΟΥΔΑΣΤΗΣ_ΠΤΥΧΙΑΚΗ">
+      <Column Name="ΠΤΥΧΙΑΚΗ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ΠΤΥΧΙΑΚΗ_ΤΙΤΛΟΣ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ΚΑΘΗΓΗΤΗΣ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΣΠΟΥΔΑΣΤΗΣ1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΠΟΥΔΑΣΤΗΣ2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΠΟΥΔΑΣΤΗΣ3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΠΟΤΕΛΕΣΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΑΕΝ_ΔΙΑΧΕΙΡΙΣΗ" Member="ViewΑΕΝ_ΔΙΑΧΕΙΡΙΣΗs">
+    <Type Name="ViewΑΕΝ_ΔΙΑΧΕΙΡΙΣΗ">
+      <Column Name="ΔΙΟΙΚΗΤΗΣ_ΟΝΟΜΑΤΕΠΩΝΥΜΟ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ_ΒΑΘΜΟΣ" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ_ΕΔΡΑ" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="ΔΙΕΥΘΥΝΤΗΣ_ΣΜ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΔΝΤΗΣ_ΒΑΘΜΟΣ_ΣΜ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΔΙΕΥΘΥΝΤΗΣ_ΣΠ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΔΝΤΗΣ_ΒΑΘΜΟΣ_ΣΠ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΝΑΠΛΗΡΩΤΗΣ_ΣΜ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΑΝΑΠΛ_ΒΑΘΜΟΣ_ΣΜ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΝΑΠΛΗΡΩΤΗΣ_ΣΠ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΑΝΑΠΛ_ΒΑΘΜΟΣ_ΣΠ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΗΡΟΦΟΡΙΕΣ" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ΚΩΔΙΚΟΣ" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΠΤΥΧΙΑΚΕΣ_ΣΜ" Member="ViewΠΤΥΧΙΑΚΕΣ_ΣΜs">
+    <Type Name="ViewΠΤΥΧΙΑΚΕΣ_ΣΜ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ1" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ2" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ3" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΠΤΥΧΙΑΚΗ_ΤΙΤΛΟΣ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TEACHER_NAME" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="ΣΠΟΥΔΑΣΤΗΣ1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΠΟΥΔΑΣΤΗΣ2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΠΟΥΔΑΣΤΗΣ3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟΤΕΛΕΣΜΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΤΥΧΙΑΚΗ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ΚΑΘΗΓΗΤΗΣ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ΑΜΚΑ2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΦΜ" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΠΤΥΧΙΑΚΕΣ_ΣΠ" Member="ViewΠΤΥΧΙΑΚΕΣ_ΣΠs">
+    <Type Name="ViewΠΤΥΧΙΑΚΕΣ_ΣΠ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ1" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ2" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ3" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΠΤΥΧΙΑΚΗ_ΤΙΤΛΟΣ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TEACHER_NAME" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="ΣΠΟΥΔΑΣΤΗΣ1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΠΟΥΔΑΣΤΗΣ2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΠΟΥΔΑΣΤΗΣ3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟΤΕΛΕΣΜΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΤΥΧΙΑΚΗ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ΚΑΘΗΓΗΤΗΣ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ΑΜΚΑ2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΦΜ" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewΠΤΥΧΙΑΚΕΣ_ΣΠ_ΣΜ" Member="ViewΠΤΥΧΙΑΚΕΣ_ΣΠ_ΣΜs">
+    <Type Name="ViewΠΤΥΧΙΑΚΕΣ_ΣΠ_ΣΜ">
+      <Column Name="ΣΧΟΛ_ΕΤΟΣ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ_ΟΝΟΜΑΣΙΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ1" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ2" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΟΝΟΜΑΤΕΠΩΝΥΜΟ3" Type="System.String" DbType="NVarChar(202)" CanBeNull="true" />
+      <Column Name="ΠΤΥΧΙΑΚΗ_ΤΙΤΛΟΣ" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TEACHER_NAME" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="ΣΠΟΥΔΑΣΤΗΣ1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΠΟΥΔΑΣΤΗΣ2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΠΟΥΔΑΣΤΗΣ3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΣΧΟΛΗ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΔΙΔΑΚΤΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΤΜΗΜΑ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΑΠΟΤΕΛΕΣΜΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΤΥΧΙΑΚΗ_ΚΩΔ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ΚΑΘΗΓΗΤΗΣ" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ΑΜΚΑ2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΜΚΑ3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΑΦΜ" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ΔΙΟΙΚΗΤΗΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΣΠΟΥΔΑΣΤΗΣ_ΥΠΗΚΟΟΤΗΤΑ_ΣΜ" Member="statΣΠΟΥΔΑΣΤΗΣ_ΥΠΗΚΟΟΤΗΤΑ_ΣΜs">
+    <Type Name="statΣΠΟΥΔΑΣΤΗΣ_ΥΠΗΚΟΟΤΗΤΑ_ΣΜ">
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΥΠΗΚΟΟΤΗΤΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΣΠΟΥΔΑΣΤΗΣ_ΥΠΗΚΟΟΤΗΤΑ_ΣΠ" Member="statΣΠΟΥΔΑΣΤΗΣ_ΥΠΗΚΟΟΤΗΤΑ_ΣΠs">
+    <Type Name="statΣΠΟΥΔΑΣΤΗΣ_ΥΠΗΚΟΟΤΗΤΑ_ΣΠ">
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΥΠΗΚΟΟΤΗΤΑ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΜΕ_ΣΠ_ΣΜ" Member="statΜΕ_ΣΠ_ΣΜs">
+    <Type Name="statΜΕ_ΣΠ_ΣΜ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΕΡΓΑΣΙΑ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΠΛΗΘΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.statΑΝΑΘΕΣΕΙΣ_ΩΡΕΣ_ΣΠ_ΣΜ" Member="statΑΝΑΘΕΣΕΙΣ_ΩΡΕΣ_ΣΠ_ΣΜs">
+    <Type Name="statΑΝΑΘΕΣΕΙΣ_ΩΡΕΣ_ΣΠ_ΣΜ">
+      <Column Name="ΣΧΟΛΙΚΟ_ΕΤΟΣ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ΚΛΑΔΟΣ_ΛΕΚΤΙΚΟ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ΩΡΕΣ_ΣΥΝΟΛΟ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,80 @@
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\FrameNavigationWPF.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\FrameNavigationWPF.pdb
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\obj\Debug\FrameNavigationWPF.csprojResolveAssemblyReference.cache
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\obj\Debug\FrameNavigationWPF.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigationWPF\obj\Debug\FrameNavigationWPF.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\FrameNavigationWPF.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\FrameNavigationWPF.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\obj\Debug\FrameNavigationWPF.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\obj\Debug\FrameNavigationWPF.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\FrameNavigationWPF.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\FrameNavigationWPF.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\obj\Debug\FrameNavigationWPF.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\obj\Debug\FrameNavigationWPF.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\FrameNavigationWPF.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\FrameNavigationWPF.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\obj\Debug\FrameNavigationWPF.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\obj\Debug\FrameNavigationWPF.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\obj\Debug\ResolveAssemblyReference.cache
+E:\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\FrameNavigationWPF.dll
+E:\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\FrameNavigationWPF.pdb
+E:\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\System.Windows.Interactivity.dll
+E:\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\System.Windows.Interactivity.xml
+E:\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\de\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\en\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\es\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\it\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigationWPF\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigationWPF\obj\Debug\FrameNavigationWPF.csprojResolveAssemblyReference.cache
+E:\FrameNavigationWPF\FrameNavigationWPF\obj\Debug\FrameNavigationWPF.dll
+E:\FrameNavigationWPF\FrameNavigationWPF\obj\Debug\FrameNavigationWPF.pdb

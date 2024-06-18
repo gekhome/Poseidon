@@ -1,0 +1,26 @@
+﻿<Page x:Class="Poseidon.SqlConnections.Connection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:sqlconn="clr-namespace:Poseidon.SqlConnections"
+      mc:Ignorable="d" x:Name="_this"
+      d:DesignHeight="700" d:DesignWidth="1000"
+	Title="Connection">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <sqlconn:SqlConnectionStringBuilder ConnectionString="{Binding ElementName=_this, Path=ConnString}"
+          Width="800" Height="600" Grid.RowSpan="2" />
+        <TextBlock Text="{Binding ElementName=_this, Path=ConnString, StringFormat='Produced Connection String: {0}'}"
+                   Grid.Row="1"    />
+
+    </Grid>
+
+
+</Page>

@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 54.75, 29.5" name="Poseidon">
+  <DataContextMoniker Name="/PoseidonDataContext" />
+  <nestedChildShapes>
+    <classShape Id="099b7f39-3170-43f3-90a1-d9331b601092" absoluteBounds="0.5, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/USER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c49ddce9-65b3-424c-8cba-b19284b25136" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6d3dd3b3-f669-4cc9-8334-1eaaf61a9c20" absoluteBounds="7.5, 4.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/ΣΧΟΛΙΚΟ_ΕΤΟΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a07bd9cd-b459-4903-9cea-077480defedf" absoluteBounds="7.5150000000000006, 4.9600000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="50c4b6cc-3c84-4c65-8ace-55aec579bb37" absoluteBounds="2.75, 0.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΕΚΠ_ΚΛΑΔΟΙ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db330ab2-3b15-4c9a-9ad6-48a4f7897dd1" absoluteBounds="2.7649999999999997, 1.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a6840ff-546d-4d65-b068-9d2bb4f6b614" absoluteBounds="2.75, 2.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PoseidonDataContext/ΕΚΠ_ΕΙΔΙΚΟΤΗΤΕΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="edfe3dd5-9e81-435d-a82d-708a24d661c2" absoluteBounds="2.7649999999999997, 2.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.75 : 1.81899251302083); (3.75 : 2.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PoseidonDataContext/ΕΚΠ_ΚΛΑΔΟΙ/ΕΚΠ_ΚΛΑΔΟΙ_ΕΚΠ_ΕΙΔΙΚΟΤΗΤΕΣ" />
+      <nodes>
+        <classShapeMoniker Id="50c4b6cc-3c84-4c65-8ace-55aec579bb37" />
+        <classShapeMoniker Id="6a6840ff-546d-4d65-b068-9d2bb4f6b614" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8b62439b-8f0d-4b75-8dc7-3aaaec83d399" absoluteBounds="2.75, 6.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/ΝΟΜΟΙ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="82b026d7-ff9d-4a76-a2ab-5b287b29742f" absoluteBounds="2.7649999999999997, 6.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f09536d1-48c8-4ecf-b453-c41fe2c74ce7" absoluteBounds="2.75, 4, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/ΠΕΡΙΦΕΡΕΙΕΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac16d931-1711-4bda-81cc-676d97d2ac33" absoluteBounds="2.7649999999999997, 4.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.75 : 5.57859537760417); (3.75 : 6.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PoseidonDataContext/ΠΕΡΙΦΕΡΕΙΕΣ/ΠΕΡΙΦΕΡΕΙΕΣ_ΝΟΜΟΙ" />
+      <nodes>
+        <classShapeMoniker Id="f09536d1-48c8-4ecf-b453-c41fe2c74ce7" />
+        <classShapeMoniker Id="8b62439b-8f0d-4b75-8dc7-3aaaec83d399" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f0569beb-293d-4710-832d-60ea6af82396" absoluteBounds="3, 18.5, 2.25, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΑΕΝ_ΕΛΛΑΔΑ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7aaf395-8eb3-416a-910c-5887fdded2bd" absoluteBounds="3.015, 18.96, 2.2199999999999998, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="90ee5b83-bdc9-4ee0-abfc-01cef958ae51" absoluteBounds="0.5, 4, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PoseidonDataContext/ΩΡΕΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="66aa9862-f2f4-41bf-801f-4a2fdf4581d7" absoluteBounds="0.51499999999999968, 4.4600000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d9090b7e-96dd-47e1-99cc-2fcd8a2baa8c" absoluteBounds="5.25, 9, 2, 2.5401025390625">
+      <DataClassMoniker Name="/PoseidonDataContext/ΠΡΟΚΗΡΥΞΕΙΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97c10c35-eeee-479f-9ddf-03c81638b39a" absoluteBounds="5.265, 9.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="59e24bf6-1a3f-4cf1-8e56-1d994897b95f" absoluteBounds="0.5, 5.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΜΑΘΗΜΑΤΑ_ΕΙΔΗ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f1f9fcd-564d-4cd8-b156-f0e1a110853d" absoluteBounds="0.51499999999999968, 6.0850000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1d077d0-1e7f-4e79-ac6c-1a80eab00dea" absoluteBounds="0.5, 8.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΕΚΠ_ΚΑΤΗΓΟΡΙΕΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca3a3b45-79d4-4080-ba59-2ddefd0dfb94" absoluteBounds="0.51499999999999968, 9.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d99801d3-b913-41d7-873d-cdca3a79b246" absoluteBounds="5.25, 7.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΦΥΛΑ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="011d0ccd-b2c9-414a-a71a-7b0a2c3a0f86" absoluteBounds="5.265, 7.9600000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5741aaf6-1dc6-491d-9054-14c4fe7def6a" absoluteBounds="0.5, 7.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PoseidonDataContext/ΜΑΘΗΜΑΤΑ_ΘΕ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="445c90b7-bd72-4f1e-866f-c54659ae7cb0" absoluteBounds="0.51499999999999968, 7.5850000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dac6ed77-2195-4b76-930a-437794e4fd81" absoluteBounds="5.25, 5.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/ΠΛΟΙΑ_ΕΙΔΗ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="257a4b7f-f1a0-4818-b5e9-6b061fc64d13" absoluteBounds="5.265, 5.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="65c24c06-8ce6-4411-8a1b-2b6c3ac4b9fa" absoluteBounds="5.5, 12.375, 2.375, 2.9247054036458331">
+      <DataClassMoniker Name="/PoseidonDataContext/ΣΧΟΛΕΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="023884b1-138e-4773-a1af-36bb866fef5e" absoluteBounds="5.515, 12.835, 2.3449999999999998, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9d9be021-769f-4aa6-8d8d-e24f3a219114" absoluteBounds="0.5, 10.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/ΤΜΗΜΑΤΑ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d740815a-abd9-4d61-b024-bb41879feff4" absoluteBounds="0.51499999999999968, 10.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="64eacc69-6735-4629-b112-dc729d53ba56" absoluteBounds="3, 22.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/ΤΜΗΜΑΤΑ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4eb1edf6-54a1-4906-a8c6-4748a53dff9d" absoluteBounds="3.0150000000000006, 22.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="10e8d620-7a80-4cc2-897c-b09cf83af81d" absoluteBounds="0.5, 12.125, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΔΙΔΑΚΤΙΚΟ_ΕΡΓΟ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60f91827-8dc1-4b01-8ca4-3c1ece8797e1" absoluteBounds="0.51499999999999968, 12.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="de70d4c0-dbe1-4d45-8bb1-fc18868be596" absoluteBounds="3, 24.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΕΚΠΑΙΔΕΥΤΙΚΟΙ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0377c359-a5da-4280-be1a-7d44ca9f137f" absoluteBounds="3.0149999999999997, 25.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f1572dc2-ab5a-4d30-b400-22a4b08e2910" absoluteBounds="0.5, 13.625, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/PoseidonDataContext/ΕΒΔΟΜΑΔΕΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f0bc8d8-ada8-4657-a30b-c877a22fcbf1" absoluteBounds="0.51499999999999968, 14.085, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a63ba478-d3d2-49ec-8f3b-3a66dc806828" absoluteBounds="9.75, 9.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/sqlΩΡΕΣ_ΕΚΠ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5eb52d26-f7ee-431c-862a-33569947cfc0" absoluteBounds="9.765, 9.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dbfd6eeb-33e6-490d-ae6b-9dc912679bba" absoluteBounds="9.75, 5.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/PoseidonDataContext/sqlΤΠΗ_ΕΚΠ_ALL_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b81a5438-127d-4a8a-8a6d-49c9dd65c068" absoluteBounds="9.765, 6.0850000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2a894e3e-2507-4833-bbea-3bc88c9075f7" absoluteBounds="12.125, 8.25, 2.375, 2.3478011067708335">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΠΑΡΑΚΟΛΟΥΘΗΣΗ_ΩΡΕΣ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1f6f772-1ccd-4b82-9e60-459c1af8b90c" absoluteBounds="12.14, 8.71, 2.3449999999999998, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29c5feba-618b-4923-882b-dc1d57421661" absoluteBounds="9.75, 4.5, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/PoseidonDataContext/sqlΣΧΟΛΙΚΟ_ΕΤΟΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c90b9b35-25f5-4bde-907c-faaf4ea1a132" absoluteBounds="9.765, 4.9600000000000009, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5143dd0a-cdca-4948-a96a-33b5520db1e0" absoluteBounds="12.125, 10.75, 2.375, 2.3478011067708335">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΠΑΡΑΚΟΛΟΥΘΗΣΗ_ΩΡΕΣ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff139ec5-4fd5-432b-a781-e145be27ce17" absoluteBounds="12.14, 11.21, 2.3449999999999998, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ffc0e3f-d837-46a4-8bf1-fcb40b2a5040" absoluteBounds="9.75, 7.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/PoseidonDataContext/sqlΤΠΗ_ΕΚΠ_ALL_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="296e8027-4fbc-4af5-a8e2-845e6f0248b4" absoluteBounds="9.765, 7.9600000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5a2604f9-ae3e-4a74-9248-8797b85ce446" absoluteBounds="9.75, 11.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/sqlΩΡΕΣ_ΕΚΠ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a61fc29a-a384-4350-8d63-832b83259a90" absoluteBounds="9.765, 11.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="23fe18ea-aa0c-49cf-86cd-b4f76f674f0c" absoluteBounds="5.125, 0.625, 2, 4.2708154296875">
+      <DataClassMoniker Name="/PoseidonDataContext/ΕΚΠΑΙΔΕΥΤΙΚΟΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf8fa873-93eb-4afe-966a-f653044ae331" absoluteBounds="5.14, 1.085, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="93d368c6-cc1d-4b31-9ca2-da19c69e5020" absoluteBounds="0.625, 26.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΕΚΠ_ΕΡΓΑΣΙΑ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95ca9efa-cd7f-439d-aa36-cafff8e9bf91" absoluteBounds="0.64000000000000012, 26.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="55f11fde-3fca-4fed-b867-bc59ff3d7033" absoluteBounds="16.625, 2.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/statΜΕ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2bbda1c4-2903-470c-a82c-90ce4c4e552b" absoluteBounds="16.64, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6024786c-67a2-43a0-862b-b7e74fb34ca7" absoluteBounds="18.875, 2.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/statΜΕ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a22af3e7-a761-49b1-9673-7bf654555545" absoluteBounds="18.89, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a41bfc88-a523-4d8c-b9e1-976475859903" absoluteBounds="16.625, 0.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/statΦΥΛΟ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1c21fec8-a169-4963-97b7-12b9f0c4da60" absoluteBounds="16.64, 1.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c56ec829-3b7a-4bc2-bb78-58a7cab3c72e" absoluteBounds="18.875, 0.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/statΦΥΛΟ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="589698bc-9115-4936-bde2-68ec6b83b33c" absoluteBounds="18.89, 1.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7067c04-dd05-4889-b6a1-76aee47b5277" absoluteBounds="21.125, 0.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/statΦΥΛΟ_ΣΠ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0f560240-aef2-40c2-95cd-373c98e873c7" absoluteBounds="21.14, 1.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="39d785c5-4c63-4836-9bd4-0d306bd8be57" absoluteBounds="16.625, 4.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/statΚΑΤΗΓΟΡΙΕΣ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b229c7cd-fc5a-4a4d-9838-3ebe29c318ef" absoluteBounds="16.64, 4.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5405148c-7955-4bd0-a213-8662faacebd8" absoluteBounds="18.875, 4.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/statΚΑΤΗΓΟΡΙΕΣ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e0f1497-83bf-44a9-a19b-d2597f94bcce" absoluteBounds="18.89, 4.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9871b078-285f-45a1-9fc2-3179e488a3f1" absoluteBounds="23.375, 0.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/statΦΥΛΟ_ΣΥΝΟΨΗ_ΣΠ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f35a82bf-8a01-4d01-b347-69c3cffd1f8a" absoluteBounds="23.39, 1.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c723830a-6ce8-49fa-b9a0-ca4b56735e6b" absoluteBounds="16.625, 6.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PoseidonDataContext/statΑΝΑΘΕΣΕΙΣ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bfeca2f4-1e52-4a80-9058-dac7d48991c5" absoluteBounds="16.64, 6.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1885a381-c7ee-4169-ab04-50f8c80e6ac8" absoluteBounds="18.875, 6.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PoseidonDataContext/statΑΝΑΘΕΣΕΙΣ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd4ec575-0622-4ded-9514-6a9eac5a5e1a" absoluteBounds="18.89, 6.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="80b13c59-30c7-4b62-b75a-5291568cc03f" absoluteBounds="21.125, 6.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PoseidonDataContext/statΑΝΑΘΕΣΕΙΣ_ΣΠ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="31e6217b-c0a4-4a9e-9b43-ac450a05f9aa" absoluteBounds="21.14, 6.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3955f478-ada4-4039-9f5c-f5b217f24d2c" absoluteBounds="23.375, 2.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PoseidonDataContext/statΑΝΑΘΕΣΕΙΣ_ΩΡΕΣ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0fc6b4f1-5bdb-4731-a515-d1b25b5eb60f" absoluteBounds="23.39, 3.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7e4770a3-b3c9-4d62-8687-357fb5c444ce" absoluteBounds="23.375, 4.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PoseidonDataContext/statΑΝΑΘΕΣΕΙΣ_ΩΡΕΣ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25c5790f-8d7f-4119-bd33-60be10954b74" absoluteBounds="23.39, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5331ea31-9227-467e-9583-4de0d88ef87b" absoluteBounds="21.125, 4.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/statΚΑΤΗΓΟΡΙΕΣ_ΣΠ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c877b5f3-535e-41ee-a5c5-e9ba1171632a" absoluteBounds="21.14, 4.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="02d102de-7426-42fe-a19c-151e074dff3f" absoluteBounds="0.5, 15, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΣΠΟΥΔΕΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e25fbf64-8a90-41b2-898e-3d82fc05fd36" absoluteBounds="0.51499999999999968, 15.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a141365f-19b9-4b52-8f41-a324593d4dd3" absoluteBounds="7.5, 6.125, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/PoseidonDataContext/sqlΑΝΑΘΕΣΕΙΣ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="257856d1-a873-4c1a-adf6-cc8b565da24f" absoluteBounds="7.5150000000000006, 6.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e696f3b9-ad05-4a65-9404-81b204a4be04" absoluteBounds="7.5, 9.25, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/PoseidonDataContext/sqlΑΝΑΘΕΣΕΙΣ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a28cb52-a4a7-4164-a2bd-63d0dc91bff6" absoluteBounds="7.5150000000000006, 9.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="54bb24e4-b75a-4e09-a2ac-d8af7ca4c7dd" absoluteBounds="7.5, 0.5, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/PoseidonDataContext/ΑΝΑΘΕΣΕΙΣ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f2c158fb-5634-4590-8c63-e61dea526491" absoluteBounds="7.5150000000000006, 0.96, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ffabfc33-3f3b-4405-8465-9af0b6d42bb4" absoluteBounds="9.75, 0.5, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/PoseidonDataContext/ΑΝΑΘΕΣΕΙΣ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="11265912-270f-4e0f-8477-554607534bb3" absoluteBounds="9.765, 0.96, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3fb20900-ba32-4a9c-a4ad-da3f9bc07b5e" absoluteBounds="18.875, 7.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/PoseidonDataContext/statΠΡΟΣΟΝΤΑ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fabda7dd-ac50-4928-bc88-46a1f92fe1d1" absoluteBounds="18.89, 8.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="055fbe55-6575-49ee-a5af-bc45a243ecea" absoluteBounds="21.125, 7.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/PoseidonDataContext/statΠΡΟΣΟΝΤΑ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="22aa7e1e-de7f-440a-b3a0-50b45f33174c" absoluteBounds="21.14, 8.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3a171b24-f4e2-47fb-a186-24c71da43e7f" absoluteBounds="23.375, 7.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/PoseidonDataContext/statΠΡΟΣΟΝΤΑ_ΣΠ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c5c4dacc-03ce-458b-baed-0ee0bdcde816" absoluteBounds="23.39, 8.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="61f4f3c3-a936-4758-a03b-3785bc38d6e3" absoluteBounds="11.25, 20.25, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/PoseidonDataContext/certΕΚΠ_ΒΕΒΑΙΩΣΗ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a008708e-1e2a-4ade-869b-5a1706e8d76a" absoluteBounds="11.265, 20.71, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e42ee83-79e6-4da5-bb1a-41cf1666473a" absoluteBounds="0.625, 22.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΕΚΠ_ΒΕΒΑΙΩΣΗ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d5d990b3-084a-4a59-bf0f-f3f2e83ec3c4" absoluteBounds="0.63999999999999968, 22.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="121eb8ea-f537-4bb8-a1ea-2f96bb938913" absoluteBounds="26.375, 1.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΕΞΟΔΟΣ_ΕΙΔΗ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6eb6b408-1be6-42e6-be04-33dce51e6ed7" absoluteBounds="26.39, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="57ba88e2-84a7-4584-9469-50eac85625e7" absoluteBounds="26.375, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΕΙΣΟΔΟΣ_ΕΙΔΗ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d31e512b-53ce-4da6-9e16-3d4347c66b38" absoluteBounds="26.39, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7db84cb9-d957-4037-8944-6ebe98160794" absoluteBounds="26.375, 3.375, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΥΠΗΚΟΟΤΗΤΕΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12301359-8466-434d-989e-7bb8e18dacdb" absoluteBounds="26.39, 3.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7e1cff10-b5a8-4b07-8de3-84cc0952a1a0" absoluteBounds="0.5, 2.375, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΕΞΑΜΗΝΑ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51a37ae5-47d8-4635-9f17-cf8ae52dccd4" absoluteBounds="0.51500000000000012, 2.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b8ca5252-8170-4620-a29c-d77e009769fb" absoluteBounds="26.375, 5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΦΟΙΤΗΣΗ_ΕΙΔΗ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd8917d9-9a9c-4aeb-872c-de39a70d54ed" absoluteBounds="26.39, 5.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f9287730-d26e-47b5-8d89-1da2a1283a79" absoluteBounds="31.375, 0.5, 2.625, 5.6169254557291657">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΣΠΟΥΔΑΣΤΗΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67b4230f-787a-41cf-8cc2-e31efdaa814c" absoluteBounds="31.39, 0.96, 2.5949999999999998, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf803fae-353a-42e9-bf19-a5cbaf0c5822" absoluteBounds="28.875, 7, 2.25, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΠΡΑΚΤΙΚΗ_ΑΣΚΗΣΗ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="06ae5078-4702-40f3-8328-fc5dc15f98ac" absoluteBounds="28.89, 7.46, 2.2199999999999998, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="97500db5-7828-41f8-a482-1fde20c2c5f3" absoluteBounds="34.75, 0.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΠΛΟΙΟ_ΚΑΤΗΓΟΡΙΑ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="30aa45a2-8ee9-44a7-a508-83c27480417c" absoluteBounds="34.765, 1.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="26ff13f6-a211-424e-95b3-9ef2ad0d1ffd" absoluteBounds="37.125, 0.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/ΠΛΟΙΟ_ΥΠΟΚΑΤΗΓΟΡΙΑ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aa25e3d4-76b8-4241-91ad-0fe241487790" absoluteBounds="37.14, 1.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="686c0662-4ae3-436d-b5ef-a07277f94315" absoluteBounds="0.625, 24.875, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/PoseidonDataContext/ΑΡΙΘΜΟΙ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee489d7b-d904-4358-8985-52208e2a847d" absoluteBounds="0.63999999999999968, 25.335, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="efb27521-8d84-4ac3-9c3f-75eb70823239" absoluteBounds="31.375, 6.375, 2.625, 2.9247054036458331">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="561fe49b-4032-4c52-9bf4-1af489d994a7" absoluteBounds="31.39, 6.835, 2.5949999999999998, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf6cde6c-5b95-4415-b00a-3c6076f879a5" absoluteBounds="31.375, 9.5, 2.625, 2.9247054036458331">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0054a48c-e6fa-47eb-b7e4-1a60d5f73574" absoluteBounds="31.39, 9.96, 2.5949999999999998, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c6da7c41-7725-4502-9084-c06879f91df5" absoluteBounds="25.875, 9.875, 2.5, 2.9247054036458331">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣ_ΣΠ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="629566ef-d482-4ab1-8fdc-4119eb56f140" absoluteBounds="25.89, 10.335, 2.4699999999999998, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b080bd23-32b1-4741-8627-6ded1b284064" absoluteBounds="23.375, 10, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΠΡΟΓΡΑΜΜΑ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9366a356-3cb2-433e-a861-ec20ab0e9a89" absoluteBounds="23.39, 10.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aa46b403-9433-40f5-ac60-a79b2394fd96" absoluteBounds="23.375, 12.625, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΠΡΟΓΡΑΜΜΑ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fb973a58-11c8-4615-addd-3c843baaea3a" absoluteBounds="23.39, 13.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a88df4d3-daa8-4124-be7b-b1ab79451c8f" absoluteBounds="20.75, 10, 2.375, 2.1554996744791666">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΣΠΟΥΔΑΣΤΗΣ_ΤΜΗΜΑ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6faa5d0e-827d-4d3d-9ec8-21473a8ca5a0" absoluteBounds="20.765, 10.46, 2.3449999999999998, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bb88afba-7927-4000-ac4a-14f0b65ee296" absoluteBounds="20.75, 12.625, 2.375, 2.1554996744791666">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΣΠΟΥΔΑΣΤΗΣ_ΤΜΗΜΑ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b1a84dea-c04f-421b-be65-b21ceea941c2" absoluteBounds="20.765, 13.085, 2.3449999999999998, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3096b452-1b05-495c-a360-13ea8c1839ce" absoluteBounds="34.75, 2.75, 2.5, 2.7324039713541666">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΑΠΟΥΣΙΕΣ_ΣΥΝΟΛΟ_ΟΡΙΟ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="185208c5-b3af-4e72-8eb0-15b588953463" absoluteBounds="34.765, 3.21, 2.4699999999999998, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2d80ccd7-e934-473c-ad7d-9737c769ff0c" absoluteBounds="34.75, 5.75, 2.5, 2.7324039713541666">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΑΠΟΥΣΙΕΣ_ΣΥΝΟΛΟ_ΟΡΙΟ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75b6ebb8-76f5-4432-ba1f-15ab668aacf4" absoluteBounds="34.765, 6.21, 2.4699999999999998, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d5ec4a41-3912-4dd5-85c6-97578fc2746a" absoluteBounds="3, 26.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/ΤΑΞΙΔΙΑ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="286b1c5b-e335-40ac-8381-2c36995a1088" absoluteBounds="3.0149999999999997, 26.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5f45cc07-c974-4389-9f26-8da352c65f2a" absoluteBounds="3, 28, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΤΑΞΙΔΙ_ΑΠΟΤΕΛΕΣΜΑ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a5af8be8-770b-4af6-a912-a1cbfa42650f" absoluteBounds="3.0149999999999997, 28.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8999d1bf-8eb6-4b69-a209-6b4cd96a6b68" absoluteBounds="5.75, 25, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/PoseidonDataContext/ΚΕΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a10abf50-8f44-404e-aaaf-230e20498bea" absoluteBounds="5.765, 25.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2c93f161-6d4f-4188-9bf6-c33ceef44d43" absoluteBounds="8, 25, 2.375, 4.0785139973958326">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΚΕΠ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b9ad445-eb8e-4e2b-92d3-64677ec5b3f6" absoluteBounds="8.015, 25.46, 2.3449999999999998, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c6e464ea-fb22-4547-813c-285c29865a4a" absoluteBounds="10.625, 25, 2.25, 4.0785139973958326">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΚΕΠ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e6ae363c-bda8-4521-abd6-090fe820a865" absoluteBounds="10.64, 25.46, 2.2199999999999998, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="88ed7262-d84e-46c7-9813-1c66bbca21ee" absoluteBounds="11.25, 15.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/PoseidonDataContext/ΜΑΘΗΜΑΤΑ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3095ba87-f322-4b19-96af-8c11f5affa3e" absoluteBounds="11.265, 15.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8bfbeed2-a0d4-4b4f-b4b2-4b5af7c69325" absoluteBounds="13.625, 15.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/PoseidonDataContext/ΜΑΘΗΜΑΤΑ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56161266-ea72-40d7-a3ad-939e60c7b0e6" absoluteBounds="13.64, 15.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cdde4b2e-28ee-43e2-9159-274c1db222ad" absoluteBounds="11.25, 13.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/PoseidonDataContext/sqlΤΜΗΜΑΤΑ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f910150-73a1-49ce-a21d-c9713957527f" absoluteBounds="11.265, 13.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ee6bc0ee-7902-44f8-b32c-20c0279cd7e2" absoluteBounds="13.625, 13.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/PoseidonDataContext/sqlΤΜΗΜΑΤΑ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0b1f5bfe-9dae-4621-a4ef-b22c45c785b8" absoluteBounds="13.64, 13.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1a784088-e6ba-44a6-bcbf-ddbcf95488ca" absoluteBounds="11.25, 18.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΜΑΘΗΜΑΤΑ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0339f124-2dcf-4efe-b2c0-34b53c710dfe" absoluteBounds="11.265, 18.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e9fe49c-7fc6-47d7-91bf-d40f0ee2a41d" absoluteBounds="13.75, 18.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΜΑΘΗΜΑΤΑ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="08b57c40-948c-42a4-950c-0eb5405495af" absoluteBounds="13.765, 18.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="62bcb92e-e2f9-425a-8959-ba3b9acc33ec" absoluteBounds="15.875, 15.5, 2.75, 3.5016097005208326">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΣΠΟΥΔΑΣΤΗΣ_ΒΑΘΜΟΙ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="785d5842-66e1-426d-8219-c375aeb10a2f" absoluteBounds="15.89, 15.96, 2.7199999999999998, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5783c17d-0a0b-4ffe-9786-9bf6dc469364" absoluteBounds="18.875, 15.5, 2.625, 3.5016097005208326">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΣΠΟΥΔΑΣΤΗΣ_ΒΑΘΜΟΙ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a0a727c-6c6b-4bd0-a948-2d4633365206" absoluteBounds="18.89, 15.96, 2.5949999999999998, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3da83f52-3e76-41cc-b4ce-5cfbeb9e9542" absoluteBounds="28.875, 8.375, 2.125, 2.5401025390625">
+      <DataClassMoniker Name="/PoseidonDataContext/ΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d190977e-ac87-4af9-aa84-5e9fe993e2db" absoluteBounds="28.89, 8.835, 2.0949999999999998, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0a9fef34-9885-4d0b-b757-33296ed719bc" absoluteBounds="28.875, 11.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΑΠΟΥΣΙΕΣ_ΕΙΔΗ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="597fe639-a89d-4777-92d1-6331a5bf3dce" absoluteBounds="28.89, 11.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="06fa710b-dbc5-45c7-bb5b-67e3a86fe1e4" absoluteBounds="28.875, 12.75, 3, 3.8862125651041666">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΑΝΑΛ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de98e570-74a1-4442-9f20-b848fe9600e3" absoluteBounds="28.89, 13.21, 2.9699999999999998, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ce71646-4091-4f99-a458-fb91890b57f4" absoluteBounds="32.125, 12.75, 2.75, 3.8862125651041666">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΑΝΑΛ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ef9a7cb-4f89-49a1-90f6-2bca978453dd" absoluteBounds="32.14, 13.21, 2.7199999999999998, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="19888191-f13c-4929-a3fe-9396b26663e6" absoluteBounds="28.875, 16.875, 3, 3.3093082682291666">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΣΥΝ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="31c0e1c8-9af8-4871-b967-f54f9dcb013c" absoluteBounds="28.89, 17.335, 2.9699999999999998, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f0b3e442-b8b4-4d36-a1a6-bcff4121d118" absoluteBounds="32.125, 16.875, 2.75, 3.3093082682291666">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΣΠΟΥΔΑΣΤΗΣ_ΑΠΟΥΣΙΕΣ_ΣΥΝ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="972d1c72-732f-445e-a77b-57d90ecf05d1" absoluteBounds="32.14, 17.335, 2.7199999999999998, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c57acb7c-544c-441f-9545-0c3286d20c26" absoluteBounds="41.625, 0.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/ΠΤΥΧΙΑΚΗ_ΑΠΟΤΕΛΕΣΜΑ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73451d48-6dcc-4bcf-b385-715942d89f85" absoluteBounds="41.64, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4add58bf-7a82-46ad-bc9b-53c8bee43e9c" absoluteBounds="17, 10.875, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΩΡΕΣ_ΜΗΝΑΣ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9847077d-0f26-4af6-8767-cd62e60fc5b0" absoluteBounds="17.015, 11.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="039b6f8f-1fad-4620-b3ed-ae06a980edc7" absoluteBounds="14.75, 10.875, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΩΡΕΣ_ΜΗΝΑΣ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94e5696f-acb6-4f63-a737-a46580af78f3" absoluteBounds="14.765, 11.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ff86aa4e-b349-467b-82a5-71aa8905b447" absoluteBounds="14.75, 8.25, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΩΡΕΣ_ΜΗΝΑΣ_ΣΠ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ccfbcf9-14e3-460a-b3e2-c6820f3d3246" absoluteBounds="14.765, 8.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3c741293-2c99-47c6-b60b-1fae57930540" absoluteBounds="12, 0.5, 2, 7.3476383463541657">
+      <DataClassMoniker Name="/PoseidonDataContext/pvtΩΡΕΣ_ΜΗΝΑΣ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e2782e4-6bf9-4719-82c3-951a1c8906ac" absoluteBounds="12.015, 0.96, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eff8b9c2-250a-460b-ad71-aaa4f5227074" absoluteBounds="14.25, 0.5, 2, 7.3476383463541657">
+      <DataClassMoniker Name="/PoseidonDataContext/pvtΩΡΕΣ_ΜΗΝΑΣ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7c2a038a-551f-4040-8467-c9c47346382c" absoluteBounds="14.265, 0.96, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a040bcde-e501-461f-8bd1-dd13bd84654e" absoluteBounds="44.625, 0.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/statΣΠΟΥΔΑΣΤΗΣ_ΦΥΛΟ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="628db169-fb1d-4709-a433-d6c30903b2b2" absoluteBounds="44.64, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6fbb4c81-bd4a-478a-be7d-16d0612bb0ee" absoluteBounds="46.875, 0.75, 2.25, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/statΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΕΙΔΟΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c96e6e0f-4b55-4b27-b65a-c7b418417b77" absoluteBounds="46.89, 1.21, 2.2199999999999998, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(36.75 : 1.22199625651042); (37.125 : 1.22199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PoseidonDataContext/ΠΛΟΙΟ_ΚΑΤΗΓΟΡΙΑ/ΠΛΟΙΟ_ΚΑΤΗΓΟΡΙΑ_ΠΛΟΙΟ_ΥΠΟΚΑΤΗΓΟΡΙΑ" />
+      <nodes>
+        <classShapeMoniker Id="97500db5-7828-41f8-a482-1fde20c2c5f3" />
+        <classShapeMoniker Id="26ff13f6-a211-424e-95b3-9ef2ad0d1ffd" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3efc999e-e7a3-407e-b4dd-6bb0ffdd057d" absoluteBounds="28.75, 0.5, 2.5, 6.3861311848958326">
+      <DataClassMoniker Name="/PoseidonDataContext/ΣΠΟΥΔΑΣΤΗΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="82c25978-a093-4329-a6ab-4a163271212d" absoluteBounds="28.765, 0.96, 2.4699999999999998, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d00e7466-d76b-4579-a5bf-6937daef82bd" absoluteBounds="44.625, 2.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PoseidonDataContext/statΣΠΟΥΔΑΣΤΗΣ_ΦΥΛΟ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4355c4db-bd96-4301-9b58-5b1ca19a44ce" absoluteBounds="44.64, 2.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e3ab6fde-db08-4d3e-92bc-69ad735bcb4a" absoluteBounds="47, 2.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PoseidonDataContext/statΣΠΟΥΔΑΣΤΗΣ_ΦΥΛΟ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7310b6ca-7ed3-4a22-8f7f-266f2c2ee48c" absoluteBounds="47.015, 2.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="00662776-6796-4be6-a652-842b587f7ff2" absoluteBounds="44.625, 3.875, 2.625, 1.3862939453125">
+      <DataClassMoniker Name="/PoseidonDataContext/statΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΕΙΔΟΣ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d4db109f-d2e7-4300-a459-e3990febd2a5" absoluteBounds="44.64, 4.335, 2.5949999999999998, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="53eb9db4-eb82-4c4a-a49c-12144a7dfd5c" absoluteBounds="47.5, 3.875, 2.625, 1.3862939453125">
+      <DataClassMoniker Name="/PoseidonDataContext/statΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΕΙΔΟΣ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93042919-aeea-4b5e-98d2-2561b783a45f" absoluteBounds="47.515, 4.335, 2.5949999999999998, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb045222-a4f5-4ab7-bf6c-4213d331bf67" absoluteBounds="52, 7.5, 2.25, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/statΣΠΟΥΔΑΣΤΗΣ_ΥΠΗΚΟΟΤΗΤΑ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="55bdb8f2-fd8a-45a2-8d5a-54875e187767" absoluteBounds="52.015, 7.96, 2.2199999999999998, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ebf57e65-7138-4f37-bc85-336a2730fcad" absoluteBounds="52, 0.75, 2.5, 3.1170068359375">
+      <DataClassMoniker Name="/PoseidonDataContext/certΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a516f96e-c27b-4c6f-ba5a-c25ef2b32eb3" absoluteBounds="52.015, 1.21, 2.4699999999999998, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b8ca7ff7-769c-4ed8-a894-21b2507402ac" absoluteBounds="52, 4.125, 2.5, 3.1170068359375">
+      <DataClassMoniker Name="/PoseidonDataContext/certΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΗ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc0bdeb5-8196-4b7b-97bf-b9d98093ef6f" absoluteBounds="52.015, 4.585, 2.4699999999999998, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="adb4b4bc-f265-4c95-9c10-0fa28ab37f49" absoluteBounds="0.5, 16.375, 2.25, 5.2323225911458326">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΕΚΠ_ΣΥΜΒΑΣΗ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1db4ad71-0c1f-4e97-bea2-fd74b64fb236" absoluteBounds="0.515, 16.835, 2.2199999999999998, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6d9a5c90-ec21-4f5f-928d-afd9eb7f12d5" absoluteBounds="2.875, 8.25, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/PoseidonDataContext/ΑΕΝ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fb0d9c35-1ab9-4309-848c-43c8467a8ade" absoluteBounds="2.8899999999999997, 8.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="45c98a2f-e1e8-4946-8ead-1148798d0e23" absoluteBounds="3.25, 20.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/PoseidonDataContext/sqlAEN_DATA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f90f2492-c65c-48cc-99d1-8614d44577d7" absoluteBounds="3.2649999999999997, 20.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1e8f23dd-c8b7-4776-8d6f-49a86a4919a1" absoluteBounds="5.625, 19, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/PoseidonDataContext/ΕΚΠ_ΒΕΒΑΙΩΣΗ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2dac5216-7ed0-43c4-a09a-65378844a94e" absoluteBounds="5.6400000000000006, 19.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="58b81c7a-55af-457e-ab45-50b844f48ac5" absoluteBounds="8, 19, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/PoseidonDataContext/ΕΚΠ_ΣΥΜΒΑΣΗ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e4b1169-7cec-40d4-8b63-9f422b5d389d" absoluteBounds="8.015, 19.46, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e13a24fa-1aac-4e8e-8a3a-6462e92a44e9" absoluteBounds="5.75, 15.375, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/PoseidonDataContext/ΠΡΟΓΡΑΜΜΑ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e6853190-7cd3-4039-b1cf-4257dc9014ad" absoluteBounds="5.765, 15.835, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="299cb92d-9aee-4ae8-9819-c997c0525d44" absoluteBounds="8, 15.375, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/PoseidonDataContext/ΠΡΟΓΡΑΜΜΑ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a604ef5e-6de0-4209-a6fd-254d51e0a389" absoluteBounds="8.015, 15.835, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="efec6040-b0aa-4d9a-8a0c-bb7b5d12264f" absoluteBounds="2.875, 11.25, 2.125, 3.3093082682291666">
+      <DataClassMoniker Name="/PoseidonDataContext/ΑΕΝ_ΔΙΑΧΕΙΡΙΣΗ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4079d926-4155-4442-a944-dfb920652139" absoluteBounds="2.89, 11.71, 2.0949999999999998, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="63239a83-9e46-4245-9523-5b0c1bc06cc6" absoluteBounds="37.625, 2.75, 2, 3.1170068359375">
+      <DataClassMoniker Name="/PoseidonDataContext/ΣΠΟΥΔΑΣΤΗΣ_ΒΑΘΜΟΙ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1db3b514-bd69-4c56-908c-4c7bac3557ae" absoluteBounds="37.64, 3.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2dd45ece-13d7-419a-9230-3552573a5a9c" absoluteBounds="26.375, 6.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/PoseidonDataContext/ΣΠΟΥΔΑΣΤΗΣ_ΕΓΓΡΑΦΕΣ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="938e46d4-98c7-40ec-a8fb-6fd7dee8a263" absoluteBounds="26.39, 6.9600000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cdf9593b-8a0a-41cf-a92b-ed3146562bcd" absoluteBounds="41.625, 2.125, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/PoseidonDataContext/ΣΠΟΥΔΑΣΤΗΣ_ΠΤΥΧΙΑΚΗ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de233e0c-ff2b-4c80-9182-a8a6cb924c30" absoluteBounds="41.64, 2.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="20048005-f39f-4609-a4ab-1423a8204877" absoluteBounds="3, 14.875, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΑΕΝ_ΔΙΑΧΕΙΡΙΣΗ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="faf7d525-adee-411f-b623-34b8e1915b84" absoluteBounds="3.0149999999999997, 15.335, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1973b947-328c-4f18-81e9-9ce49ef3a3b7" absoluteBounds="44.625, 5.625, 2, 4.8477197265625">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΠΤΥΧΙΑΚΕΣ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64446380-996c-4da4-a5f2-7cd1ae3af9eb" absoluteBounds="44.64, 6.085, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7009e3d2-c3b9-4f5c-aec4-00c5f00ef0c1" absoluteBounds="46.875, 5.625, 2, 4.8477197265625">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΠΤΥΧΙΑΚΕΣ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="445ace32-fdf7-4f39-b7d5-954c59f5847d" absoluteBounds="46.89, 6.085, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c0f8c5f3-a5ac-41db-844f-74d0e31a0a81" absoluteBounds="49.125, 5.625, 2, 4.8477197265625">
+      <DataClassMoniker Name="/PoseidonDataContext/ViewΠΤΥΧΙΑΚΕΣ_ΣΠ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5ed17fc6-1289-4592-a5b3-7d37b9cfc3bd" absoluteBounds="49.14, 6.085, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="63bb8f16-ce0c-4691-b4a2-4753d534291d" absoluteBounds="52, 9, 2.375, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/statΣΠΟΥΔΑΣΤΗΣ_ΥΠΗΚΟΟΤΗΤΑ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b8b2c21-bfe3-4de8-a760-7d36f0102fc5" absoluteBounds="52.015, 9.46, 2.3449999999999998, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e18e70ac-3937-47be-a58b-e7bb77caec22" absoluteBounds="52, 10.5, 2.375, 1.1939925130208333">
+      <DataClassMoniker Name="/PoseidonDataContext/statΣΠΟΥΔΑΣΤΗΣ_ΥΠΗΚΟΟΤΗΤΑ_ΣΠ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7bfa2e89-c6be-4d05-bf8c-9e9048512cd8" absoluteBounds="52.015, 10.96, 2.3449999999999998, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fdc2272e-9fad-46a6-967c-fde27f45ed12" absoluteBounds="21.125, 2.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PoseidonDataContext/statΜΕ_ΣΠ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9debc709-82d7-4db1-b9fe-9e6ce71ea85e" absoluteBounds="21.14, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="72bbcddc-7fd6-4f20-a2b7-90be9f7ba72b" absoluteBounds="41.75, 5.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PoseidonDataContext/statΑΝΑΘΕΣΕΙΣ_ΩΡΕΣ_ΣΠ_ΣΜ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="090c77de-d3a7-4e1c-90ae-0cf08c1ed4bf" absoluteBounds="41.765, 5.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

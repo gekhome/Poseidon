@@ -1,0 +1,54 @@
+﻿<Page x:Class="Poseidon.AppPages.Statistics.ALL.Pages.RepStudentNationalityChart"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:telerikControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+      xmlns:tk="clr-namespace:Telerik.ReportViewer.Wpf;assembly=Telerik.ReportViewer.Wpf"
+      xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"        
+      xmlns:charts ="clr-namespace:Poseidon.AppPages.Statistics.ALL.Charts"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1000"
+	Title="Κατανομή σπουδαστών ανά υπηκοότητα">
+
+    
+    <Grid>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="1" Margin="0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="6">
+                <TextBlock Text="Θέμα:" Margin="6,6,6,6" FontWeight="Bold" FontSize="12" Foreground="Black" VerticalAlignment="Center"/>
+                <telerikInput:RadComboBox x:Name="ThemeSelector"
+                                    Width="120"
+                                    VerticalAlignment="Center"
+                                    SelectedIndex="0"
+                                    telerik:StyleManager.Theme="{Binding SelectedItem, ElementName=ThemeSelector}">
+                    <telerik:Windows8Theme />
+                    <telerik:Office_BlackTheme />
+                    <telerik:Office_BlueTheme />
+                    <telerik:Office_SilverTheme />
+                    <telerik:SummerTheme />
+                    <telerik:VistaTheme />
+                    <telerik:Windows7Theme />
+                    <telerik:Windows8TouchTheme />
+                    <telerik:TransparentTheme />
+                    <telerik:Expression_DarkTheme />
+                </telerikInput:RadComboBox>
+            </StackPanel>
+            <Border BorderBrush="White" CornerRadius="4" BorderThickness="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,8">
+                <Border.Effect>
+                    <DropShadowEffect Color="GhostWhite" Opacity=".50" ShadowDepth="4" />
+                </Border.Effect>
+
+                <tk:ReportViewer MinWidth="860" Height="600" UseLayoutRounding="True"
+                                 x:Name="ReportViewer1"
+                                 Report="Poseidon.Reports.ALL.StudentNationality, Poseidon"
+                                 telerik:StyleManager.Theme="{Binding SelectedItem, ElementName=ThemeSelector}">
+                </tk:ReportViewer>
+
+            </Border>
+        </StackPanel>
+
+
+    </Grid>
+</Page>

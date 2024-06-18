@@ -1,0 +1,162 @@
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigateTest.exe
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigateTest.pdb
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigationWPF.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigationWPF.pdb
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.csprojResolveAssemblyReference.cache
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\obj\Debug\MainWindow.baml
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page1.baml
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page2.baml
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\obj\Debug\MainWindow.g.cs
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page1.g.cs
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page2.g.cs
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\obj\Debug\App.g.cs
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest_MarkupCompile.cache
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.g.resources
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.exe
+C:\Users\Christine\Documents\Cal Personal\Projects\myStuff\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\MainWindow.baml
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page2.baml
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\MainWindow.g.cs
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page2.g.cs
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\App.g.cs
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest_MarkupCompile.cache
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.exe
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigateTest.exe
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigateTest.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigationWPF.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigationWPF.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page1.baml
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page1.g.cs
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.g.resources
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigateTest.exe
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigateTest.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigationWPF.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigationWPF.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\MainWindow.baml
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page1.baml
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page2.baml
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\MainWindow.g.cs
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page1.g.cs
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page2.g.cs
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\App.g.cs
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest_MarkupCompile.cache
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.g.resources
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.exe
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigateTest.exe
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigateTest.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigationWPF.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigationWPF.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\obj\Debug\MainWindow.baml
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page1.baml
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page2.baml
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\obj\Debug\MainWindow.g.cs
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page1.g.cs
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page2.g.cs
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\obj\Debug\App.g.cs
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest_MarkupCompile.cache
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.g.resources
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.exe
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.pdb
+C:\Users\Christine\Desktop\FrameNavigationWPF\FrameNavigationWPF\FrameNavigateTest\obj\Debug\ResolveAssemblyReference.cache
+E:\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.exe
+E:\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.pdb
+E:\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigateTest.exe
+E:\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigateTest.pdb
+E:\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigationWPF.dll
+E:\FrameNavigationWPF\FrameNavigateTest\bin\Debug\System.Windows.Interactivity.dll
+E:\FrameNavigationWPF\FrameNavigateTest\bin\Debug\FrameNavigationWPF.pdb
+E:\FrameNavigationWPF\FrameNavigateTest\bin\Debug\System.Windows.Interactivity.xml
+E:\FrameNavigationWPF\FrameNavigateTest\bin\Debug\de\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigateTest\bin\Debug\en\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigateTest\bin\Debug\es\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigateTest\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigateTest\bin\Debug\it\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigateTest\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigateTest\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigateTest\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigateTest\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+E:\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.csprojResolveAssemblyReference.cache
+E:\FrameNavigationWPF\FrameNavigateTest\obj\Debug\MainWindow.baml
+E:\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page1.baml
+E:\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page2.baml
+E:\FrameNavigationWPF\FrameNavigateTest\obj\Debug\MainWindow.g.cs
+E:\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page1.g.cs
+E:\FrameNavigationWPF\FrameNavigateTest\obj\Debug\Page2.g.cs
+E:\FrameNavigationWPF\FrameNavigateTest\obj\Debug\App.g.cs
+E:\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest_MarkupCompile.cache
+E:\FrameNavigationWPF\FrameNavigateTest\obj\Debug\FrameNavigateTest.g.resources
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\FrameNavigateTest\obj\Debug\FrameNavigateTest.exe
+E:\WPF Projects\THETIS\Thetis Code\WpfFrameNavigation\FrameNavigateTest\obj\Debug\FrameNavigateTest.pdb
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\obj\Debug\FrameNavigateTest.exe
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\obj\Debug\FrameNavigateTest.pdb
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\bin\Debug\FrameNavigateTest.exe
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\bin\Debug\FrameNavigateTest.pdb
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\bin\Debug\System.Windows.Interactivity.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\bin\Debug\System.Windows.Interactivity.xml
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\bin\Debug\de\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\bin\Debug\en\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\bin\Debug\es\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\bin\Debug\it\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\obj\Debug\FrameNavigateTest.csprojResolveAssemblyReference.cache
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\obj\Debug\MainWindow.baml
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\obj\Debug\Page1.baml
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\obj\Debug\Page2.baml
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\obj\Debug\MainWindow.g.cs
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\obj\Debug\Page1.g.cs
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\obj\Debug\Page2.g.cs
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\obj\Debug\App.g.cs
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\obj\Debug\FrameNavigateTest_MarkupCompile.cache
+E:\MYTHWARE\PROJECTS\AEN\POSEIDON\Poseidon Code\WpfFrameNavigation\FrameNavigateTest\obj\Debug\FrameNavigateTest.g.resources

@@ -1,0 +1,127 @@
+﻿<UserControl x:Class="Poseidon.AppPages.Tools.BookShips"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:converts="clr-namespace:Poseidon.Utilities"
+             mc:Ignorable="d"
+             d:DesignHeight="800" d:DesignWidth="1000">
+
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="darkGrey" Color="#767676" />
+        <converts:BinaryImageConverter x:Key="imgConverter"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.Resources>
+
+            <DataTemplate x:Key="PageTemplate">
+                <StackPanel Margin="10" Background="LightGray" Orientation="Vertical">
+
+                    <TextBlock FontSize="24" 
+                           FontWeight="Bold"
+                           Text="{Binding SHIP_TYPE}" />
+                    <Image Width="200" VerticalAlignment="Center" Margin="0 10 0 0" 
+                       Height="200"
+                       Source="/Poseidon;component/Shell/Images/Other/steering-wheel.png"  Stretch="Fill" />
+                    <StackPanel HorizontalAlignment="Stretch" Orientation="Vertical" Margin="0 20 0 0">
+                        <TextBlock FontWeight="Bold" Text="DESCRIPTION:" />
+                        <TextBlock Text="{Binding SHIP_DESCRIPTION}" TextWrapping="Wrap"  />
+                    </StackPanel>
+                    
+                </StackPanel>
+            </DataTemplate>
+
+
+        </Grid.Resources>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="40" />
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+            <Border Name="LayoutHost" Background="LightBlue" BorderBrush="Black" BorderThickness="2" Grid.Column="0" 
+                VerticalAlignment="Center" HorizontalAlignment="Center" Height="640" Width="860">
+            <Border.LayoutTransform>
+                <ScaleTransform ScaleX="{Binding ElementName=zoomSlider,Path=Value}" ScaleY="{Binding ElementName=zoomSlider, Path=Value}" />
+            </Border.LayoutTransform>
+            
+            <StackPanel Name="bookHost" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <telerik:RadBook x:Name="book1"
+                         Width="800"
+                         Height="540"
+                         FirstPagePosition="Right"
+                         FoldActivated="RadBook1_FoldActivated"
+                         FoldDeactivated="RadBook1_FoldDeactivated"
+                         LeftPageTemplate="{StaticResource PageTemplate}"
+                         RightPageTemplate="{StaticResource PageTemplate}"
+                         FoldSize="35,35"
+                         FontSize="11"
+                         RightPageIndex="0"/>
+
+                    <!--<telerik:RadBookItem Cursor="Hand" MouseLeftButtonUp="RadBookItemMouseLeftButtonUp">
+                        <Image Source="/Poseidon;component/Shell/Images/Other/frontcover.png" Stretch="Fill" />
+                    </telerik:RadBookItem>
+                </telerik:RadBook>-->
+                
+                <StackPanel Name="Paging" Grid.Column="0"  Margin="0,10,0,0" 
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal" Height="60">
+                    <telerik:RadButton Width="24"
+                               Height="24"
+                               Command="telerik:BookCommands.FirstPage"
+                               CommandTarget="{Binding ElementName=book1}"
+                               CornerRadius="12"
+                               ToolTipService.ToolTip="First Page">
+                        <Path Margin="-2 0 0 0"
+                      Data="M12,0 L12,8 L6,4 L6,8 L0,4 L6,0 L6,4 z"
+                      Fill="{StaticResource darkGrey}" />
+                    </telerik:RadButton>
+                    <telerik:RadButton Width="24"
+                               Height="24"
+                               Margin="8 0 12 0"
+                               Command="telerik:BookCommands.PreviousPage"
+                               CommandTarget="{Binding ElementName=book1}"
+                               CornerRadius="12"
+                               ToolTipService.ToolTip="Previous Page">
+                        <Path Margin="-2 0 0 0"
+                      Data="  M0,4 L6,0 L6,8 z"
+                      Fill="{StaticResource darkGrey}" />
+                    </telerik:RadButton>
+                    <telerik:RadButton Width="24"
+                               Height="24"
+                               Margin="12 0 8 0"
+                               Command="telerik:BookCommands.NextPage"
+                               CommandTarget="{Binding ElementName=book1}"
+                               CornerRadius="12"
+                               ToolTipService.ToolTip="Next Page">
+                        <Path Margin="2 0 0 0"
+                      Data="M0,0 L6,4 L0,8 z"
+                      Fill="{StaticResource darkGrey}" />
+                    </telerik:RadButton>
+                    <telerik:RadButton Width="24"
+                               Height="24"
+                               Command="telerik:BookCommands.LastPage"
+                               CommandTarget="{Binding ElementName=book1}"
+                               CornerRadius="12"
+                               ToolTipService.ToolTip="Last Page">
+                        <Path Margin="2 0 0 0"
+                      Data="M6,0 L12,4 L6,8 z M0,0 L6,4 L0,8 z"
+                      Fill="{StaticResource darkGrey}" />
+                    </telerik:RadButton>
+                </StackPanel>
+
+            </StackPanel>
+            
+        </Border>
+        </ScrollViewer>
+        <telerik:RadSlider x:Name="zoomSlider" Grid.Column="1" Orientation="Vertical" Width="24" Height="400" VerticalAlignment="Center"
+                           Value="1" Minimum="0" SmallChange="0.1" Maximum="5" TickPlacement="Both" TickFrequency="0.2" HandlesVisibility="Visible">
+
+        </telerik:RadSlider>
+
+    </Grid>
+</UserControl>
